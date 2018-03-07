@@ -1,0 +1,7 @@
+ProjectTitle: 'Prewiev page'
+
+PageList:
+- file: main.html
+  ready: 10
+- file: parts.html
+  ready: 10
