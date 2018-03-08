@@ -23,7 +23,7 @@ let util = require('gulp-util')
 				//Nunjucks
 				,'nunjucks': soursePath + 'nunjucks-templates'
 				//Sass
-				, 'sass': [soursePath + 'sass/**/*.+(sass|scss)', soursePath + 'elements/**/*.(sass|scss)']
+				, 'sass': [soursePath + 'sass/**/*.+(sass|scss)', soursePath + 'elements/**/*.+(sass|scss)']
 				, 'sassFolder': soursePath + 'sass/'
 				//images
 				, 'img': soursePath + 'img/*.*'

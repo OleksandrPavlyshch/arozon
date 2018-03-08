@@ -1,10 +1,76 @@
 ---
 title: Index page
 ---
-{% extends "layouts/_layout.html" %}
+{% extends "nunjucks-templates/layouts/_layout.html" %}
 
 {% block content %}
-	
+	<style type="text/css">
+		.styleguide-row {
+			margin-bottom: 40px;
+		}
+		.styleguide-head {
+			font-size: 40px;
+			color: #6bbd96;
+			margin-bottom: 20px;
+		}
+	</style>
+	<div class="container">
+		<div class="styleguide-head">Text</div>
+		<div class="styleguide-row">
+			<h1>h1 Some text</h1>
+			<br>
+			<h2>h2 Some text</h2>
+			<br>
+			<h3>h3 Some text</h3>
+			<br>
+			<h4>h4 Some text</h4>
+			<br>
+			<h5>h5 Some text</h5>
+			<br>
+			<h6>h6 Some text</h6>
+			<br>
+			<p>Paragraph Some text</p>
+		</div>
+		<div class="styleguide-head">Text Gradient</div>
+		<div class="styleguide-row">
+			<h1 class="text-gradient">h1 Some text</h1>
+			<br>
+			<h2 class="text-gradient">h2 Some text</h2>
+			<br>
+			<h3 class="text-gradient">h3 Some text</h3>
+			<br>
+			<h4 class="text-gradient">h4 Some text</h4>
+			<br>
+			<h5 class="text-gradient">h5 Some text</h5>
+			<br>
+			<h6 class="text-gradient">h6 Some text</h6>
+			<br>
+			<p class="text-gradient">Paragraph Some text</p>
+		</div>
+		<div class="styleguide-head">Buttons</div>
+		<div class="styleguide-row">
+			<button>Заказать  уборку</button>
+			<br>
+			<br>
+			<div style="background-color: #33a3cc; padding: 10px;">
+				<button class="button see-trough">Заказать уборку</button>
+			</div>
+			<br>
+			<br>
+			<div style="background-color: #33a3cc; padding: 10px;">
 
+				<button class="button see-trough is-wide-button">Заказать уборку</button>
+			</div>
+			<br>
+			<br>
+			<button>Заказать уборку</button>
+			<br>
+			<br>
+			<button class="button ">Узнать стоимость</button>
+			<br>
+			<br>
+			<button class="button see-trough is-wide-button">Узнать стоимость</button>
+		</div>
+	</div>
 
 {% endblock %}
