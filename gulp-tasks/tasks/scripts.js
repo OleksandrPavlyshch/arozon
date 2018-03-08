@@ -4,7 +4,7 @@ const gulp = require('gulp')
 	, gulpif = require('gulp-if')
 	, concat = require('gulp-concat')
 	, configs = require('../configs')
-	, jsFileName = "index.js";
+	, jsFileName = "app.js";
 
 //scripts
 gulp.task('scripts', () => {
