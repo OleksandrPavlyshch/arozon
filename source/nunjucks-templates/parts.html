@@ -1,10 +1,10 @@
----
-title: Index page
----
 {% extends "nunjucks-templates/layouts/_layout.html" %}
 
 {% block content %}
 	<style type="text/css">
+		body {
+			padding-bottom: 200px;
+		}
 		.styleguide-row {
 			margin-bottom: 40px;
 		}
@@ -53,23 +53,19 @@ title: Index page
 			<br>
 			<br>
 			<div style="background-color: #33a3cc; padding: 10px;">
-				<button class="button see-trough">Заказать уборку</button>
+				<button class="button is-see-trough">Заказать уборку</button>
 			</div>
 			<br>
 			<br>
 			<div style="background-color: #33a3cc; padding: 10px;">
-
-				<button class="button see-trough is-wide-button">Заказать уборку</button>
+				<button class="button is-see-trough is-wide-button">Заказать уборку</button>
 			</div>
 			<br>
 			<br>
-			<button>Заказать уборку</button>
+			<button class="button is-bg-move"><span>Узнать стоимость</span></button>
 			<br>
 			<br>
-			<button class="button ">Узнать стоимость</button>
-			<br>
-			<br>
-			<button class="button see-trough is-wide-button">Узнать стоимость</button>
+			<button class="button is-bg-move is-wide-button"><span>Узнать стоимость</span></button>
 		</div>
 	</div>
 

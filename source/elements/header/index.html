@@ -1,12 +1,56 @@
+{% set 
+	citys = [
+		{
+			name: 'киев',
+			phone: '067 513 55 33'
+		},
+		{
+			name: 'луцк',
+			phone: '067 513 55 33'
+		},
+		{
+			name: 'черновцы',
+			phone: '067 513 55 33'
+		},
+		{
+			name: 'суммы',
+			phone: '067 513 55 33'
+		}
+	]
+%}
+
 <header id="header" class="header">
 	<div class="container">
 			<div class="row">
 				<div class="col-xs-6">
-					<div class="box-row"></div>
+					<div class="box-row">
+						<a class="logo" href="/">
+							{{mixins.icon('logo', 'logo-img')}}
+							<span class="logo-text">arozon</span>
+						</a>
+						<nav class="header-menu">
+							<ul>
+								<li><a class="active" href="#">клининг</a></li>
+								<li><a href="#">аудит</a></li>
+								<li><a href="#">обучение</a></li>
+								<li><a href="#">хендлинг</a></li>
+								<li><a href="#">контактная информация</a></li>
+							</ul>
+						</nav>
+					</div>
 				</div>
 				<div class="col-xs-2">
 					<div class="box-row">
-						
+						<select class="select-custom select_city right">
+							{% for city in citys %}
+								<option value="{{ city.name }}">
+									<span class="select_city-name">{{ city.name  }}</span>
+									<span class="select_city-phone">
+										+380 <b>{{ city.phone }}</b>
+									</span>
+								</option>
+							{% endfor %}
+						</select>
 					</div>
 				</div>
 			</div>
