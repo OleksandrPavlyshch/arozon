@@ -9,24 +9,22 @@
     <meta name="theme-color" content="#fff">
     <meta name="format-detection" content="telephone=no">
     <!-- bower:css -->
-    <link rel="stylesheet" href="css/vendor/nice-select.css" />
     <!-- endbower -->
+    <link rel="stylesheet" href="css/vendor/nice-select.css" />
     <link rel="stylesheet" media="all" href="css/screen.css">
     {% include "../partials/_media-tags.html" %}
     {% include "../partials/_favicons.html" %}
   </head>
-  <body>
+  {% if page_class %}<body class="{{ page_class }}">{% else %}<body>{% endif %}
     <!-- BEGIN content -->
-    <div class="out">
       {% block content %}{% endblock %}
-    </div>
     <!-- END content -->
 
     <!-- BEGIN scripts -->
     <!-- bower:js -->
     <script src="js/vendor/jquery.js"></script>
-    <script src="js/vendor/jquery.nice-select.min.js"></script>
     <!-- endbower -->
+    <script src="js/vendor/jquery.nice-select.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <!-- END scripts -->
 

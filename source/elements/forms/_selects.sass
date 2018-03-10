@@ -1,0 +1,55 @@
+.select_city
+	float: none
+	width: 100%
+	padding: 0 14px 0 22px
+	line-height: 42px
+	height: 48px
+	border-radius: 24px
+	border-color: $white
+	border: solid 2px $white-200
+	outline: none
+	.is_main_page &
+		border-color: $white
+		&:hover,
+		&:focus
+			border-color: $white
+	&:hover,
+	&:focus
+		border-color: $white-200
+
+	&:after
+		display: none
+	.current
+		height: 48px
+		background-color: $white
+	&-name
+		@extend .text-gradient
+		letter-spacing: 1.2px
+		font-size: $fs-xs
+		font-weight: 700
+		text-transform: uppercase
+	&-phone
+		float: right
+		font-size: $fs-m+1
+		color: $grey-500
+		b
+			font-weight: normal
+			color: $black-300
+	.list
+		left: -2px
+		right: -2px
+		margin-top: 13px
+		border-radius: 24px
+		background-color: $white
+		box-shadow: 0 0 20px 0 rgba($black, 0.2)
+	.option
+		background-color: inherit
+		line-height: 47px
+		height: 48px
+		padding: 0 18px 0 22px
+		&:hover
+				background-color: $gray-200
+		&.selected
+			font-weight: normal
+	.option + .option
+		border-top: 1px solid $white-300

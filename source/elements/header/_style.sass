@@ -1,15 +1,40 @@
 header
-
-
-
+	// background-color: $blue-400
 	margin: 0 auto
+	.select_city
+		margin-top: 12px
 	.container
-		border: 1px solid $blue-400
-	.row
-		border: 1px solid $blue-400
-		// margin-top: 15px
-	.col-xs-2
-		border: 1px solid $blue-400
-	.box-row
-		border: 1px solid $blue-400
-		background-color: rgba($blue-400, .3)
+		+clr
+	.logo
+		padding: 21px 15px 19px
+		display: inline-block
+		background-image: linear-gradient(to left, $green-400, $blue-400)
+		text-align: center
+		color: $white
+		float: left
+		margin-right: 35px
+		text-align: center
+		text-decoration: none
+		&-img
+			font-size: 28px
+			display: block
+			margin: 0 auto 2px
+		&-text
+			font-size: $fs-xxxs
+			font-weight: 500
+			line-height: 14px
+			text-transform: uppercase
+			letter-spacing: 0.9px
+
+
+
+
+.container
+	border: 1px solid $blue-400
+.row
+	border: 1px solid $blue-400
+.col-xs-2
+	border: 1px solid $blue-400
+.box-row
+	border: 1px solid $blue-400
+	background-color: rgba($blue-400, .3)

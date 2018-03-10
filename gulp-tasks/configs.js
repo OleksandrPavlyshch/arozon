@@ -8,8 +8,8 @@ let util = require('gulp-util')
 		, 'source': {
 				'root': soursePath
 				//vendors
-				, 'vendorJs': soursePath + 'js/vendor/'
-				, 'vendorCss': soursePath + 'css/vendor/'
+				, 'vendorJs': soursePath + 'vendor/js/'
+				, 'vendorCss': soursePath + 'vendor/css/'
 				// js
 				, 'js': soursePath + 'elements/**/*.js'
 				, 'pagelist': soursePath + 'index.yaml'

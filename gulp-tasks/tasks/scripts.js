@@ -17,4 +17,5 @@ gulp.task('scripts', () => {
 
 gulp.task('scripts:watch', () => {
 	gulp.watch(configs.source.js, ['scripts']);
+	gulp.watch(configs.source.vendorJs + '*.js', ['copy:vendor:js']);
 });
