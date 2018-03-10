@@ -1,11 +1,24 @@
-header
-	// background-color: $blue-400
-	margin: 0 auto
+.header
+	position: absolute
+	z-index: 100
+	left: 0
+	right: 0
+	top: 60px
+	transform: translateY(-60px)
+	transition: transform .3s ease-in-out
 	.select_city
 		margin-top: 12px
+	&.is-scroll
+		top: 0
+		position: fixed
+		background-color: $blue-700
+		.select_city
+			margin: 5px 0
+	&.is-fixed
+		transform: translateY(0)
 	.container
 		+clr
-	.logo
+	&_logo
 		padding: 21px 15px 19px
 		display: inline-block
 		background-image: linear-gradient(to left, $green-400, $blue-400)
@@ -15,6 +28,8 @@ header
 		margin-right: 35px
 		text-align: center
 		text-decoration: none
+		.is-scroll &
+			padding: 15px 15px 17px
 		&-img
 			font-size: 28px
 			display: block
@@ -25,16 +40,42 @@ header
 			line-height: 14px
 			text-transform: uppercase
 			letter-spacing: 0.9px
+		.is-scroll &
+			&-text
+				display: none
+			&-img
+				margin-bottom: 0
 
 
+	&_menu
+		// display: inline-block
+		&-list
+			padding-top: 30px
+			.is-scroll &
+				padding-top: 20px
+		&-item
+			display: inline-block
+			font-weight: 700
+			font-size: $fs-xs
+			line-height: $lh-ss
+			letter-spacing: 1.2px
+			color: $blue-700
+			.is_main_page &,
+			.is-scroll &
+				opacity: .7
+				color: $white
+			&.active
+				@extend .text-gradient
+				.is_main_page &,
+				.is-scroll &
+					opacity: 1
+					background: none
+					-webkit-background-clip: none
+					background-clip: none
 
-
-.container
-	border: 1px solid $blue-400
-.row
-	border: 1px solid $blue-400
-.col-xs-2
-	border: 1px solid $blue-400
-.box-row
-	border: 1px solid $blue-400
-	background-color: rgba($blue-400, .3)
+		&-item + &-item
+			margin-left: 32px
+		&-link
+			text-decoration: none
+			text-transform: uppercase
+			color: inherit

@@ -1,9 +1,22 @@
 // default layout
 @import flexboxgrid
 
+//denug begin
+footer
+	.container
+		border: 1px solid $blue-400
+	.row
+		border: 1px solid $blue-400
+	.col-xs-2
+		border: 1px solid $blue-400
+	.box-row
+		border: 1px solid $blue-400
+		background-color: rgba($blue-400, .3)
+//denug end
+
 .container
 	@extend .container-fluid
-	max-width: $desctop+px
+	width: $desctop+px
 
 .clearfix
 	*zoom: 1

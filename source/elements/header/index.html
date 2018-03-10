@@ -18,25 +18,48 @@
 		}
 	]
 %}
-
-
+{% set menu = [
+		{
+			name: 'клининг',
+			link: '#'
+		},
+		{
+			name: 'аудит',
+			link: '#'
+		},
+		{
+			name: 'обучение',
+			link: '#'
+		},
+		{
+			name: 'хендлинг',
+			link: '#'
+		},
+		{
+			name: 'контактная информация',
+			link: '#'
+		}
+	]
+%}
 
 <header id="header" class="header">
 	<div class="container">
 			<div class="row">
 				<div class="col-xs-6">
 					<div class="box-row">
-						<a class="logo" href="/">
-							{{mixins.icon('logo', 'logo-img')}}
-							<span class="logo-text">arozon</span>
+						<a class="header_logo" href="/">
+							{{mixins.icon('logo', 'header_logo-img')}}
+							<span class="header_logo-text">arozon</span>
 						</a>
-						<nav class="header-menu">
-							<ul>
-								<li><a class="active" href="#">клининг</a></li>
-								<li><a href="#">аудит</a></li>
-								<li><a href="#">обучение</a></li>
-								<li><a href="#">хендлинг</a></li>
-								<li><a href="#">контактная информация</a></li>
+						<nav class="header_menu">
+							<ul class="header_menu-list">
+								{% for item in menu %}
+									{% if loop.index == active_menu_link %}
+										<li class="header_menu-item active"><a class="header_menu-link" href="{{item.link}}">{{item.name}}</a></li>
+									{% else %}
+										<li class="header_menu-item"><a class="header_menu-link" href="{{item.link}}">{{item.name}}</a></li>
+									{% endif %}
+								{% endfor %}
 							</ul>
 						</nav>
 					</div>
