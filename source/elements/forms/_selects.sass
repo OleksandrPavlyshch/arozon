@@ -18,7 +18,6 @@
 			border-color: $white
 	.is-scroll &
 		background-color: transparent
-		// border-color: transparent
 		border-color: $blue-500
 		border-width: 0 0 0 1px
 		border-radius: 0
@@ -30,12 +29,13 @@
 		display: none
 	.current
 		height: 48px
-		// background-color: $white
+		text-align: right
 	&-name
 		@extend .text-gradient
 		letter-spacing: 1.2px
 		font-size: $fs-xs
 		font-weight: 700
+		float: left
 		text-transform: uppercase
 	&-phone
 		float: right
@@ -59,6 +59,7 @@
 		background-color: inherit
 		line-height: 47px
 		height: 48px
+		overflow: hidden
 		padding: 0 18px 0 22px
 		&:hover
 				background-color: $gray-200
