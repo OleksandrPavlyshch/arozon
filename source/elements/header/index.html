@@ -41,28 +41,25 @@
 		}
 	]
 %}
-
 <header id="header" class="header">
 	<div class="container">
 			<div class="row">
 				<div class="col-xs-6">
-					<div class="box-row">
-						<a class="header_logo" href="/">
-							{{mixins.icon('logo', 'header_logo-img')}}
-							<span class="header_logo-text">arozon</span>
-						</a>
-						<nav class="header_menu">
-							<ul class="header_menu-list">
-								{% for item in menu %}
-									{% if loop.index == active_menu_link %}
-										<li class="header_menu-item active"><a class="header_menu-link" href="{{item.link}}">{{item.name}}</a></li>
-									{% else %}
-										<li class="header_menu-item"><a class="header_menu-link" href="{{item.link}}">{{item.name}}</a></li>
-									{% endif %}
-								{% endfor %}
-							</ul>
-						</nav>
-					</div>
+					<a class="header_logo" href="/">
+						{{mixins.icon('logo', 'header_logo-img')}}
+						<span class="header_logo-text">arozon</span>
+					</a>
+					<nav class="header_menu">
+						<ul class="header_menu-list">
+							{% for item in menu %}
+								{% if loop.index == active_menu_link %}
+									<li class="header_menu-item active"><a class="header_menu-link" href="{{item.link}}">{{item.name}}</a></li>
+								{% else %}
+									<li class="header_menu-item"><a class="header_menu-link" href="{{item.link}}">{{item.name}}</a></li>
+								{% endif %}
+							{% endfor %}
+						</ul>
+					</nav>
 				</div>
 				<div class="col-xs-2">
 					<select class="select-custom select_city">
@@ -72,9 +69,6 @@
 							</option>
 						{% endfor %}
 					</select>
-					<!-- <div class="box-row">
-
-					</div> -->
 				</div>
 			</div>
 	</div>

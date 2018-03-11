@@ -15,7 +15,7 @@ function renderHtml(onlyChanged){
 	});
 
 	return gulp
-		.src([configs.source.nunjucks + '/**/[^_]*.html'])
+		.src([configs.source.nunjucks + '/[^_]*.html'])
 		.pipe(plumber({
 			errorHandler: configs.errorHandler
 		}))
