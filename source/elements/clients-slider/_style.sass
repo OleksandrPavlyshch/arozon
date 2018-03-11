@@ -1,1 +1,33 @@
-.clients-slider
+.clients_slider
+	padding: 20px 0
+	&-header
+		transform: rotate(-90deg)
+		transform-origin: 0 0
+		height: 0
+		width: 0
+		color: $grey-500
+		font-size: $fs-m
+		position: absolute
+		left: 0
+		white-space: nowrap
+		bottom: 20px
+	&-content
+		min-height: 120px
+		position: relative
+	&-wrap
+		margin-left: 20px
+	&-item
+		// +gray-half
+		+vertical
+		height: 100px
+		text-align: center
+		opacity: .6
+		text-align: center
+		padding: 0 10px
+		img
+			display: inline-block
+			height: auto
+			max-height: 100%
+			max-width: 100%
+			vertical-align: middle
+			width: 90%
