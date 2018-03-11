@@ -28,6 +28,7 @@ p
 
 .text-blue
 	color: $blue-500
+
 .clipboard_copy
 	cursor: pointer
 	display: inline-block
@@ -42,22 +43,6 @@ p
 		color: $blue-400
 		background: none
 
-@keyframes pulse
-	0%
-		-webkit-transform: scale(0)
-		transform: scale(0)
-		opacity: 0
-
-	50%
-		-webkit-transform: scale(0.99)
-		transform: scale(0.99)
-
-	100%
-		-webkit-transform: scale(1)
-		transform: scale(1)
-		opacity: 1
-		visibility: visible
-
 .ui-tooltip
 	color: white
 	position: absolute
@@ -68,17 +53,8 @@ p
 	text-align: center
 	border-radius: 3px
 	letter-spacing: 0.025em
-	// visibility: hidden
 	max-width: calc((1680px - 10vw) / 3 - 32px + 96px)
 	background-color: $black
-	@media (max-width: 1680px)
-		max-width: calc((100% - 10vw) / 3 - 32px + 96px)
-	&.before
-		transform: scale(0)
-		transform-origin: center
-		visibility: visible
-	&.show
-		animation: pulse 200ms cubic-bezier(0, 0, 0.2, 1) forwards
 
 .ui-helper-hidden-accessible
 	display: none

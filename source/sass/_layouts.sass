@@ -2,17 +2,36 @@
 @import flexboxgrid
 
 //denug begin
-footer
+.hero
 	// .container
 	// 	border: 1px solid $blue-400
 	// .row
 	// 	border: 1px solid $blue-400
-	// .col-xs-2
+	// .col-xs-6,
+	// .col-xs-5,
+	// .col-xs-3,
+	// .col-xs-4,
+	// .col-xs-2,
+	// .col-xs
 	// 	border: 1px solid $blue-400
+	// 	min-height: 100px
 	// .box-row
 	// 	border: 1px solid $blue-400
 	// 	background-color: rgba($blue-400, .3)
 //denug end
+
+%extreme-left-col
+	margin-left: $base-padding * -1
+	padding-left: $base-padding * 2
+%extreme-right-col
+	margin-right: $base-padding * -1
+	padding-right: $base-padding * 2
+
+%row-extreme
+	> div:first-child
+		@extend %extreme-left-col
+	> div:last-child
+		@extend %extreme-right-col
 
 .container
 	@extend .container-fluid

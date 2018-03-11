@@ -1,1 +1,25 @@
-.footer
+.hero
+	overflow: hidden
+	height: 100vh
+	max-height: 850px
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: 50% 50%
+	padding: 90px 0 180px
+	color: $white
+	.container,
+	&-content
+		height: 100%
+		vertical-align: middle
+	&-header
+		text-transform: uppercase
+		line-height: 1
+		margin-bottom: 32px
+	&-title
+		font-size: $fs-xxxm
+		line-height: 1.6
+		opacity: .8
+		margin-bottom: 33px
+	&-text-wrap
+		@extend %extreme-left-col
+		border-left: 2px solid $green-300
