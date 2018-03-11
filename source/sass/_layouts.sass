@@ -28,10 +28,16 @@
 	padding-right: $base-padding * 2
 
 %row-extreme
+	margin-left: $base-padding * -2
+	margin-right: $base-padding * -2
 	> div:first-child
-		@extend %extreme-left-col
+		padding-left: $base-padding * 2
 	> div:last-child
-		@extend %extreme-right-col
+		padding-right: $base-padding * 2
+
+.row-extreme
+	@extend .row
+	@extend %row-extreme
 
 .container
 	@extend .container-fluid
