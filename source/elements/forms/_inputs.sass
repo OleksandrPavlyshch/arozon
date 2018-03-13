@@ -1,0 +1,184 @@
+.datepicker
+	&-popup
+		background: $white
+		box-shadow: 0 0 50px 0 rgba($black, .2)
+		width: 100%
+		min-width: 274px
+		z-index: 11 !important
+		position: absolute !important
+		bottom: 73px !important
+		top: auto !important
+		left: 0 !important
+		border-radius: 3px
+		& .ui-datepicker-header
+			text-align: center
+			margin-top: 24px
+			line-height: 1
+			margin-bottom: 18px
+		& .ui-datepicker-title
+			@extend .text-gradient
+			font-weight: 700
+			font-size: $fs-m
+		& .ui-datepicker-next,
+		& .ui-datepicker-prev
+			position: absolute
+
+		& .ui-datepicker-next .ui-corner-all,
+		& .ui-datepicker-prev .ui-corner-all
+			color: inherit
+
+		& .ui-datepicker-prev
+			left: 28px
+
+		& .ui-datepicker-next
+			right: 28px
+
+		& .ui-icon
+			border: 2px solid #AEAEAE
+			border-top: none
+			cursor: pointer
+			display: block
+			width: 12px
+			height: 12px
+
+		& .ui-icon:hover
+			border-color: #AEAEAE
+
+		& .ui-state-disabled .ui-icon
+			border-color: #E2E2E2
+
+		& .ui-state-disabled .ui-icon:hover
+			border-color: #E2E2E2
+
+		& .ui-icon-circle-triangle-w
+			border-right: none
+			-webkit-transform: rotate(45deg)
+			transform: rotate(45deg)
+
+		& .ui-icon-circle-triangle-e
+			border-left: none
+			-webkit-transform: rotate(-45deg)
+			transform: rotate(-45deg)
+
+		& .ui-state-disabled *
+			color: $grey-400 !important
+
+		& .ui-datepicker-calendar
+			width: 100%
+			padding: 0 23px
+			margin-bottom: 20px
+			border-collapse: separate
+
+		& .ui-datepicker-calendar thead
+			font-size: $fs-xs
+			color: $grey-500
+			font-weight: 400
+			border-bottom: 1px solid $white-300
+
+		& .ui-datepicker-calendar thead>tr>th
+			padding-bottom: 33px
+			font-weight: 400
+
+		& .ui-datepicker-calendar tbody
+			margin-top: 30px
+			font-size: 14px
+
+		& .ui-datepicker-calendar tbody>tr>td
+			text-align: center
+			padding-bottom: 4px
+
+		& .ui-datepicker-calendar tbody>tr>td>*
+			font-size: $fs-s
+			color: $black-300
+			background: 0 0
+			border: none
+			border-radius: 50%
+			display: block
+			width: 30px
+			height: 30px
+			line-height: 31px
+			text-align: center
+			margin: 0 auto
+			text-decoration: none
+
+		& .ui-datepicker-calendar tbody>tr>td>a:hover
+			background: $grey-400
+
+		& .ui-state-active
+			color: $white !important
+			background: $def-grad !important
+
+
+
+
+
+.form-group
+	&.focus-date .input-box,
+	&.focus .input-box
+		&:before
+			opacity: 1
+	.input-box
+		background-color: $grey-400
+		border-radius: 4px
+		line-height: 48px
+		height: 48px
+		border: none
+		position: relative
+		padding: 2px
+		&:before
+			transition: opacity $t-n $tf-def
+			content: ''
+			opacity: 0
+			right: 0
+			left: 0
+			bottom: 0
+			top: 0
+			position: absolute
+			z-index: 1
+			background-image: $def-grad
+			border-radius: 3px
+			z-index: 1
+		&:hover,
+		&:focus
+			&:before
+				opacity: 1
+		input,
+		select,
+		textarea
+			position: relative
+			padding: 0 21px
+			z-index: 3
+			display: block
+			width: 100%
+			min-height: 44px
+			line-height: 44px
+			background-color: $grey-300
+			color: $black-300
+			font-size: $fs-m
+			+placeholder
+				color: $grey-500
+
+
+.placeholder-box
+	margin-bottom: 6px
+	display: flex
+	justify-content: space-between
+	position: relative
+	label
+		line-height: $lh-ss
+		font-size: $fs-xxs
+		color: $grey-500
+		width: 0
+		overflow: hidden
+		white-space: nowrap
+		transition: width $t-n $tf-prt
+		.focus-date &,
+		.focus &
+			width: 100%
+	.empty-field
+		font-size: $fs-xxs
+		line-height: $lh-ss
+		text-align: right
+		position: absolute
+		right: 0
+		color: $red-600
