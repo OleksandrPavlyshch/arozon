@@ -31,8 +31,30 @@
 });
 
 
+	var focusANDEnterField = function () {
 
-	
+    $('input, textarea').focus(function() {
+        var get_family = $(this).parent().parent();
 
+        $(get_family).addClass('focus');
+    });
+
+    $('input, textarea').focusout(function() {
+        var get_family = $(this).parent().parent();
+
+        $(get_family).removeClass('focus');
+
+        if ($(this).val().trim().length == 0) {
+
+            $(get_family).removeClass('enter');
+        } else {
+            $(get_family).addClass('enter');
+        }
+    });
+
+    $('input').focusout();
+};
+
+focusANDEnterField();
 
 })(jQuery);
