@@ -48,7 +48,6 @@
 
 
 	&_menu
-		// display: inline-block
 		&-list
 			padding-top: 30px
 			.is-scroll &
@@ -64,7 +63,8 @@
 			.is-scroll &
 				opacity: .7
 				color: $white
-			&.active
+			&.active,
+			&:hover
 				@extend .text-gradient
 				.is_main_page &,
 				.is-scroll &

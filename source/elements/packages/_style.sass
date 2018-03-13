@@ -1,6 +1,6 @@
 .packages
 	margin-bottom: 34px
-	margin-top: -282px
+	margin-top: -276px
 	&-wrap
 		border-radius: 10px
 		position: relative
@@ -20,15 +20,15 @@
 		border-radius: 10px
 		background-color: $white
 		border: solid 1px $white-200
-		border-right-width: none
+		border-right-width: 0
 		position: relative
 		z-index: 1
 		padding-top: 42px
 		text-align: center
-		padding-bottom: 47px
+		padding-bottom: 44px
 		transition: transform .2s linear
+		will-change: transform
 		&:hover
-			// transform: scale(1.1)
 			transform: translateY(-2%)
 			z-index: 10
 		& + &
