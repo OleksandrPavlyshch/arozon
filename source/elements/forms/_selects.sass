@@ -1,13 +1,38 @@
-.select_city
+%select-custom
+	position: relative
 	float: none
 	width: 100%
 	padding: 0 14px 0 22px
-	line-height: 42px
+	line-height: 44px
 	height: 48px
-	border-radius: 24px
-	border-color: $white
-	border: solid 2px $white-200
 	outline: none
+	border: solid 2px $white-200
+	.current
+		height: 48px
+		text-align: right
+	.list
+		margin-top: 12px
+		background-color: $white
+		box-shadow: 0 0 20px 0 rgba($black, 0.2)
+	.option
+		background-color: inherit
+		line-height: 47px
+		height: 48px
+		overflow: hidden
+		padding: 0 18px 0 22px
+		&:hover
+				background-color: $gray-200
+		&.selected
+			font-weight: normal
+	.option + .option
+		border-top: 1px solid $white-300
+
+select.select-custom
+	display: none
+
+.select_city
+	@extend %select-custom
+	border-radius: 24px
 	&:hover,
 	&:focus
 		border-color: $white-200
@@ -24,12 +49,8 @@
 		&:hover,
 		&:focus
 			border-color: $blue-500
-
 	&:after
 		display: none
-	.current
-		height: 48px
-		text-align: right
 	&-name
 		@extend .text-gradient
 		letter-spacing: 1.2px
@@ -47,23 +68,73 @@
 		.is-scroll .current &,
 		.is-scroll .current & b
 			color: $white
-
 	.list
+		border-radius: 24px
 		left: -2px
 		right: -2px
-		margin-top: 13px
-		border-radius: 24px
-		background-color: $white
-		box-shadow: 0 0 20px 0 rgba($black, 0.2)
+
+
+.select_clean-type
+	@extend %select-custom
+	border: none
+	border-radius: 4px
+	line-height: 48px
+	padding: 0 22px
+	background-color: $gray-400
+	&:before
+		transition: opacity $t-n $tf-def
+		content: ''
+		opacity: 0
+		right: 0
+		left: 0
+		bottom: 0
+		top: 0
+		position: absolute
+		z-index: 1
+		background-image: $def-grad
+		border-radius: 3px
+		z-index: 1
+	&:hover,
+	&:focus
+		&:before
+			opacity: 1
+	&:after
+		+arr(9, 7, $grey-500, b)
+		transform-origin: 50% 50%
+		transform: rotate(0)
+		content: ''
+		z-index: 4
+		right: 19px
+	&.open:after
+		transform: rotate(-180deg);
+	.current
+		position: absolute
+		background-color: $gray-300
+		right: 2px
+		left: 2px
+		bottom: 2px
+		top: 2px
+		padding: 0 22px
+		height: 44px
+		line-height: 44px
+		border-radius: 3px
+		text-align: left
+		z-index: 3
+	.list
+		left: 0
+		right: 0
+		border-radius: 5px
 	.option
-		background-color: inherit
-		line-height: 47px
-		height: 48px
-		overflow: hidden
-		padding: 0 18px 0 22px
-		&:hover
-				background-color: $gray-200
-		&.selected
-			font-weight: normal
-	.option + .option
-		border-top: 1px solid $white-300
+		padding: 0 22px
+		position: relative
+		&.selected:before
+			content: ''
+			position: absolute
+			right: 14px
+			top: 17px
+			width: 18px
+			height: 14px
+			background-image: url(create-svg('M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z', $green-400, 24))
+			background-repeat: no-repeat
+			background-position: 50% 50%
+			background-size: 18px 14px

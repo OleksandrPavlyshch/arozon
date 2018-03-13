@@ -2,8 +2,8 @@ ProjectTitle: 'Prewiev page'
 
 PageList:
 - file: main.html
-  ready: 10
+  ready: 70
 - file: calculator.html
   ready: 10
 - file: parts.html
-  ready: 10
+  ready: 30

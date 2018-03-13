@@ -10,8 +10,8 @@
 		@content
 
 @function create-svg($path, $fill-color, $size: "16")
-  $fill-color: str-slgice(inspect($fill-color), 2)
-  $fill-color: "%23" + $fill-color
+  // $fill-color: str-slgice(inspect($fill-color), 2)
+  // $fill-color: "%23" + $fill-color
   $icon: "data:image/svg+xml;charset=utf8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 version%3D%221%22 viewBox%3D%220 0 #{$size} #{$size}%22%3E%3Cpath fill%3D%22#{$fill-color}%22 d%3D%22#{$path}%22%2F%3E%3C%2Fsvg%3E"
 
   @return $icon
