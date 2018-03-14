@@ -41,6 +41,21 @@
 
 			</div>
 		</div>
+
+		<div class="styleguide-row">
+			<h2 class="text-gradient">Date picker</h2>
+			<br>
+			<br>
+
+			<div class="row">
+
+				<div class="col-xs-2">
+					<div class="datepicker"></div>
+				</div>
+
+			</div>
+		</div>
+		
 		<div class="styleguide-row">
 			<h2 class="text-gradient">Date picker</h2>
 			<br>
@@ -57,6 +72,30 @@
 						
 						<div class="input-box">
 							<input id="datepicker-clean" class="datepicker" placeholder="Дата уборки" readonly tabindex="0">
+							{{mixins.icon('today', 'input-box-icon is_right_icon')}}
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="styleguide-row">
+			<h2 class="text-gradient">Time picker</h2>
+			<br>
+			<br>
+
+			<div class="row">
+
+				<div class="col-xs-1">
+					<div class="form-group">
+						<div class="placeholder-box">
+							<label for="datepicker-clean">Время</label>
+							<span class="empty-field">Обязательное поле</span>
+						</div>
+						<div class="input-box">
+							<input id="timepicker-clean" class="timepicker" placeholder="Время" readonly tabindex="0">
+							{{mixins.icon('time', 'input-box-icon is_right_icon')}}
 						</div>
 					</div>
 				</div>
@@ -100,6 +139,7 @@
 						</div>
 						<div class="input-box">
 							<input class="input-base" placeholder="Имя" tabindex="0">
+
 						</div>
 					</div>
 				</div>
@@ -114,25 +154,25 @@
 			<div class="row">
 				<div class="col-xs-2">
 					<label class="input_custom is_custom_checkbox">First checkbox
-						<input type="checkbox" checked="checked"/>
+						<input type="checkbox" checked="checked" tabindex="0"/>
 						<div class="input_custom-indicator"></div>
 					</label>
 					<br>
 					<br>
 					<label class="input_custom is_custom_checkbox">Second checkbox
-						<input type="checkbox"/>
+						<input type="checkbox" tabindex="0"/>
 						<div class="input_custom-indicator"></div>
 					</label>
 					<br>
 					<br>
 					<label class="input_custom is_custom_checkbox">Disabled
-						<input type="checkbox" disabled="disabled"/>
+						<input type="checkbox" disabled="disabled" tabindex="0"/>
 						<div class="input_custom-indicator"></div>
 					</label>
 					<br>
 					<br>
 					<label class="input_custom is_custom_checkbox">Disabled & checked
-						<input type="checkbox" disabled="disabled" checked="checked"/>
+						<input type="checkbox" disabled="disabled" checked="checked" tabindex="0"/>
 						<div class="input_custom-indicator"></div>
 					</label>
 					<br>
@@ -147,25 +187,25 @@
 			<div class="row">
 				<div class="col-xs-2">
 					<label class="input_custom is_custom_radio">First radio
-						<input type="radio" name="radio" checked="checked"/>
+						<input type="radio" name="radio" checked="checked" tabindex="0"/>
 						<div class="input_custom-indicator"></div>
 					</label>
 					<br>
 					<br>
 					<label class="input_custom is_custom_radio">Second radio
-						<input type="radio" name="radio"/>
+						<input type="radio" name="radio" tabindex="0"/>
 						<div class="input_custom-indicator"></div>
 					</label>
 					<br>
 					<br>
 					<label class="input_custom is_custom_radio">Disabled
-						<input type="radio" name="radio2" disabled="disabled"/>
+						<input type="radio" name="radio2" disabled="disabled" tabindex="0"/>
 						<div class="input_custom-indicator"></div>
 					</label>
 					<br>
 					<br>
 					<label class="input_custom is_custom_radio">Disabled & checked
-						<input type="radio" name="radio2" disabled="disabled" checked="checked"/>
+						<input type="radio" name="radio2" disabled="disabled" checked="checked" tabindex="0"/>
 						<div class="input_custom-indicator"></div>
 					</label>
 					<br>
@@ -180,17 +220,17 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<label class="input_custom is_custom_swich">
-						<input type="radio" name="radio2" checked="checked"/>
+						<input type="radio" name="radio2" checked="checked" tabindex="0"/>
 						<div class="input_custom-indicator"></div>
 					</label>
 					
 					<label class="input_custom is_custom_swich">
-						<input type="radio" name="radio2"/>
+						<input type="radio" name="radio2" tabindex="0"/>
 						<div class="input_custom-indicator"></div>
 					</label>
 
 					<label class="input_custom is_custom_swich">
-						<input type="radio" name="radio2" />
+						<input type="radio" name="radio2" tabindex="0"/>
 						<div class="input_custom-indicator"></div>
 					</label>
 				</div>
@@ -203,17 +243,17 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<label class="input_custom is_custom_swich">
-						<input type="checkbox" checked="checked"/>
+						<input type="checkbox" checked="checked" tabindex="0"/>
 						<div class="input_custom-indicator"></div>
 					</label>
 
 					<label class="input_custom is_custom_swich">
-						<input type="checkbox"/>
+						<input type="checkbox" tabindex="0"/>
 						<div class="input_custom-indicator"></div>
 					</label>
 
 					<label class="input_custom is_custom_swich">
-						<input type="checkbox" />
+						<input type="checkbox" tabindex="0"/>
 						<div class="input_custom-indicator"></div>
 					</label>
 				</div>

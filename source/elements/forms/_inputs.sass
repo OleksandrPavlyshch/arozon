@@ -1,20 +1,24 @@
 .datepicker
+	.ui-datepicker-inline
+		position: relative
 	&-popup
+		position: absolute !important
+		bottom: 73px !important
+		left: 0 !important
+		top: auto !important
+	&-popup,
+	.ui-datepicker-inline
 		background: $white
 		box-shadow: 0 0 50px 0 rgba($black, .2)
 		width: 100%
 		min-width: 274px
-		z-index: 11 !important
-		position: absolute !important
-		bottom: 73px !important
-		top: auto !important
-		left: 0 !important
+		z-index: 6
 		border-radius: 3px
 		& .ui-datepicker-header
 			text-align: center
-			margin-top: 24px
+			padding-top: 24px
 			line-height: 1
-			margin-bottom: 18px
+			padding-bottom: 18px
 		& .ui-datepicker-title
 			@extend .text-gradient
 			font-weight: 700
@@ -117,6 +121,10 @@
 	&.focus .input-box
 		&:before
 			opacity: 1
+		.input-box-icon.is_right_icon
+			color: $green-400
+		.input-box-icon.is_left_icon
+			color: $blue-400
 	&.not-style .input-box
 		background-color: transparent
 		border-radius: 0
@@ -148,6 +156,21 @@
 		&:focus
 			&:before
 				opacity: 1
+			.input-box-icon.is_right_icon
+				color: $green-400
+			.input-box-icon.is_left_icon
+				color: $blue-400
+		&-icon
+			position: absolute
+			top: 13px
+			font-size: 22px
+			z-index: 3
+			color: $grey-500
+			transition: color $t-n $tf-def
+			&.is_right_icon
+				right: 14px
+			&.is_left_icon
+				left: 14px
 		input,
 		select,
 		textarea
