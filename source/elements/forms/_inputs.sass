@@ -240,3 +240,162 @@
 			&:before,
 			&:after
 					background: $blue-400
+
+$color-white: #FFFFFF
+$color-black: #000000
+$color-light-grey: #E6E6E6
+$color-grey: #CCCCCC
+$color-dark-grey: #7B7B7B
+$color-primary: #2AA1C0
+$color-secondary: #0E647D
+
+.input_custom
+	padding-left: 30px
+	display: block
+	cursor: pointer
+	position: relative
+	line-height: $lh-sm
+	input
+		position: absolute
+		z-index: -1
+		opacity: 0
+	&-indicator
+		position: absolute
+		top: 0
+		left: 0
+		height: 24px
+		width: 24px
+		background-color: $white-300
+		border: solid 2px $white-400
+		border-radius: 5px
+		.is_custom_radio &
+			border-radius: 50%
+		.input_custom:hover input ~ &,
+		.input_custom input:focus ~ &
+			background-color: $grey-400
+		.input_custom input:checked ~ &
+			&:before
+				opacity: 1
+		.input_custom input:disabled ~ &
+			background-color: $white-300
+			opacity: .7
+			pointer-events: none
+		&:before
+			content: ''
+			border-radius: inherit
+			background-image: $def-grad
+			position: absolute
+			left: -2px
+			top: -2px
+			bottom: -2px
+			right: -2px
+			transition: opacity $t-n $tf-prt
+			opacity: 0
+		&:after
+			content: ''
+			position: absolute
+			opacity: 0
+			transform: scale(.5) rotate(45deg)
+			transition: all $t-n $tf-prt
+			.input_custom input:checked ~ &
+				opacity: 1
+				transform: scale(1) rotate(45deg)
+			.is_custom_checkbox &
+				top: 3px
+				left: 8px
+				width: 5px
+				height: 12px
+				border: solid $white
+				border-width: 0 2px 2px 0
+				transform: rotate(45deg)
+				box-shadow: 2px 4px 3px 0 rgba($black, .2)
+			.is_custom_radio &
+				width: 12px
+				height: 12px
+				left: 4px
+				top: 4px
+				background-color: $white
+				border-radius: 50%
+				box-shadow: 0px 1px 3px 0 rgba($black, .2)
+
+
+
+
+
+.input_custom
+	display inline-block
+	position relative
+	padding-left 30px
+	cursor pointer
+	input
+		position absolute
+		z-index -1
+		opacity 0
+
+// Custom control
+.control__indicator
+	position absolute
+	top 0
+	left 0
+	height 24px
+	width 24px
+	background-color: $grey-200
+	border: solid 2px $grey-400
+	
+	.control--radio &
+		border-radius 50%
+	
+	// Hover and focus
+	.control:hover input ~ &,
+	.control input:focus ~ &
+		background $color-grey
+	
+	// Checked
+	.control input:checked ~ &
+		background $color-primary
+
+	// Hover when checked
+	.control:hover input:not([disabled]):checked ~ &,
+	.control input:checked:focus ~ &
+		background $color-secondary
+	
+	// Hide default browser input
+	.control input:disabled ~ &
+		background $color-light-grey
+		opacity 0.6
+		pointer-events none
+
+	&:after
+		content: ''
+		position absolute
+		display none // Hide check
+
+		.control input:checked ~ &
+			display block // Show check
+
+		// Checkbox tick
+		.control--checkbox &
+			left 8px
+			top 4px
+			width 3px
+			height 8px
+			border solid $color-white
+			border-width 0 2px 2px 0
+			transform rotate(45deg)
+		
+		// Disabled tick colour
+		.control--checkbox input:disabled ~ &
+			border-color $color-dark-grey
+
+		// Radio button inner circle
+		.control--radio &
+			left 7px
+			top 7px
+			height 6px
+			width 6px
+			border-radius 50%
+			background $color-white
+
+		// Disabled circle colour
+		.control--radio input:disabled ~ &
+			background $color-dark-grey
