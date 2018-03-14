@@ -56,7 +56,7 @@
 						</div>
 						
 						<div class="input-box">
-							<input id="datepicker-clean" class="datepicker input-base" placeholder="Дата уборки" readonly="">
+							<input id="datepicker-clean" class="datepicker" placeholder="Дата уборки" readonly="">
 						</div>
 					</div>
 				</div>
@@ -76,13 +76,32 @@
 							<label for="count">Кол-во комнат</label>
 						</div>
 						<div class="input-box wrapp-count">
-							<span class="count-down">
-								{{mixins.icon('remove')}}
-							</span>
+							<span class="count-down"></span>
 							<input id="count" class="count-input input-base" value="1" maxlength="3" readonly="" disabled="">
 							<span class="count-up active">
-								{{mixins.icon('add')}}
 							</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="styleguide-row">
+			<h2 class="text-gradient">Text Field</h2>
+			<br>
+			<br>
+
+			<div class="row">
+
+				<div class="col-xs-2">
+					<div class="form-group">
+						<div class="placeholder-box">
+							<label for="datepicker-clean">Имя</label>
+							<span class="empty-field">Обязательное поле</span>
+						</div>
+						
+						<div class="input-box">
+							<input class="input-base" placeholder="Имя">
 						</div>
 					</div>
 				</div>

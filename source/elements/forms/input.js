@@ -80,53 +80,24 @@ let changeCount = function () {
 				}
 		}
 
-		$('.wrapp-count .count-up').click(function() {
-			let $countInput = $(this).parent().find('.count-input')
+		$('.wrapp-count').on('click', function(e) {
+			let $countInput = $(this).find('.count-input')
 				, countVal = $countInput.val();
+				let this_count = $(e.target).attr('class');
 
-				if (countVal < maxCount) {
-						countVal++;
-						$countInput.val(countVal);
-						setStyle($countInput);
-				}
-				return;
+			if (this_count.split(' ').indexOf('count-down') >= 0 && countVal > minCount) {
+				countVal--;
+				$countInput.val(countVal);
+				setStyle($countInput);
+			}
+
+			if (this_count.split(' ').indexOf('count-up') >= 0 && countVal < maxCount) {
+				countVal++;
+				$countInput.val(countVal);
+				setStyle($countInput);
+			}
 		});
 
-		$('.wrapp-count .count-down').click(function() {
-			let $countInput = $(this).parent().find('.count-input')
-				, countVal = $countInput.val();
-
-				if (countVal > minCount) {
-					countVal--;
-					$countInput.val(countVal);
-					setStyle($countInput);
-				}
-				return;
-		});
-
-		// $('.wrapp-count').click(function(e) {
-		// 	let $countInput = $(this).find('.count-input')
-		// 		, countVal = $countInput.val();
-		// 		let this_count = $(e.target).attr('class');
-
-		// 		if (this_count.split(' ').indexOf('count-down') >= 0) {
-		// 				if (countVal > minCount) {
-		// 						countVal--;
-		// 						$countInput.val(countVal);
-		// 						setStyle($countInput);
-		// 				} else {
-		// 						return;
-		// 				}
-		// 		} else if (this_count.split(' ').indexOf('count-up') >= 0) {
-		// 				if (countVal < maxCount) {
-		// 						countVal++;
-		// 						$countInput.val(countVal);
-		// 						setStyle($countInput);
-		// 				} else {
-		// 						return;
-		// 				}
-		// 		}
-		// });
 };
 
 focusANDEnterField();
