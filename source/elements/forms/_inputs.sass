@@ -117,6 +117,12 @@
 	&.focus .input-box
 		&:before
 			opacity: 1
+	&.not-style .input-box
+		background-color: transparent
+		border-radius: 0
+		padding: 0
+		&:before
+			display: none
 	.input-box
 		background-color: $grey-400
 		border-radius: 4px
@@ -174,12 +180,46 @@
 		transition: width $t-n $tf-prt
 		.focus-date &,
 		.focus &,
-		.enter &
+		.enter &,
+		.preselected &
 			width: 100%
+
 	.empty-field
 		font-size: $fs-xxs
 		line-height: $lh-ss
 		text-align: right
 		position: absolute
+		visibility: hidden
+		opacity: 0
 		right: 0
 		color: $red-600
+
+
+.wrapp-count
+	input
+		text-align: center
+	.count-down,
+	.count-up
+		cursor: pointer
+		position: absolute
+		top: 14px
+		height: 18px
+		width: 18px
+		z-index: 4
+		opacity: .5
+		transition: opacity $t-n $tf-prt
+		&.active
+			opacity: 1
+		.icon
+			color: $grey-500
+			font-size: $fs-xm
+			vertical-align: top
+			transition: color $t-n $tf-prt
+	.count-down
+		left: 15px
+		&.active:hover .icon
+			color: $green-400
+	.count-up
+		right: 15px
+		&.active:hover .icon
+			color: $blue-400

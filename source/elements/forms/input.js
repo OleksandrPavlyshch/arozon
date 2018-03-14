@@ -31,30 +31,105 @@
 });
 
 
-	var focusANDEnterField = function () {
+	let focusANDEnterField = function () {
 
-    $('input, textarea').focus(function() {
-        var get_family = $(this).parent().parent();
+		$('input, textarea').focus(function() {
+			let get_family = $(this).parent().parent();
+			$(get_family).addClass('focus');
+		});
 
-        $(get_family).addClass('focus');
-    });
+		$('input, textarea').focusout(function() {
+				let get_family = $(this).parent().parent();
 
-    $('input, textarea').focusout(function() {
-        var get_family = $(this).parent().parent();
+				$(get_family).removeClass('focus');
 
-        $(get_family).removeClass('focus');
+				if ($(this).val().trim().length === 0) {
 
-        if ($(this).val().trim().length == 0) {
+						$(get_family).removeClass('enter');
+				} else {
+						$(get_family).addClass('enter');
+				}
+		});
 
-            $(get_family).removeClass('enter');
-        } else {
-            $(get_family).addClass('enter');
-        }
-    });
+		$('input').focusout();
+};
 
-    $('input').focusout();
+let changeCount = function () {
+
+		let minCount = 1
+			, maxCount = 999;
+
+		$('.count-input').change(function() {
+				setStyle($(this));
+		});
+
+		function setStyle($count) {
+			let num = $count.val()
+				, $countDown = $count.parent().find('.count-down')
+				, $countUp = $count.parent().find('.count-up');
+
+				if (num > minCount && num < maxCount) {
+						$countDown.addClass('active');
+						$countUp.addClass('active');
+				} else if (num == minCount) {
+						$countUp.addClass('active');
+						$countDown.removeClass('active');
+				} else if (num == maxCount) {
+						$countDown.addClass('active');
+						$countUp.removeClass('active');
+				}
+		}
+
+		$('.wrapp-count .count-up').click(function() {
+			let $countInput = $(this).parent().find('.count-input')
+				, countVal = $countInput.val();
+
+				if (countVal < maxCount) {
+						countVal++;
+						$countInput.val(countVal);
+						setStyle($countInput);
+				}
+				return;
+		});
+
+		$('.wrapp-count .count-down').click(function() {
+			let $countInput = $(this).parent().find('.count-input')
+				, countVal = $countInput.val();
+
+				if (countVal > minCount) {
+					countVal--;
+					$countInput.val(countVal);
+					setStyle($countInput);
+				}
+				return;
+		});
+
+		// $('.wrapp-count').click(function(e) {
+		// 	let $countInput = $(this).find('.count-input')
+		// 		, countVal = $countInput.val();
+		// 		let this_count = $(e.target).attr('class');
+
+		// 		if (this_count.split(' ').indexOf('count-down') >= 0) {
+		// 				if (countVal > minCount) {
+		// 						countVal--;
+		// 						$countInput.val(countVal);
+		// 						setStyle($countInput);
+		// 				} else {
+		// 						return;
+		// 				}
+		// 		} else if (this_count.split(' ').indexOf('count-up') >= 0) {
+		// 				if (countVal < maxCount) {
+		// 						countVal++;
+		// 						$countInput.val(countVal);
+		// 						setStyle($countInput);
+		// 				} else {
+		// 						return;
+		// 				}
+		// 		}
+		// });
 };
 
 focusANDEnterField();
+changeCount();
 
 })(jQuery);

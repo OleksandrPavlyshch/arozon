@@ -23,12 +23,18 @@
 					<h2 class="text-gradient">Select clean-type</h2>
 					<br>
 					<br>
-
-					<select class="select-custom select_clean-type">
-						<option value="1">После ремонта / стройки</option>
-						<option value="2">Генеральная</option>
-						<option value="3">Поддерживающая</option>
-					</select>
+					<div class="form-group not-style preselected">
+						<div class="placeholder-box">
+							<label for="datepicker-clean">Дата уборки</label>
+						</div>
+						<div class="input-box">
+						<select class="select-custom select_clean-type">
+							<option value="1" selected>После ремонта / стройки</option>
+							<option value="2">Генеральная</option>
+							<option value="3">Поддерживающая</option>
+						</select>
+						</div>
+					</div>
 
 				</div>
 
@@ -56,7 +62,32 @@
 				</div>
 
 			</div>
+		</div>
+		<div class="styleguide-row">
+			<h2 class="text-gradient">Count</h2>
+			<br>
+			<br>
 
+			<div class="row">
+
+				<div class="col-xs-1">
+					<div class="form-group">
+						<div class="placeholder-box">
+							<label for="count">Кол-во комнат</label>
+						</div>
+						<div class="input-box wrapp-count">
+							<span class="count-down">
+								{{mixins.icon('remove')}}
+							</span>
+							<input id="count" class="count-input input-base" value="1" maxlength="3" readonly="" disabled="">
+							<span class="count-up active">
+								{{mixins.icon('add')}}
+							</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
 		</div>
 	</div>
 
