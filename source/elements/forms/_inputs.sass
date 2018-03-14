@@ -251,10 +251,12 @@ $color-secondary: #0E647D
 
 .input_custom
 	padding-left: 30px
-	display: block
+	display: inline-block
 	cursor: pointer
 	position: relative
 	line-height: $lh-sm
+	&.is_custom_swich
+		padding-left: 48px
 	input
 		position: absolute
 		z-index: -1
@@ -270,6 +272,9 @@ $color-secondary: #0E647D
 		border-radius: 5px
 		.is_custom_radio &
 			border-radius: 50%
+		.is_custom_swich &
+				width: 48px
+				border-radius: 12px
 		.input_custom:hover input ~ &,
 		.input_custom input:focus ~ &
 			background-color: $grey-400
@@ -303,8 +308,8 @@ $color-secondary: #0E647D
 			.is_custom_checkbox &
 				top: 3px
 				left: 8px
-				width: 5px
-				height: 12px
+				width: 6px
+				height: 11px
 				border: solid $white
 				border-width: 0 2px 2px 0
 				transform: rotate(45deg)
@@ -317,6 +322,18 @@ $color-secondary: #0E647D
 				background-color: $white
 				border-radius: 50%
 				box-shadow: 0px 1px 3px 0 rgba($black, .2)
+			.is_custom_swich &
+				opacity: 1
+				transform: scale(1)
+				width: 12px
+				height: 12px
+				top: 4px
+				left: 4px
+				border-radius: 50%
+				box-shadow: 0px 1px 3px 0 rgba($black, .2)
+				background-color: $white
+			.input_custom.is_custom_swich input:checked ~ &
+				left: calc(100% - 16px)
 
 
 
