@@ -7,3 +7,5 @@ PageList:
   ready: 10
 - file: parts.html
   ready: 30
+- file: pickers.html
+  ready: 30
