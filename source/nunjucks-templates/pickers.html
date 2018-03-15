@@ -46,36 +46,11 @@
 							{{mixins.icon('today', 'input-box-icon is_right_icon')}}
 						</div>
 					</div>
-
 				</div>
 
 			</div>
 		</div>
 		
-		<div class="styleguide-row">
-			<h2 class="text-gradient">Date picker</h2>
-			<br>
-			<br>
-
-			<div class="row">
-
-				<div class="col-xs-2">
-					<div class="form-group">
-						<div class="placeholder-box">
-							<label for="datepicker-clean">Дата уборки</label>
-							<span class="empty-field">Обязательное поле</span>
-						</div>
-						
-						<div class="input-box">
-							<input id="datepicker-clean" class="datepicker-mod" placeholder="Дата уборки" readonly tabindex="0">
-							{{mixins.icon('today', 'input-box-icon is_right_icon')}}
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
 		<div class="styleguide-row">
 			<h2 class="text-gradient">Time picker</h2>
 			<br>
@@ -90,7 +65,70 @@
 							<span class="empty-field">Обязательное поле</span>
 						</div>
 						<div class="input-box">
-							<input id="timepicker-clean" class="timepicker" placeholder="Время" readonly tabindex="0">
+							<div class="input_popup">
+								<div class="input_popup-top">
+									<div class="timepicker">
+										<div class="timepicker-top">
+											<p class="timepicker-top-content text-gradient">
+												<span class="timepicker-top-content-hours">00</span>
+												:
+												<span class="timepicker-top-content-minutes">00</span>
+											</p>
+										</div>
+										<div class="timepicker-bot">
+											<div class="timepicker-bot-col">
+												<ul class="timepicker-hour_list">
+													<li class="active" data-hour="1"><span>1</span></li>
+													<li data-hour="2"><span>2</span></li>
+													<li data-hour="3"><span>3</span></li>
+													<li data-hour="4"><span>4</span></li>
+													<li data-hour="5"><span>5</span></li>
+													<li data-hour="6"><span>6</span></li>
+													<li data-hour="7"><span>7</span></li>
+													<li data-hour="8"><span>8</span></li>
+													<li data-hour="9"><span>9</span></li>
+													<li data-hour="10"><span>10</span></li>
+													<li data-hour="11"><span>11</span></li>
+													<li data-hour="12"><span>12</span></li>
+													<li data-hour="13"><span>13</span></li>
+													<li data-hour="14"><span>14</span></li>
+													<li data-hour="15"><span>15</span></li>
+													<li data-hour="16"><span>16</span></li>
+													<li data-hour="17"><span>17</span></li>
+													<li data-hour="18"><span>18</span></li>
+													<li data-hour="19"><span>19</span></li>
+													<li data-hour="20"><span>20</span></li>
+													<li data-hour="21"><span>21</span></li>
+													<li data-hour="22"><span>22</span></li>
+													<li data-hour="23"><span>23</span></li>
+													<li data-hour="24"><span>24</span></li>
+												</ul>
+											</div>
+											<div class="timepicker-bot-col">
+												<ul class="timepicker-minute_list">
+													<li class="active" data-minutes="00"><span>00</span></li>
+													<li data-minutes="05"><span>05</span></li>
+													<li data-minutes="10"><span>10</span></li>
+													<li data-minutes="15"><span>15</span></li>
+													<li data-minutes="20"><span>20</span></li>
+													<li data-minutes="25"><span>25</span></li>
+													<li data-minutes="30"><span>30</span></li>
+													<li data-minutes="35"><span>35</span></li>
+													<li data-minutes="40"><span>40</span></li>
+													<li data-minutes="45"><span>45</span></li>
+													<li data-minutes="50"><span>50</span></li>
+													<li data-minutes="55"><span>55</span></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="input_popup-bot">
+									<button class="input_popup-cancel">отмена</button>
+									<button class="input_popup-confirm">принять</button>
+								</div>
+							</div>
+							<input class="has_input_popup" placeholder="Время" readonly tabindex="0">
 							{{mixins.icon('time', 'input-box-icon is_right_icon')}}
 						</div>
 					</div>

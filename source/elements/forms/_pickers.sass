@@ -1,0 +1,216 @@
+.mCSB_scrollTools .mCSB_draggerRail
+	background-color: transparent
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar
+	width: 6px
+	border-radius: 3px
+	background-color: $grey-400
+
+.input_popup
+	position: absolute
+	z-index: 6
+	left: 0
+	bottom: 73px
+	background: $white
+	width: 100%
+	min-width: 278px
+	text-align: center
+	visibility: hidden
+	box-shadow: 0 0 50px 0 rgba($black, .2)
+	transform: translateY(20px)
+	opacity: 0
+	border-radius: 5px
+	transition: opacity $t-f $tf-def, transform $t-n $tf-def
+	&.is-show-bot
+		transform: translateY(-20px)
+		bottom: auto
+		top: 73px
+	&.is-show
+		transition: opacity $t-f $tf-def, transform $t-n $tf-def
+		opacity: 1
+		visibility: visible
+		transform: translateY(0)
+	&-bot
+		padding: 40px 25px 24px
+		overflow: hidden
+		line-height: $lh-sm
+	&-cancel,
+	&-confirm
+		border: none
+		padding: 0
+		background-color: transparent
+		font-weight: 700
+		font-size: $fs-ss
+		transition: all $t-n $tf-def
+		text-transform: uppercase
+		cursor: pointer
+	&-cancel
+		color: $grey-500
+		float: left
+		&:hover
+			color: $grey-600
+	&-confirm
+		color: $blue-500
+		float: right
+		&:hover
+			color: $blue-600
+
+.timepicker
+	&-top
+		padding: 26px
+		border-bottom: 1px solid $white-300
+		&-content
+			font-size: $fs-xm
+			font-weight: 700
+			line-height: $lh-sm
+	&-bot
+		border-bottom: 1px solid $white-300
+		overflow: hidden
+		max-height: 263px
+		&-col
+			width: 50%
+			float: left
+			padding-top: 10px
+			line-height: 40px
+			color: $black-300
+			font-size: $fs-m
+			& + &
+				border-left: 1px solid $white-300
+			span
+				display: inline-block
+				height: 34px
+				width: 34px
+				line-height: 34px
+				border-radius: 50%
+				cursor: pointer
+				&:hover
+					background: $grey-400
+			& .active span
+				color: $white
+				background: $def-grad
+
+.datepicker
+	.ui-datepicker-inline
+		position: relative
+	&-popup
+		position: absolute !important
+		bottom: 73px !important
+		left: 0 !important
+		top: auto !important
+		box-shadow: 0 0 50px 0 rgba($black, .2)
+	&-popup,
+	.ui-datepicker-inline
+		background: $white
+		width: 100%
+		min-width: 274px
+		z-index: 6 !important
+		// border-radius: 3px
+		& .ui-datepicker-header
+			text-align: center
+			padding-top: 29px
+			line-height: 1
+			padding-bottom: 18px
+		& .ui-datepicker-title
+			@extend .text-gradient
+			font-weight: 700
+			font-size: $fs-m
+		& .ui-datepicker-next,
+		& .ui-datepicker-prev
+			position: absolute
+
+		& .ui-datepicker-next .ui-corner-all,
+		& .ui-datepicker-prev .ui-corner-all
+			color: inherit
+
+		& .ui-datepicker-prev
+			left: 28px
+
+		& .ui-datepicker-next
+			right: 28px
+
+		& .ui-icon
+			border: 2px solid $grey-500
+			border-top: none
+			cursor: pointer
+			display: block
+			width: 12px
+			height: 12px
+
+		& .ui-icon:hover
+			border-color: $grey-500
+
+		& .ui-state-disabled .ui-icon
+			opacity: .3
+
+		& .ui-icon-circle-triangle-w
+			border-right: none
+			-webkit-transform: rotate(45deg)
+			transform: rotate(45deg)
+
+		& .ui-icon-circle-triangle-e
+			border-left: none
+			-webkit-transform: rotate(-45deg)
+			transform: rotate(-45deg)
+
+		& .ui-state-disabled *
+			color: $grey-400 !important
+
+		& .ui-datepicker-calendar thead
+			font-size: $fs-xs
+			color: $grey-500
+			font-weight: 400
+			margin-bottom: 10px
+			ml-10
+
+		& .ui-datepicker-calendar thead>tr>th
+			padding-top: 10px
+			padding-bottom: 33px
+			font-weight: 400
+			line-height: 1
+			border-bottom: 1px solid $white-300
+
+		& .ui-datepicker-calendar thead th:first-child
+			padding-left: 15px
+
+		& .ui-datepicker-calendar thead th:last-child
+			padding-right: 15px
+
+
+		& .ui-datepicker-calendar tbody
+			// padding: 25px 23px 20px
+
+		& .ui-datepicker-calendar tbody>tr>td
+			text-align: center
+			padding-bottom: 6px
+
+		& .ui-datepicker-calendar tbody>tr:first-child>td
+			padding-top: 22px
+
+		& .ui-datepicker-calendar tbody>tr td:first-child
+			padding-left: 15px
+
+		& .ui-datepicker-calendar tbody>tr td:last-child
+			padding-right: 15px
+
+		& .ui-datepicker-calendar tbody>tr>td>*
+			font-size: $fs-s
+			color: $black-300
+			background: 0 0
+			border: none
+			border-radius: 50%
+			display: block
+			width: 30px
+			height: 30px
+			line-height: 30px
+			text-align: center
+			margin: 0 auto
+			text-decoration: none
+
+		& .ui-datepicker-calendar tbody>tr>td>a:hover
+			background: $grey-400
+
+		& .ui-state-active
+			color: $white !important
+			background: $def-grad !important
