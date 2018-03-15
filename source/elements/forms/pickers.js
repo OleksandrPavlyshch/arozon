@@ -57,12 +57,13 @@ let timepickeActionHendler = ($item, $parent) => {
 		, $timepicker = $item.parents(TPClass)
 		, $hoursOut = $timepicker.find(TPHourOutputClass)
 		, $minutesOut = $timepicker.find(TPMinuteOutputClass);
-	console.log(val);
+
 	if($parent.hasClass(TPHourListClass)){
 		$hoursOut.html(val);
 		$timepicker.data('hours', val); //set data hours
 		return;
 	}
+
 	$timepicker.data('minutes', val); //set data minutes
 	$minutesOut.html(val);
 };
@@ -142,6 +143,7 @@ let showInputPopup = ($popup, data) => {
 		if($timepicker.length) {
 			let hoursVal = $timepicker.data('hours') || '0'
 				, minutesVal =  $timepicker.data('minutes') || '00';
+
 			$input.val(hoursVal + ' : ' + minutesVal);
 			$input.data('hours', hoursVal);
 			$input.data('minutes', minutesVal);
