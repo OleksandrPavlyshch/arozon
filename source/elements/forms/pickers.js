@@ -47,27 +47,51 @@ $('body').on('click', TPlistItemClass, (e)=>{
 
 		$parent.find(TPlistItemClass).removeClass(TPlistActiveClass);
 		$item.addClass(TPlistActiveClass);
-		setTimepickerValue($item, $parent);
+
+
+		timepickeActionHendler($item, $parent);
 });
 
-let setTimepickerValue = ($item, $parent) => {
+let timepickeActionHendler = ($item, $parent) => {
 	let val = $item.data('val')
-		, $picker = $item.parents(TPClass)
-		, $hoursOut = $picker.find(TPHourOutputClass)
-		, $minutesOut = $picker.find(TPMinuteOutputClass);
+		, $timepicker = $item.parents(TPClass)
+		, $hoursOut = $timepicker.find(TPHourOutputClass)
+		, $minutesOut = $timepicker.find(TPMinuteOutputClass);
 	console.log(val);
 	if($parent.hasClass(TPHourListClass)){
 		$hoursOut.html(val);
-		$picker.data('hours', val); //set data hours
+		$timepicker.data('hours', val); //set data hours
 		return;
 	}
-	$picker.data('minutes', val); //set data minutes
+	$timepicker.data('minutes', val); //set data minutes
 	$minutesOut.html(val);
+};
+
+let setTimepickerValue = ($timepicker, data) => {
+	let $hoursOut = $timepicker.find(TPHourOutputClass)
+		, $minutesOut = $timepicker.find(TPMinuteOutputClass)
+		, $TPHourList = $timepicker.find('.' + TPHourListClass)
+		, $TPMinutelist = $timepicker.find('.' + TPMinutelistClass)
+		, hours = data.hours || '0'
+		, minutes = data.minutes || '00';
+
+	$timepicker.find(TPlistItemClass).removeClass(TPlistActiveClass); //remove active classes
+
+	//set active tems
+	$TPHourList.find('.timepicker-list-item[data-val="' + hours + '"]').addClass(TPlistActiveClass);
+	$TPMinutelist.find('.timepicker-list-item[data-val="' + minutes + '"]').addClass(TPlistActiveClass);
+
+	//set in output
+	$hoursOut.html(hours);
+	$minutesOut.html(minutes);
 };
 
 
 //Popup logic
 let showInputPopup = ($popup, data) => {
+	let $datepicker = $popup.find('.datepicker')
+	, $timepicker = $popup.find('.timepicker');
+
 	if ($popup.hasClass("is-show")) {
 		return;
 	}
@@ -81,8 +105,12 @@ let showInputPopup = ($popup, data) => {
 		$popup.removeClass('is-show-bot');
 	}
 
-	if($popup.find('.datepicker')){
-		$popup.find('.datepicker').datepicker("setDate", new Date(data.date));
+	if($datepicker.length){
+		$datepicker.datepicker("setDate", new Date(data.date));
+	}
+
+	if($timepicker.length){
+		setTimepickerValue($timepicker, data);
 	}
 
 	$popup.parent().parent().addClass('focus-popup');
@@ -100,6 +128,7 @@ let showInputPopup = ($popup, data) => {
 	let setValFromPicker = ($input, $popup) => {
 		let $datepicker = $popup.find('.datepicker')
 		, $timepicker = $popup.find('.timepicker');
+
 		if($datepicker.length) {
 			let date = $datepicker.datepicker( "getDate" )
 				, day = date.getDate()
@@ -110,12 +139,12 @@ let showInputPopup = ($popup, data) => {
 			$input.data('date', year + '-' + month + '-' + day);
 		}
 
-
 		if($timepicker.length) {
 			let hoursVal = $timepicker.data('hours') || '0'
 				, minutesVal =  $timepicker.data('minutes') || '00';
 			$input.val(hoursVal + ' : ' + minutesVal);
-			console.log('test');
+			$input.data('hours', hoursVal);
+			$input.data('minutes', minutesVal);
 		}
 
 		$popup.parent().parent().addClass('enter'); //set is field not empty
