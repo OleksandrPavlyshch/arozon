@@ -1,3 +1,139 @@
 {% macro icon(name, mod) %}
 <svg class="icon icon-{{name}} {{mod}}"><use xlink:href="img/sprite.svg#{{name}}"></use></svg>
 {% endmacro %}
+
+{% macro timepicker(name='time', error_mes='Обязательное поле', placeholder='Время') %}
+<div class="form-group">
+	<div class="placeholder-box">
+		<label for="datepicker-clean">{{placeholder}}</label>
+		<span class="empty-field">{{error_mes}}</span>
+	</div>
+	<div class="input-box">
+		<div class="input_popup">
+			<div class="input_popup-top">
+				<div class="timepicker">
+					<div class="timepicker-top">
+						<p class="timepicker-top-content text-gradient">
+							<span class="timepicker-top-content-hours">0</span>
+							:
+							<span class="timepicker-top-content-minutes">00</span>
+						</p>
+					</div>
+					<div class="timepicker-bot">
+						<div class="timepicker-bot-col">
+							<ul class="timepicker-list timepicker-hour_list">
+								<li class="timepicker-list-item active" data-val="0"><span>0</span></li>
+								<li class="timepicker-list-item" data-val="1"><span>1</span></li>
+								<li class="timepicker-list-item" data-val="2"><span>2</span></li>
+								<li class="timepicker-list-item" data-val="3"><span>3</span></li>
+								<li class="timepicker-list-item" data-val="4"><span>4</span></li>
+								<li class="timepicker-list-item" data-val="5"><span>5</span></li>
+								<li class="timepicker-list-item" data-val="6"><span>6</span></li>
+								<li class="timepicker-list-item" data-val="7"><span>7</span></li>
+								<li class="timepicker-list-item" data-val="8"><span>8</span></li>
+								<li class="timepicker-list-item" data-val="9"><span>9</span></li>
+								<li class="timepicker-list-item" data-val="10"><span>10</span></li>
+								<li class="timepicker-list-item" data-val="11"><span>11</span></li>
+								<li class="timepicker-list-item" data-val="12"><span>12</span></li>
+								<li class="timepicker-list-item" data-val="13"><span>13</span></li>
+								<li class="timepicker-list-item" data-val="14"><span>14</span></li>
+								<li class="timepicker-list-item" data-val="15"><span>15</span></li>
+								<li class="timepicker-list-item" data-val="16"><span>16</span></li>
+								<li class="timepicker-list-item" data-val="17"><span>17</span></li>
+								<li class="timepicker-list-item" data-val="18"><span>18</span></li>
+								<li class="timepicker-list-item" data-val="19"><span>19</span></li>
+								<li class="timepicker-list-item" data-val="20"><span>20</span></li>
+								<li class="timepicker-list-item" data-val="21"><span>21</span></li>
+								<li class="timepicker-list-item" data-val="22"><span>22</span></li>
+								<li class="timepicker-list-item" data-val="23"><span>23</span></li>
+							</ul>
+						</div>
+						<div class="timepicker-bot-col">
+							<ul class="timepicker-list timepicker-minute_list">
+								<li class="timepicker-list-item active" data-val="00"><span>00</span></li>
+								<li class="timepicker-list-item" data-val="05"><span>05</span></li>
+								<li class="timepicker-list-item" data-val="10"><span>10</span></li>
+								<li class="timepicker-list-item" data-val="15"><span>15</span></li>
+								<li class="timepicker-list-item" data-val="20"><span>20</span></li>
+								<li class="timepicker-list-item" data-val="25"><span>25</span></li>
+								<li class="timepicker-list-item" data-val="30"><span>30</span></li>
+								<li class="timepicker-list-item" data-val="35"><span>35</span></li>
+								<li class="timepicker-list-item" data-val="40"><span>40</span></li>
+								<li class="timepicker-list-item" data-val="45"><span>45</span></li>
+								<li class="timepicker-list-item" data-val="50"><span>50</span></li>
+								<li class="timepicker-list-item" data-val="55"><span>55</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="input_popup-bot">
+				<button class="input_popup-cancel">отмена</button>
+				<button class="input_popup-confirm">принять</button>
+			</div>
+		</div>
+		<input name="{{name}}" class="has_input_popup" placeholder="{{placeholder}}" readonly tabindex="0">
+		{{icon('time', 'input-box-icon is_right_icon')}}
+	</div>
+</div>
+{% endmacro %}
+
+{% macro datepicker(name='date', error_mes='Обязательное поле', placeholder='Дата уборки') %}
+<div class="form-group">
+	<div class="placeholder-box">
+		<label for="datepicker-clean">{{placeholder}}</label>
+		<span class="empty-field">{{error_mes}}</span>
+	</div>
+	
+	<div class="input-box">
+		<div class="input_popup">
+			<div class="input_popup-top">
+				<div class="datepicker"></div>
+			</div>
+			<div class="input_popup-bot">
+				<button class="input_popup-cancel">отмена</button>
+				<button class="input_popup-confirm">принять</button>
+			</div>
+		</div>
+		<input name="{{name}}" class="has_input_popup" placeholder="{{placeholder}}" readonly tabindex="0">
+		{{icon('today', 'input-box-icon is_right_icon')}}
+	</div>
+</div>
+{% endmacro %}
+
+{% macro count(name='count', min=1, max=999, placeholder='Кол-во комнат') %}
+<div class="form-group">
+	<div class="placeholder-box">
+		<label for="count">{{placeholder}}</label>
+	</div>
+	<div class="input-box wrapp-count">
+		<span class="count-down"></span>
+		<input name="{{name}}" data-min-count="{{min}}" data-max-count="{{max}}" class="count-input input-base" value="{{min}}" maxlength="3" readonly tabindex="0">
+		<span class="count-up active">
+		</span>
+	</div>
+</div>
+{% endmacro %}
+
+
+{% macro input_field(name='input', error_mes='Обязательное поле', placeholder='Имя', mod_prop) %}
+<div class="form-group">
+	<div class="placeholder-box">
+		<label for="datepicker-clean">{{placeholder}}</label>
+		<span class="empty-field">{{error_mes}}</span>
+	</div>
+	<div class="input-box">
+		<input name="{{name}}" class="input-base" placeholder="{{placeholder}}" tabindex="0" {{mod_prop}}>
+
+	</div>
+</div>
+{% endmacro %}
+
+<!-- {% macro checkbox(label='checkbox', name='checkbox', state, mod_prop) %}
+<label class="input_custom is_custom_checkbox">{{label}}
+	<input name="{{name}}" type="checkbox" checked="{{state}}" tabindex="0" {{mod_prop}}/>
+	<div class="input_custom-indicator"></div>
+</label>
+
+{% endmacro %}
+ -->

@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-xs-2">
+		<div class="form-group not-style preselected">
+					<div class="placeholder-box">
+						<label for="datepicker-clean">Дата уборки</label>
+					</div>
+					<div class="input-box">
+					<select class="select-custom select_clean-type" tabindex="0">
+						<option value="1" selected>После ремонта / стройки</option>
+						<option value="2">Генеральная</option>
+						<option value="3">Поддерживающая</option>
+					</select>
+					</div>
+				</div>
+	</div>
+	<div class="col-xs-2">
+		{{mixins.datepicker()}}
+	</div>
+	<div class="col-xs-1">
+		{{mixins.timepicker()}}
+	</div>
+	<div class="col-xs-1">
+		{{mixins.count()}}
+	</div>
+	<div class="col-xs-1">
+		{{mixins.count(placeholder="Кол-во санузлов")}}
+	</div>
+	<div class="col-xs-1"></div>
+</div>

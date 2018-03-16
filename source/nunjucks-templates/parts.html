@@ -50,17 +50,7 @@
 			<div class="row">
 
 				<div class="col-xs-1">
-					<div class="form-group">
-						<div class="placeholder-box">
-							<label for="count">Кол-во комнат</label>
-						</div>
-						<div class="input-box wrapp-count">
-							<span class="count-down"></span>
-							<input id="count" data-min-count="1"  data-max-count="200" class="count-input input-base" value="1" maxlength="3" readonly tabindex="0">
-							<span class="count-up active">
-							</span>
-						</div>
-					</div>
+					{{mixins.count()}}
 				</div>
 
 			</div>
@@ -72,18 +62,8 @@
 			<br>
 			<div class="row">
 				<div class="col-xs-2">
-					<div class="form-group">
-						<div class="placeholder-box">
-							<label for="datepicker-clean">Имя</label>
-							<span class="empty-field">Обязательное поле</span>
-						</div>
-						<div class="input-box">
-							<input class="input-base" placeholder="Имя" tabindex="0">
-
-						</div>
-					</div>
+					{{mixins.input_field()}}
 				</div>
-
 			</div>
 		</div>
 
@@ -99,6 +79,7 @@
 					</label>
 					<br>
 					<br>
+
 					<label class="input_custom is_custom_checkbox">Second checkbox
 						<input type="checkbox" tabindex="0"/>
 						<div class="input_custom-indicator"></div>

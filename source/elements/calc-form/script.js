@@ -1,0 +1,3 @@
+(($) => {
+	$( "#calc-forms" ).tabs();
+})(jQuery);
