@@ -116,14 +116,14 @@
 {% endmacro %}
 
 
-{% macro input_field(name='input', error_mes='Обязательное поле', placeholder='Имя', mod_prop) %}
+{% macro input_field(type='text', name='input', error_mes='Обязательное поле', placeholder='Имя', mod_prop) %}
 <div class="form-group">
 	<div class="placeholder-box">
-		<label for="datepicker-clean">{{placeholder}}</label>
+		<label>{{placeholder}}</label>
 		<span class="empty-field">{{error_mes}}</span>
 	</div>
 	<div class="input-box">
-		<input name="{{name}}" class="input-base" placeholder="{{placeholder}}" tabindex="0" {{mod_prop}}>
+		<input type="{{type}}" name="{{name}}" class="input-base" placeholder="{{placeholder}}" tabindex="0" {{mod_prop}}>
 
 	</div>
 </div>

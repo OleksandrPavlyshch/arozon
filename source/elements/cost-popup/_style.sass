@@ -1,0 +1,62 @@
+.fancybox-is-open .fancybox-bg
+	opacity: .5
+	background-color: $black
+.cost_popup
+	display: none
+	text-align: center
+	padding: 43px 46px
+	border-radius: 10px
+	background-color: $white
+	box-shadow: 0 0 80px 0 rgba($black, 0.3)
+	overflow: visible
+	.fancybox-close-small
+		right: -40px
+		top: -14px
+		&:hover:after
+			background: none
+		&:after
+			font-size: 30px
+			color: $white
+	&-mes
+		line-height: $lh-sm
+		margin-bottom: 5px
+	&-header
+		font-family: 'roboto', Arial, sans-serif
+		font-size: 68px
+		line-height: 1
+		position: relative
+		padding-right: 43px
+		display: inline-block
+		&-handreds,
+		&-curency
+			position: absolute
+			right: 0
+			z-index: 3
+			color: $green-400
+		&-handreds
+			top: 6px
+			font-size: $fs-l
+			font-weight: 700
+		&-curency
+			bottom: 8px
+			font-size: $fs-xm
+			font-weight: 500
+	&-form
+		padding-top: 18px
+		&-row + &-row
+			margin-top: 14px
+		label
+			text-align: left
+		.button.is-blue
+			padding-left: 56px
+			padding-right: 56px
+			margin-top: 48px
+		&-more_ditails
+			display: inline-block
+			font-size: $fs-m
+			line-height: $lh-sm
+			color: $blue-500
+			text-decoration: none
+			margin-top: 29px
+			&:hover
+				text-decoration: underline

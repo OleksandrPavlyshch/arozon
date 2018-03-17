@@ -45,4 +45,8 @@
 		]
 	});
 
+	$('[data-fancybox]').fancybox({
+		protect: true
+	});
+
 })(jQuery);
