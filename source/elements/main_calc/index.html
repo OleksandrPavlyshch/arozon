@@ -1,0 +1,18 @@
+<section class="main_calc">
+	<div class="container">
+		<div id="calc-forms">
+			<div class="main_calc-tabs_row">
+				<ul class="row main_calc-tabs col-xs-2">
+					<li class="col-xs main_calc-tab"><a class="main_calc-tab-link" href="#calc-form-tab-1">дом</a></li>
+					<li class="col-xs main_calc-tab"><a class="main_calc-tab-link" href="#calc-form-tab-2">квартира</a></li>
+				</ul>
+			</div>
+			<div id="calc-form-tab-1">
+				{% include "elements/main_calc/home-form.html" %}
+			</div>
+			<div id="calc-form-tab-2">
+				{% include "elements/main_calc/flat-form.html" %}
+			</div>
+		</div>
+	</div>
+</section>

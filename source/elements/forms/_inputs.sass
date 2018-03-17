@@ -137,8 +137,10 @@
 			transition: color $t-n $tf-prt
 	.count-down
 		left: 15px
+		&:after
+			display: none
 		&.active:hover:before
-			background: $green-400
+			background: $blue-400
 	.count-up
 		right: 15px
 		&:after
@@ -146,7 +148,7 @@
 		&.active:hover
 			&:before,
 			&:after
-					background: $blue-400
+					background: $green-400
 
 .input_custom
 	padding-left: 30px

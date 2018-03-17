@@ -1,13 +1,14 @@
 //	 <button class="button is-see-trough"><span>Заказать уборку<span></button>
-// 
 //	 <button class="button is-see-trough is-wide-button"><span>Заказать уборку<span></button>
 //
 //	 <button class="button is-blue">Узнать стоимость</button>
-//
 //	 <button class="button is-blue is-wide-button">Узнать стоимость</button>
-//	 <button class="button is-blue"><span>Узнать стоимость</span></button>
 //
-//	 <button class="button is-blue is-wide-button"><span>Узнать стоимость</span></button>
+//	 <button class="button is-blue is-not-round">Узнать стоимость</button>
+//	 <button class="button is-blue is-not-round is-wide-button">Узнать стоимость</button>
+//
+//	 <button class="button is-bg-move"><span>Узнать стоимость</span></button>
+//	 <button class="button is-bg-move is-wide-button"><span>Узнать стоимость</span></button>
 
 
 %button
@@ -27,9 +28,6 @@
 	transition: all $t-n $tf-def
 	text-decoration: none
 
-%is-wide-button
-	display: block
-	width: 100%
 
 %is-see-trough
 	padding: 10px 51px
@@ -37,7 +35,7 @@
 	border-color: $white
 	color: $white
 	font-weight: 700
-	min-width: 276px
+	min-width: 270px
 	span
 		transition: all $t-n $tf-def
 	&:hover,
@@ -85,6 +83,15 @@
 	&:hover
 		box-shadow: 0 0 30px 0 rgba($blue-700, .5)
 
+%is-wide-button
+	display: block
+	width: 100%
+	padding-left: 10px
+	padding-right: 10px
+
+%is-not-round
+	border-radius: 3px
+
 button,
 .button
 	@extend %button
@@ -96,6 +103,8 @@ button,
 		@extend %is-bg-move
 	&.is-blue
 		@extend %is-blue
+	&.is-not-round
+		@extend %is-not-round
 
 
 .share-buttons

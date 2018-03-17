@@ -49,10 +49,10 @@ $('body').on('click', TPlistItemClass, (e)=>{
 		$item.addClass(TPlistActiveClass);
 
 
-		timepickeActionHendler($item, $parent);
+		timepickeActionHandler($item, $parent);
 });
 
-let timepickeActionHendler = ($item, $parent) => {
+let timepickeActionHandler = ($item, $parent) => {
 	let val = $item.data('val')
 		, $timepicker = $item.parents(TPClass)
 		, $hoursOut = $timepicker.find(TPHourOutputClass)
