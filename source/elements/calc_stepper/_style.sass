@@ -1,2 +1,70 @@
+ul.stepper
+	overflow: visible
+	.step
+		&:before
+			width: 36px
+			height: 36px
+			line-height: 36px
+			font-size: 16px
+			text-align: center
+			background-color: $grey-400
+			color: $grey-600
+		&:not(:last-of-type)
+			margin-bottom: 15px
+			&.active
+				margin-bottom: 48px
+			&:after
+				background-color: $grey-400
+				width: 2px
+				top: 47px
+				left: 17px
+				height: calc(100% - 18px)
+		&.active
+			&:before
+				background-image: $to-bot-grad
+				color: $white
+			&:not(:last-child):after
+				height: calc(100% + 5px)
+			&:after
+				background-color: $green-400
+		&.done
+			&:before
+				content: ''
+				background-color: $blue-700
+				border: solid 2px rgba($black, 0.15)
+				color: $white
+				background-image: url(create-svg('M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z', $white, 24))
+				background-repeat: no-repeat
+				background-position: 50% 50%
+				background-size: 20px 16px
+			&:after
+				background-color: $blue-800
+		&.wrong
+			&:before
+				content: ''
+				background-color: $red-600
+				background-image: url(create-svg('M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z', $white, 24))
+				background-repeat: no-repeat
+				background-position: 50% 50%
+				background-size: 24px 24px
+				color: $white
+			&:after
+				background-color: $red-600
+		.step-title
+			font-size: $fs-xxm
+			line-height: $lh-sm
+			padding: 15px 44px 15px 82px
+			color: $grey-500
+		&.done .step-title
+			color: $grey-600
+		&.active .step-title
+			color: $black-300
+			
+
+
+
 .calc_stepper
-	
+	padding-bottom: 80px
+	&-header
+		color: $grey-300
+		margin-bottom: 72px
