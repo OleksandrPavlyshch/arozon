@@ -1,4 +1,5 @@
 (($) => {
+
 	$('.clipboard_copy').tooltip({
 		disabled: true,
 		position: {

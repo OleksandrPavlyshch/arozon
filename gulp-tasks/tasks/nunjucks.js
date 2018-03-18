@@ -48,6 +48,6 @@ gulp.task('nunjucks:watch', function() {
 	], ['nunjucks:changed']);
 
 	gulp.watch([
-		configs.source.nunjucks + '/**/_*.html', configs.source.root + 'elements/**/*.html'
+		configs.source.nunjucks + '/_*.html', configs.source.root + 'elements/**/*.html'
 	], ['nunjucks']);
 });
