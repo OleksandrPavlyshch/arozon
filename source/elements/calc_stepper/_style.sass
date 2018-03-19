@@ -12,7 +12,7 @@ ul.stepper
 		&:not(:last-of-type)
 			margin-bottom: 17px
 			&.active
-				margin-bottom: 48px
+				margin-bottom: 37px
 			&:after
 				background-color: $grey-400
 				width: 2px
@@ -24,7 +24,7 @@ ul.stepper
 				background-image: $to-bot-grad
 				color: $white
 			&:not(:last-child):after
-				height: calc(100% + 5px)
+				height: calc(100% - 6px)
 			&:after
 				background-color: $green-400
 		&.done
@@ -76,16 +76,20 @@ ul.stepper
 		margin-left: -5px
 		text-transform: uppercase
 	&-sum_block
-		margin-top: 78px
+		margin-top: 118px
+		float: right
 		border-left: 2px solid $green-400
-		padding: 23px 0 23px 39px
+		padding: 19px 9px 23px 36px
+		&-title
+			font-size: $fs-m
+			line-height: $lh-sm
 		&-header
 			font-family: 'roboto', Arial, sans-serif
-			margin: 16px 0 24px
+			margin: 6px 0 15px
 			font-size: 40px
 			line-height: 1
 			position: relative
-			padding-right: 29px
+			padding-right: 26px
 			display: inline-block
 			&-handreds,
 			&-curency
@@ -106,6 +110,9 @@ ul.stepper
 			font-size: $fs-xs
 			line-height: 1.5
 			color: $grey-500
+	&-input_images_row
+		margin-left: -42px
+		margin-right: -52px
 	// .col-xs-6
 	// 	flex-basis: 81%
 	// 	max-width: 71%

@@ -114,7 +114,7 @@ let showInputPopup = ($popup, data) => {
 		setTimepickerValue($timepicker, data);
 	}
 
-	$popup.parent().parent().addClass('focus-popup');
+	$popup.parent().addClass('focus-popup');
 	$popup.addClass('is-show');
 };
 
@@ -123,7 +123,7 @@ let showInputPopup = ($popup, data) => {
 		setTimeout(function(){
 			$popup.removeClass('is-show-bot');
 			},300);
-		$popup.parent().parent().removeClass('focus-popup');
+		$popup.parent().removeClass('focus-popup');
 	};
 
 	let setValFromPicker = ($input, $popup) => {
@@ -149,7 +149,7 @@ let showInputPopup = ($popup, data) => {
 			$input.data('minutes', minutesVal);
 		}
 
-		$popup.parent().parent().addClass('enter'); //set is field not empty
+		$popup.parent().addClass('enter'); //set is field not empty
 	};
 
 	$('body').on('click', '.has_input_popup', (e)=>{

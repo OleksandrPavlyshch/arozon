@@ -3,12 +3,12 @@
 	let focusANDEnterField = function () {
 
 		$('input, textarea').focus(function() {
-			let get_family = $(this).parent().parent();
+			let get_family = $(this).parent();
 			$(get_family).addClass('focus');
 		});
 
 		$('input, textarea').focusout(function() {
-				let get_family = $(this).parent().parent();
+				let get_family = $(this).parent();
 
 				$(get_family).removeClass('focus');
 

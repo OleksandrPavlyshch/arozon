@@ -1,17 +1,13 @@
 <div class="main_calc-form row">
 	<div class="col-xs-2">
-		<div class="form-group not-style preselected">
-					<div class="placeholder-box">
-						<label for="datepicker-clean">Вид уборки</label>
-					</div>
-					<div class="input-box">
-					<select class="select-custom select_clean-type" tabindex="0">
-						<option value="1" selected>После ремонта / стройки</option>
-						<option value="2">Генеральная</option>
-						<option value="3">Поддерживающая</option>
-					</select>
-					</div>
-				</div>
+		<div class="input_box not-style preselected">
+			<span class="input_box-placeholder">Вид уборки</span>
+			<select class="select-custom select_clean-type" tabindex="0">
+				<option value="1" selected>После ремонта / стройки</option>
+				<option value="2">Генеральная</option>
+				<option value="3">Поддерживающая</option>
+			</select>
+		</div>
 	</div>
 	<div class="col-xs-2">
 		{{mixins.datepicker()}}

@@ -2,13 +2,8 @@
 <svg class="icon icon-{{name}} {{mod}}"><use xlink:href="img/sprite.svg#{{name}}"></use></svg>
 {% endmacro %}
 
-{% macro timepicker(name='time', error_mes='Обязательное поле', placeholder='Время') %}
-<div class="form-group">
-	<div class="placeholder-box">
-		<label for="datepicker-clean">{{placeholder}}</label>
-		<span class="empty-field">{{error_mes}}</span>
-	</div>
-	<div class="input-box">
+{% macro timepicker(name='time', error_mes='Обязательное поле', placeholder='Время', mod_prop) %}
+	<div class="input_box">
 		<div class="input_popup">
 			<div class="input_popup-top">
 				<div class="timepicker">
@@ -72,20 +67,15 @@
 				<button class="input_popup-confirm">принять</button>
 			</div>
 		</div>
-		<input name="{{name}}" class="has_input_popup" placeholder="{{placeholder}}" readonly tabindex="0">
-		{{icon('time', 'input-box-icon is_right_icon')}}
+
+		<span class="input_box-placeholder">{{placeholder}}</span>
+		<input name="{{name}}" class="has_input_popup" placeholder="{{placeholder}}" readonly tabindex="0" {{mod_prop}}>
+		{{icon('time', 'input_box-icon is_right_icon')}}
 	</div>
-</div>
 {% endmacro %}
 
-{% macro datepicker(name='date', error_mes='Обязательное поле', placeholder='Дата уборки') %}
-<div class="form-group">
-	<div class="placeholder-box">
-		<label for="datepicker-clean">{{placeholder}}</label>
-		<span class="empty-field">{{error_mes}}</span>
-	</div>
-	
-	<div class="input-box">
+{% macro datepicker(name='date', error_mes='Обязательное поле', placeholder='Дата уборки', mod_prop ) %}
+	<div class="input_box">
 		<div class="input_popup">
 			<div class="input_popup-top">
 				<div class="datepicker"></div>
@@ -95,38 +85,29 @@
 				<button class="input_popup-confirm">принять</button>
 			</div>
 		</div>
-		<input name="{{name}}" class="has_input_popup" placeholder="{{placeholder}}" readonly tabindex="0">
-		{{icon('today', 'input-box-icon is_right_icon')}}
+		
+		<span class="input_box-placeholder">{{placeholder}}</span>
+		<input name="{{name}}" class="has_input_popup" placeholder="{{placeholder}}" readonly tabindex="0" {{mod_prop}}>
+		{{icon('today', 'input_box-icon is_right_icon')}}
 	</div>
-</div>
 {% endmacro %}
 
 {% macro count(name='count', min=1, max=999, placeholder='Кол-во комнат') %}
-<div class="form-group">
-	<div class="placeholder-box">
-		<label for="count">{{placeholder}}</label>
-	</div>
-	<div class="input-box wrapp-count">
+	<div class="input_box wrapp-count">
+		<span class="input_box-placeholder">{{placeholder}}</span>
 		<span class="count-down"></span>
 		<input name="{{name}}" data-min-count="{{min}}" data-max-count="{{max}}" class="count-input input-base" value="{{min}}" maxlength="3" readonly tabindex="0">
 		<span class="count-up active">
 		</span>
 	</div>
-</div>
 {% endmacro %}
 
 
 {% macro input_field(type='text', name='input', error_mes='Обязательное поле', placeholder='Имя', mod_prop) %}
-<div class="form-group">
-	<div class="placeholder-box">
-		<label>{{placeholder}}</label>
-		<span class="empty-field">{{error_mes}}</span>
-	</div>
-	<div class="input-box">
+	<div class="input_box">
+		<span class="input_box-placeholder">{{placeholder}}</span>
 		<input type="{{type}}" name="{{name}}" class="input-base" placeholder="{{placeholder}}" tabindex="0" {{mod_prop}}>
-
 	</div>
-</div>
 {% endmacro %}
 
 <!-- {% macro checkbox(label='checkbox', name='checkbox', state, mod_prop) %}
