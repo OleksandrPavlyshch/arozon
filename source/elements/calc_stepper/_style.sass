@@ -10,7 +10,7 @@ ul.stepper
 			background-color: $grey-400
 			color: $grey-600
 		&:not(:last-of-type)
-			margin-bottom: 15px
+			margin-bottom: 17px
 			&.active
 				margin-bottom: 48px
 			&:after
@@ -33,7 +33,7 @@ ul.stepper
 				background-color: $blue-700
 				border: solid 2px rgba($black, 0.15)
 				color: $white
-				background-image: url(create-svg('M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z', $white, 24))
+				background-image: url(create-svg($check-icon, $white, 24))
 				background-repeat: no-repeat
 				background-position: 50% 50%
 				background-size: 20px 16px
@@ -43,7 +43,7 @@ ul.stepper
 			&:before
 				content: ''
 				background-color: $red-600
-				background-image: url(create-svg('M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z', $white, 24))
+				background-image: url(create-svg($attention-icon, $white, 24))
 				background-repeat: no-repeat
 				background-position: 50% 50%
 				background-size: 24px 24px
@@ -59,12 +59,53 @@ ul.stepper
 			color: $grey-600
 		&.active .step-title
 			color: $black-300
-			
-
+		&-content
+			margin-left: 61px
+			margin-right: 0
+			padding-top: 15px
+			// width: 97%
+		&-actions
+			padding-top: 24px
 
 
 .calc_stepper
 	padding-bottom: 80px
 	&-header
 		color: $grey-300
-		margin-bottom: 72px
+		margin-bottom: 44px
+		margin-left: -5px
+		text-transform: uppercase
+	&-sum_block
+		margin-top: 78px
+		border-left: 2px solid $green-400
+		padding: 23px 0 23px 39px
+		&-header
+			font-family: 'roboto', Arial, sans-serif
+			margin: 16px 0 24px
+			font-size: 40px
+			line-height: 1
+			position: relative
+			padding-right: 29px
+			display: inline-block
+			&-handreds,
+			&-curency
+				position: absolute
+				text-align: right
+				right: 0
+				z-index: 3
+				color: $green-400
+			&-handreds
+				top: 3px
+				font-size: $fs-xm
+				font-weight: 700
+			&-curency
+				bottom: 3px
+				font-size: $fs-xs
+				font-weight: 500
+		&-bot
+			font-size: $fs-xs
+			line-height: 1.5
+			color: $grey-500
+	// .col-xs-6
+	// 	flex-basis: 81%
+	// 	max-width: 71%

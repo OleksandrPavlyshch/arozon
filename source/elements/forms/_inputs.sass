@@ -235,3 +235,51 @@
 				background-color: $white
 			.input_custom.is_custom_swich input:checked ~ &
 				left: calc(100% - 16px)
+
+.input_custom_image
+	text-align: center
+	vertical-align: top
+	padding: 0 15px
+	margin: 10px 0
+	display: inline-block
+	cursor: pointer
+	position: relative
+	& + &
+		border-left: 1px solid $white-200
+	input
+		position: absolute
+		z-index: -1
+		opacity: 0
+	&-illustration
+		display: block
+		margin: 0 auto 19px
+		max-width: 120px
+		max-height: 140px
+	&-text
+		position: relative
+		line-height: $lh-sm
+		font-size: $fs-m
+		color: $grey-500
+		margin: 0 30px
+		transition: all $t-s $tf-def
+		letter-spacing: 0.05em
+		&:before
+			content: ''
+			position: absolute
+			right: -26px
+			top: 4px
+			transition: all $t-s $tf-def
+			// transform: scale(.5)
+			opacity: 0
+			width: 22px
+			height: 18px
+			background-image: url(create-svg($check-icon, $green-400, 24))
+			background-repeat: no-repeat
+			background-position: 50% 50%
+			background-size: 26px 22px
+		input:checked ~ &
+			@extend .text-gradient
+			&:before
+				opacity: 1
+				// transform: scale(1)
+
