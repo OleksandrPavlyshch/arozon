@@ -124,6 +124,9 @@ let showInputPopup = ($popup, data) => {
 			$popup.removeClass('is-show-bot');
 			},300);
 		$popup.parent().removeClass('focus-popup');
+		if ($.isFunction($.fn.valid) ? 1 : 0) {
+			$popup.parent().find('input').valid();
+		}
 	};
 
 	let setValFromPicker = ($input, $popup) => {
