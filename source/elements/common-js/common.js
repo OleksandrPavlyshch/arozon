@@ -71,30 +71,30 @@
 	} );
 
 	$.validator.setDefaults({
-		// debug: true,
 			errorClass: 'invalid',
 			validClass: "valid",
 			errorPlacement: function (error, element) {
-				console.log(error, element);
+				let $parent = $(element).parent();
 				 if(element.is(':radio') || element.is(':checkbox')) {
-						error.insertBefore($(element).parent());
+						error.insertBefore($parent);
 				 } else {
 						error.insertBefore(element); // default error placement.
 						// element.closest('label').data('error', error);
 						// element.next().attr('data-error', error);
+						$parent.addClass('invalid');
 				 }
 			},
 			success: function (element) {
-				 if(!$(element).closest('li').find('label.invalid:not(:empty)').length){
+				let $parent = $(element).parent();
+				console.log($parent);
+				$parent.removeClass('invalid');
+				if(!$(element).closest('li').find('label.invalid:not(:empty)').length){
 						$(element).closest('li').removeClass('wrong');
-				 }
+				}
 			}
 	 });
-	// if (validation) {
 
-		 // When parallel stepper is defined we need to consider invisible and
-		 // hidden fields
-		 // if($('.stepper.parallel').length) $.validator.setDefaults({ignore:''});
-	// }
+	$('[name=phone]').mask('+(38) 000 000 00 00');
+
 
 })(jQuery);

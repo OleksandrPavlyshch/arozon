@@ -1,7 +1,15 @@
 <div class="step-title">Площадь и объемы</div>
 <div class="step-content">
 	<div class="row">
-			
+		<div class="col-xs-2 wrap-count">
+			{{mixins.count( name='square-amount', placeholder='Кв. метры', min=23, max=999)}}
+		</div>
+		<div class="col-xs-2 wrap-count">
+			{{mixins.count( name='flats-amount', placeholder='Кол-во комнат', min=23, max=999)}}
+		</div>
+		<div class="col-xs-2 wrap-count">
+			{{mixins.count( name='bathrooms-amount', placeholder='Кол-во санузлов', min=23, max=999)}}
+		</div>
 	</div>
 	<div class="step-actions">
 		<button class="button is-blue next-step">далее</button>

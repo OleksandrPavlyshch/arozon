@@ -51,7 +51,7 @@ let changeCount = function () {
 				}
 		}
 
-		$('.wrapp-count').on('click', function(e) {
+		$('.wrap-count').on('click', function(e) {
 			let $countInput = $(this).find('.count-input')
 				, minVal = $countInput.data('minCount') || minCount
 				, maxVal = $countInput.data('maxCount') || maxCount

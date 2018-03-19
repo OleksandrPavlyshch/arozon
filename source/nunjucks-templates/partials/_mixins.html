@@ -93,7 +93,7 @@
 {% endmacro %}
 
 {% macro count(name='count', min=1, max=999, placeholder='Кол-во комнат') %}
-	<div class="input_box wrapp-count">
+	<div class="input_box wrap-count">
 		<span class="input_box-placeholder">{{placeholder}}</span>
 		<span class="count-down"></span>
 		<input name="{{name}}" data-min-count="{{min}}" data-max-count="{{max}}" class="count-input input-base" value="{{min}}" maxlength="3" readonly tabindex="0">

@@ -63,6 +63,7 @@ ul.stepper
 			margin-left: 61px
 			margin-right: 0
 			padding-top: 15px
+			// display: block
 			// width: 97%
 		&-actions
 			padding-top: 24px
@@ -70,6 +71,25 @@ ul.stepper
 
 .calc_stepper
 	padding-bottom: 80px
+	// &-wrap
+	// 	max-width: 76%
+	// 	flex-basis: 0;
+	&-form_row + &-form_row
+		margin-top: 44px
+		.input_box
+			margin-top: 0
+	&-col-third
+		max-width: 228px
+	&-col-md
+		max-width: 29%
+	&-col-sm
+		max-width: 17.5%
+	&-col-lg
+		max-width: 33.5%
+	div.wrap-count
+		max-width: 156px + 34
+	.input_box.wrap-count
+		max-width: 156px
 	&-header
 		color: $grey-300
 		margin-bottom: 44px

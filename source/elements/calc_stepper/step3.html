@@ -1,24 +1,24 @@
 <div class="step-title">Где и когда будем наводить чистату и порядок?</div>
 <div class="step-content">
-	<div class="row">
-		<div class="col-xs-2">
+	<div class="row calc_stepper-form_row">
+		<div class="col-xs calc_stepper-col-md">
 			{{mixins.input_field( name='city', placeholder='Город', mod_prop='required')}}
 		</div>
-		<div class="col-xs3">
+		<div class="col-xs calc_stepper-col-lg">
 			{{mixins.input_field( name='street', placeholder='Улица', mod_prop='required')}}
 		</div>
-		<div class="col-xs-1">
+		<div class="col-xs calc_stepper-col-sm">
 			{{mixins.input_field( name='building', placeholder='Дом', mod_prop='required')}}
 		</div>
-		<div class="col-xs-2">
+		<div class="col-xs calc_stepper-col-sm">
 			{{mixins.input_field( name='flat', placeholder='Квартира', mod_prop='required')}}
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-xs-2">
+	<div class="row calc_stepper-form_row">
+		<div class="col-xs calc_stepper-col-md">
 			{{mixins.datepicker( mod_prop='required' )}}
 		</div>
-		<div class="col-xs-2">
+		<div class="col-xs calc_stepper-col-sm">
 			{{mixins.timepicker( mod_prop='required' )}}
 		</div>
 	</div>
