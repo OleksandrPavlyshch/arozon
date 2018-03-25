@@ -114,7 +114,7 @@ select.select-custom
 		left: 2px
 		bottom: 2px
 		top: 2px
-		padding: 0 22px
+		padding: 0 16px
 		height: 44px
 		line-height: 44px
 		font-size: $fs-m
@@ -125,17 +125,27 @@ select.select-custom
 		left: 0
 		right: 0
 		border-radius: 5px
+		// opacity: 1
+		// transform: none
 	.option
-		padding: 0 22px
+		padding: 0 20px
 		position: relative
-		&.selected:before
-			content: ''
-			position: absolute
-			right: 14px
-			top: 17px
-			width: 18px
-			height: 14px
-			background-image: url(create-svg($check-icon, $green-400, 24))
-			background-repeat: no-repeat
-			background-position: 50% 50%
-			background-size: 18px 14px
+		line-height: 45px
+		height: 48px
+		letter-spacing: 0.08em
+		color: $black-300
+		&.selected
+			font-weight: 700
+			&:before
+				content: ''
+				position: absolute
+				right: 11px
+				top: 13px
+				width: 25px
+				height: 23px
+				touch-action: none
+				pointer-events: none
+				background-image: url(create-svg($check-icon, $green-400, 24))
+				background-repeat: no-repeat
+				background-position: 50% 50%
+				background-size: cover

@@ -45,6 +45,7 @@ $('body').on('click', TPlistItemClass, (e)=>{
 	let $item = $(e.currentTarget)
 		, $parent = $item.parent(TPlistClass);
 
+		console.log('test');
 		$parent.find(TPlistItemClass).removeClass(TPlistActiveClass);
 		$item.addClass(TPlistActiveClass);
 
@@ -89,34 +90,41 @@ let setTimepickerValue = ($timepicker, data) => {
 
 
 //Popup logic
-let showInputPopup = ($popup, data) => {
-	let $datepicker = $popup.find('.datepicker')
-	, $timepicker = $popup.find('.timepicker');
-
-	if ($popup.hasClass("is-show")) {
-		return;
-	}
-	let popupOffset = $popup.offset().top
+	let showInputPopup = ($popup, data) => {
+		let $datepicker = $popup.find('.datepicker')
+		, $timepicker = $popup.find('.timepicker')
+		, popupOffset = $popup.offset().top
 		, windowScroll = $(window).scrollTop()
 		, popupPos = popupOffset - windowScroll;
 
-	if (popupPos < 90) {
-		$popup.addClass('is-show-bot');
-	} else {
-		$popup.removeClass('is-show-bot');
-	}
+		if ($popup.hasClass("is-show")) {
+			return;
+		}
 
-	if($datepicker.length){
-		$datepicker.datepicker("setDate", new Date(data.date));
-	}
+		if (popupPos < 90) {
+			$popup.addClass('is-show-bot');
+		} else {
+			$popup.removeClass('is-show-bot');
+		}
 
-	if($timepicker.length){
-		setTimepickerValue($timepicker, data);
-	}
+		if($datepicker.length){
+			$datepicker.datepicker("setDate", new Date(data.date));
+		}
 
-	$popup.parent().addClass('focus-popup');
-	$popup.addClass('is-show');
-};
+		if($timepicker.length){
+			setTimepickerValue($timepicker, data);
+		}
+
+		$popup.parent().addClass('focus-popup');
+		$popup.addClass('is-show');
+	};
+
+	let hideAllInputPopups = () => {
+		$('.input_popup').removeClass('is-show').parent().removeClass('focus-popup');
+		setTimeout(function(){
+			$('.input_popup').removeClass('is-show-bot');
+		},300);
+	};
 
 	let hideInputPopup = ($popup) => {
 		$popup.removeClass('is-show');
@@ -125,7 +133,7 @@ let showInputPopup = ($popup, data) => {
 			},300);
 		$popup.parent().removeClass('focus-popup');
 		if ($.isFunction($.fn.valid) ? 1 : 0) {
-			$popup.parent().find('input').valid();
+			$popup.parents('.input_box').find('input').valid();
 		}
 	};
 
@@ -156,8 +164,18 @@ let showInputPopup = ($popup, data) => {
 	};
 
 	$('body').on('click', '.has_input_popup', (e)=>{
-		let $popup = $(e.target).parent().find('.input_popup');
-		showInputPopup($popup, $(e.target).data());
+		let $popup = $(e.currentTarget).find('.input_popup');
+		if( !$popup.hasClass('is-show') && !$(e.target).hasClass('input_popup-control') ){
+			hideAllInputPopups();
+			showInputPopup($popup, $(e.target).data());
+		}
+	});
+
+	$('body').on('click', (e) => {
+		var $target = $(e.target);
+		if ($target.closest('.has_input_popup').length === 0 && !$target.hasClass('ui-icon')) {
+			hideAllInputPopups();
+		}
 	});
 
 	$('body').on('click', '.input_popup-cancel', (e)=>{
@@ -167,7 +185,7 @@ let showInputPopup = ($popup, data) => {
 
 	$('body').on('click', '.input_popup-confirm', (e)=>{
 		let $popup = $(e.target).parents('.input_popup')
-		, $input = $popup.parent().find('.has_input_popup');
+		, $input = $popup.parent().find('input');
 		setValFromPicker($input, $popup);
 		hideInputPopup($popup);
 	});

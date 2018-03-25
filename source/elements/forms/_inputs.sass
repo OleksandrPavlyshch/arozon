@@ -37,14 +37,16 @@ input[type=number]::-webkit-outer-spin-button
 	&-icon
 		position: absolute
 		top: 13px
-		font-size: 22px
+		font-size: 24px
 		z-index: 3
 		color: $grey-500
 		transition: color $t-n $tf-def
+		touch-action: none
+		pointer-events: none
 		&.is_right_icon
-			right: 14px
+			right: 13px
 		&.is_left_icon
-			left: 14px
+			left: 13px
 	&.focus-popup,
 	&.focus-date,
 	&.focus,
@@ -92,6 +94,8 @@ input[type=number]::-webkit-outer-spin-button
 		background-color: $grey-200
 		color: $black-300
 		font-size: $fs-m
+		&.time-input
+			padding: 0 15px
 		+placeholder
 			color: $grey-500
 		&.input-base:focus
@@ -108,30 +112,14 @@ input[type=number]::-webkit-outer-spin-button
 		right: 0
 		color: $red-600
 
-// .placeholder-box
-// 	margin-bottom: 6px
-// 	display: flex
-// 	justify-content: space-between
-// 	position: relative
-
-// 	.empty-field,
-// 		font-size: $fs-xxs
-// 		line-height: $lh-ss
-// 		text-align: right
-// 		position: absolute
-// 		visibility: hidden
-// 		opacity: 0
-// 		right: 0
-// 		color: $red-600
-
-
 .wrap-count
 	input
 		text-align: center
+		cursor: default
 	.count-down,
 	.count-up
-		cursor: pointer
 		position: absolute
+		cursor: default
 		top: 17px
 		height: 14px
 		width: 14px
@@ -148,6 +136,7 @@ input[type=number]::-webkit-outer-spin-button
 			left: 6px
 			transform: rotate(90deg)
 		&.active
+			cursor: pointer
 			opacity: 1
 		.icon
 			color: $grey-500
@@ -155,13 +144,13 @@ input[type=number]::-webkit-outer-spin-button
 			vertical-align: top
 			transition: color $t-n $tf-prt
 	.count-down
-		left: 15px
+		left: 18px
 		&:after
 			display: none
 		&.active:hover:before
 			background: $blue-400
 	.count-up
-		right: 15px
+		right: 18px
 		&:after
 			transform: rotate(0)
 		&.active:hover

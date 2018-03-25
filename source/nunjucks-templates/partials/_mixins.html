@@ -2,8 +2,8 @@
 <svg class="icon icon-{{name}} {{mod}}"><use xlink:href="img/sprite.svg#{{name}}"></use></svg>
 {% endmacro %}
 
-{% macro timepicker(name='time', error_mes='Обязательное поле', placeholder='Время', mod_prop) %}
-	<div class="input_box">
+{% macro timepicker(name='time', placeholder='Время', mod_prop) %}
+	<div class="has_input_popup input_box">
 		<div class="input_popup">
 			<div class="input_popup-top">
 				<div class="timepicker">
@@ -63,32 +63,32 @@
 				</div>
 			</div>
 			<div class="input_popup-bot">
-				<div class="input_popup-cancel">отмена</div>
-				<div class="input_popup-confirm">принять</div>
+				<div class="input_popup-control input_popup-cancel">отмена</div>
+				<div class="input_popup-control input_popup-confirm">принять</div>
 			</div>
 		</div>
 
 		<span class="input_box-placeholder">{{placeholder}}</span>
-		<input name="{{name}}" class="has_input_popup" placeholder="{{placeholder}}" readonly tabindex="0" {{mod_prop}}>
+		<input name="{{name}}" placeholder="{{placeholder}}" readonly tabindex="0" {{mod_prop}}>
 		{{icon('time', 'input_box-icon is_right_icon')}}
 	</div>
 {% endmacro %}
 
-{% macro datepicker(name='date', error_mes='Обязательное поле', placeholder='Дата уборки', mod_prop ) %}
-	<div class="input_box">
+{% macro datepicker(name='date', placeholder='Дата уборки', mod_prop ) %}
+	<div class="has_input_popup input_box">
 		<div class="input_popup">
 			<div class="input_popup-top">
 				<div class="datepicker"></div>
 			</div>
 			<div class="input_popup-bot">
-				<div class="input_popup-cancel">отмена</div>
-				<div class="input_popup-confirm">принять</div>
+				<div class="input_popup-control input_popup-cancel">отмена</div>
+				<div class="input_popup-control input_popup-confirm">принять</div>
 			</div>
 		</div>
 		
 		<span class="input_box-placeholder">{{placeholder}}</span>
-		<input name="{{name}}" class="has_input_popup" placeholder="{{placeholder}}" readonly tabindex="0" {{mod_prop}}>
-		{{icon('today', 'input_box-icon is_right_icon')}}
+		<input name="{{name}}" placeholder="{{placeholder}}" readonly tabindex="0" {{mod_prop}}>
+		{{icon('calendar', 'input_box-icon is_right_icon')}}
 	</div>
 {% endmacro %}
 
