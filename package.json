@@ -54,9 +54,5 @@
     "require-yaml": "0.0.1",
     "run-sequence": "^2.2.1",
     "wiredep": "^4.0.0"
-  },
-  "dependencies": {
-    "gulp-cli": "^2.0.1",
-    "rimraf": "^2.6.2"
   }
 }
