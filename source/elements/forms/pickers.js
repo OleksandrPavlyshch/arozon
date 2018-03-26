@@ -5,6 +5,12 @@
 		monthNamesShort: [ "Января","Февраля","Марта","Апреля","Мая","Июня","Июля","Августа","Сентября","Октября","Ноября","Декабря"],
 		monthNames: [ "Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь" ],
 		showOtherMonths: true,
+		onSelect: function() {
+			//Auto swich months
+			let $datepicker = $(this);
+
+			$datepicker.datepicker( "setDate", new Date($datepicker.datepicker( "getDate" )) );
+		},
 		selectOtherMonths: true,
 		language: 'ru',
 		dateFormat: 'd M yy',
@@ -14,6 +20,7 @@
 		prevText: '',
 		firstDay: 1
 	});
+
 //scroll for time picker
 	$('.timepicker-bot-col').mCustomScrollbar({
 		autoHideScrollbar: false,
@@ -45,12 +52,10 @@ $('body').on('click', TPlistItemClass, (e)=>{
 	let $item = $(e.currentTarget)
 		, $parent = $item.parent(TPlistClass);
 
-		console.log('test');
-		$parent.find(TPlistItemClass).removeClass(TPlistActiveClass);
-		$item.addClass(TPlistActiveClass);
+	$parent.find(TPlistItemClass).removeClass(TPlistActiveClass);
+	$item.addClass(TPlistActiveClass);
 
-
-		timepickeActionHandler($item, $parent);
+	timepickeActionHandler($item, $parent);
 });
 
 let timepickeActionHandler = ($item, $parent) => {
@@ -101,12 +106,6 @@ let setTimepickerValue = ($timepicker, data) => {
 			return;
 		}
 
-		if (popupPos < 90) {
-			$popup.addClass('is-show-bot');
-		} else {
-			$popup.removeClass('is-show-bot');
-		}
-
 		if($datepicker.length){
 			$datepicker.datepicker("setDate", new Date(data.date));
 		}
@@ -115,22 +114,32 @@ let setTimepickerValue = ($timepicker, data) => {
 			setTimepickerValue($timepicker, data);
 		}
 
-		$popup.parent().addClass('focus-popup');
-		$popup.addClass('is-show');
+		setTimeout(function(){
+			if (popupPos < 90) {
+				$popup.addClass('is-show-bot');
+			} else {
+				$popup.removeClass('is-show-bot');
+			}
+		}, 250);
+		setTimeout(function(){
+
+			$popup.parent().addClass('focus-popup');
+			$popup.addClass('is-show');
+		}, 300);
 	};
 
 	let hideAllInputPopups = () => {
 		$('.input_popup').removeClass('is-show').parent().removeClass('focus-popup');
 		setTimeout(function(){
 			$('.input_popup').removeClass('is-show-bot');
-		},300);
+		}, 200);
 	};
 
 	let hideInputPopup = ($popup) => {
 		$popup.removeClass('is-show');
 		setTimeout(function(){
 			$popup.removeClass('is-show-bot');
-			},300);
+			}, 200);
 		$popup.parent().removeClass('focus-popup');
 		if ($.isFunction($.fn.valid) ? 1 : 0) {
 			$popup.parents('.input_box').find('input').valid();
@@ -142,13 +151,10 @@ let setTimepickerValue = ($timepicker, data) => {
 		, $timepicker = $popup.find('.timepicker');
 
 		if($datepicker.length) {
-			let date = $datepicker.datepicker( "getDate" )
-				, day = date.getDate()
-				, month = date.getMonth() + 1
-				, year = date.getFullYear();
+			let date = $datepicker.datepicker( "getDate" );
 
 			$input.val($datepicker.val());
-			$input.data('date', year + '-' + month + '-' + day);
+			$input.data('date', date);
 		}
 
 		if($timepicker.length) {

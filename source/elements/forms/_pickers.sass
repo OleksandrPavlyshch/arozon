@@ -12,31 +12,40 @@
 	position: absolute
 	z-index: 6
 	left: 0
-	bottom: 73px
+	visibility: hidden
+	opacity: 0
+	transform-origin: 50% 100%
+	bottom: 72px
+	transform: scale(.75) translateY(021px)
+	transition: all .2s cubic-bezier(.5,0,0,1.25), opacity .15s ease-out
 	background: $white
 	width: 100%
 	min-width: 278px
 	text-align: center
-	visibility: hidden
 	box-shadow: 0 0 50px 0 rgba($black, .2)
-	transform: translateY(20px)
 	overflow: hidden
-	opacity: 0
 	border-radius: 5px
-	transition: opacity $t-f $tf-def, transform $t-n $tf-def
 	&.is-show-bot
-		transform: translateY(-20px)
+		transform: scale(.75) translateY(-21px)
+		transform-origin: 50% 0
 		bottom: auto
 		top: 73px
 	&.is-show
-		transition: opacity $t-f $tf-def, transform $t-n $tf-def
 		opacity: 1
 		visibility: visible
-		transform: translateY(0)
+		transform: scale(1) translateY(0)
+	&-top
+		min-height: 358px
+		opacity: 0
+		.is-show &
+			opacity: 1
 	&-bot
-		padding: 40px 25px 24px
+		padding: 3px 25px 21px
 		overflow: hidden
 		line-height: $lh-sm
+		opacity: 0
+		.is-show &
+			opacity: 1
 	&-cancel,
 	&-confirm
 		border: none
@@ -57,16 +66,17 @@
 		color: $blue-500
 		float: right
 		&:hover
-			color: $blue-600
+			color: $blue-200
 
 .timepicker
 	&-top
-		padding: 26px
+		padding: 15px 10px 11px
 		border-bottom: 1px solid $white-300
 		&-content
 			font-size: $fs-xm
 			font-weight: 700
 			line-height: $lh-sm
+			word-spacing: -0.1em
 	&-bot
 		border-bottom: 1px solid $white-300
 		overflow: hidden
@@ -113,9 +123,9 @@
 		// border-radius: 3px
 		& .ui-datepicker-header
 			text-align: center
-			padding-top: 29px
+			padding-top: 27px
 			line-height: 1
-			padding-bottom: 18px
+			padding-bottom: 25px
 		& .ui-datepicker-title
 			@extend .text-gradient
 			font-weight: 700
@@ -129,18 +139,18 @@
 			color: inherit
 
 		& .ui-datepicker-prev
-			left: 28px
+			left: 25px
 
 		& .ui-datepicker-next
-			right: 28px
+			right: 30px
 
 		& .ui-icon
 			border: 2px solid $grey-500
 			border-top: none
 			cursor: pointer
 			display: block
-			width: 12px
-			height: 12px
+			width: 14px
+			height: 14px
 
 		& .ui-icon:hover
 			border-color: $grey-500
@@ -158,8 +168,11 @@
 			-webkit-transform: rotate(-45deg)
 			transform: rotate(-45deg)
 
-		& .ui-state-disabled *
+		& .ui-state-disabled *,
+		& .ui-datepicker-other-month *
 			color: $grey-400 !important
+			&:hover
+				color: $black-300 !important
 
 		& .ui-datepicker-calendar thead
 			font-size: $fs-xs
@@ -170,7 +183,7 @@
 
 		& .ui-datepicker-calendar thead>tr>th
 			padding-top: 10px
-			padding-bottom: 33px
+			padding-bottom: 31px
 			font-weight: 400
 			line-height: 1
 			border-bottom: 1px solid $white-300
@@ -190,7 +203,7 @@
 			padding-bottom: 6px
 
 		& .ui-datepicker-calendar tbody>tr:first-child>td
-			padding-top: 22px
+			padding-top: 20px
 
 		& .ui-datepicker-calendar tbody>tr td:first-child
 			padding-left: 15px
@@ -218,3 +231,5 @@
 		& .ui-state-active
 			color: $white !important
 			background: $def-grad !important
+			&:hover
+				color: $white !important
