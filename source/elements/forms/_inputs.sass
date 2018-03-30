@@ -58,6 +58,14 @@ input[type=number]::-webkit-outer-spin-button
 			color: $green-400
 		.input_box-icon.is_left_icon
 			color: $blue-400
+	&.focus-popup,
+	&.focus-date,
+	&.focus
+		input,
+		select,
+		textarea
+			+placeholder
+				color: $grey-200
 	&.invalid
 		background-color: $red-600
 		&:before
@@ -116,47 +124,45 @@ input[type=number]::-webkit-outer-spin-button
 	input
 		text-align: center
 		cursor: default
+		user-select: none
+	.count-down
+		left: 18px
+		&:after
+			display: none
+		&:hover:before
+			background: $blue-400
+	.count-up
+		right: 18px
+		&:after
+			transform: rotate(90deg)
+		&:hover
+			&:before,
+			&:after
+				background: $green-400
 	.count-down,
 	.count-up
+		cursor: pointer
 		position: absolute
-		cursor: default
 		top: 17px
 		height: 14px
 		width: 14px
 		z-index: 4
-		opacity: .5
 		transition: opacity $t-n $tf-prt
 		&:before,
 		&:after
 			background: $grey-500
 			content: ' '
 			position: absolute
-			height: 14px
-			width: 2px
-			left: 6px
-			transform: rotate(90deg)
-		&.active
-			cursor: pointer
-			opacity: 1
-		.icon
-			color: $grey-500
-			font-size: $fs-xm
-			vertical-align: top
-			transition: color $t-n $tf-prt
-	.count-down
-		left: 18px
-		&:after
-			display: none
-		&.active:hover:before
-			background: $blue-400
-	.count-up
-		right: 18px
-		&:after
-			transform: rotate(0)
-		&.active:hover
+			width: 14px
+			height: 2px
+			top: 6px
+		&.disabled
+			filter: grayscale(100%)
+			cursor: default
+			opacity: .5
 			&:before,
 			&:after
-					background: $green-400
+				background: $grey-500
 
 .input_custom
 	padding-left: 46px
@@ -253,6 +259,7 @@ input[type=number]::-webkit-outer-spin-button
 	cursor: pointer
 	position: relative
 	max-width: 233px
+	user-select: none
 	& + &
 		border-left: 1px solid $white-200
 	input
@@ -264,22 +271,28 @@ input[type=number]::-webkit-outer-spin-button
 		margin: 0 auto 17px
 		max-width: 120px
 		max-height: 140px
+		transition: filter $t-n $tf-prt
+		will-change: filter
+		filter: grayscale(100%)
+		touch-action: none
+		pointer-events: none
+		input:checked ~ &
+			filter: grayscale(0)
 	&-text
 		position: relative
-		display: block
+		display: inline-block
 		text-align: center
 		line-height: $lh-sm
 		font-size: $fs-m
 		color: $grey-500
 		margin: 0 15px
-		transition: all $t-s $tf-prt
 		letter-spacing: 0.02em
-		&:before
+		&:after
 			content: ''
 			position: absolute
 			right: -29px
 			top: 4px
-			transition: all $t-s $tf-prt
+			transition: all $t-n $tf-prt
 			transform: scale(.5)
 			opacity: 0
 			width: 22px
@@ -290,9 +303,10 @@ input[type=number]::-webkit-outer-spin-button
 			background-size: 26px 22px
 		input:checked ~ &
 			@extend .text-gradient
-			&:before
+			&:after
 				opacity: 1
 				transform: scale(1)
+
 
 textarea
 	padding: 18px 17px

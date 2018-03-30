@@ -120,26 +120,26 @@ let setTimepickerValue = ($timepicker, data) => {
 			} else {
 				$popup.removeClass('is-show-bot');
 			}
-		}, 250);
+		}, 150);
 		setTimeout(function(){
 
 			$popup.parent().addClass('focus-popup');
 			$popup.addClass('is-show');
-		}, 300);
+		}, 200);
 	};
 
 	let hideAllInputPopups = () => {
 		$('.input_popup').removeClass('is-show').parent().removeClass('focus-popup');
 		setTimeout(function(){
 			$('.input_popup').removeClass('is-show-bot');
-		}, 200);
+		}, 100);
 	};
 
 	let hideInputPopup = ($popup) => {
 		$popup.removeClass('is-show');
 		setTimeout(function(){
 			$popup.removeClass('is-show-bot');
-			}, 200);
+			}, 100);
 		$popup.parent().removeClass('focus-popup');
 		if ($.isFunction($.fn.valid) ? 1 : 0) {
 			$popup.parents('.input_box').find('input').valid();

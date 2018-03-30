@@ -19,6 +19,18 @@
 		}
 	});
 
+	// counters
+	$('.count-input').each(function () {
+
+		$(this).number({
+			'minus' : 'count-down',
+			'plus' : 'count-up',
+			'btnTag' : 'span'
+		});
+
+	});
+
+
 	var clipboard = new ClipboardJS('.clipboard_copy');
 	clipboard.on('success', function(e) {
 			$('.clipboard_copy').tooltip('enable').tooltip('open');
@@ -28,20 +40,23 @@
 		url: 'https://github.com/OleksandrPavlyshch/arozon',
 		text: 'Arozon',
 		shareIn: 'popup',
-		showLabel: false,
-		showCount: 'inside',
+		// showLabel: false,
+		showCount: false,
 		shares: [
 			{
 				share: 'facebook',
-				logo: 'img/facebook.svg'
+				logo: 'img/facebook.svg',
+				label: '62'
 			},
 			{
 				share: 'twitter',
-				logo: 'img/twitter.svg'
+				logo: 'img/twitter.svg',
+				label: '62'
 			},
 			{
 				share: 'telegram',
-				logo: 'img/telegram.svg'
+				logo: 'img/telegram.svg',
+				label: '62'
 			}
 		]
 	});

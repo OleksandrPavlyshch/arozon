@@ -17,9 +17,13 @@
 		position: relative
 	&-wrap
 		margin-left: 20px
+		&-i
+			display: flex
 	&-item
 		// +gray-half
 		+vertical
+		flex: 1
+		display: inline-block
 		height: 100px
 		text-align: center
 		opacity: .6
@@ -27,8 +31,14 @@
 		padding: 0 10px
 		img
 			display: inline-block
-			height: auto
-			max-height: 100%
 			max-width: 100%
 			vertical-align: middle
-			width: 90%
+			width: auto
+	&-logo1
+		max-height: 32px
+	&-logo2
+		max-height: 46px
+	&-logo3
+		max-height: 83px
+	&-logo4
+		max-height: 90px

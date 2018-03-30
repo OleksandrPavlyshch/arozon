@@ -2,13 +2,13 @@
 <div class="step-content">
 	<div class="row">
 		<div class="col-xs-2 wrap-count">
-			{{mixins.count( name='square-amount', placeholder='Кв. метры', min=23, max=999)}}
+			{{mixins.count( value=60, name='square-amount', placeholder='Кв. метры', min=20, max=500)}}
 		</div>
 		<div class="col-xs-2 wrap-count">
-			{{mixins.count( name='flats-amount', placeholder='Кол-во комнат', min=23, max=999)}}
+			{{mixins.count( value=3, name='flats-amount', placeholder='Кол-во комнат', min=1, max=50)}}
 		</div>
 		<div class="col-xs-2 wrap-count">
-			{{mixins.count( name='bathrooms-amount', placeholder='Кол-во санузлов', min=23, max=999)}}
+			{{mixins.count( value=2, name='bathrooms-amount', placeholder='Кол-во санузлов', min=1, max=50)}}
 		</div>
 	</div>
 	<div class="step-actions">

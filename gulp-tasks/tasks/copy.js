@@ -1,6 +1,7 @@
 const gulp = require('gulp')
 	, filter = require('gulp-filter')
 	, plumber = require('gulp-plumber')
+	, gulpif = require('gulp-if')
 	, uglify = require('gulp-uglify')
 	, cleanCSS = require('gulp-clean-css')
 	, configs = require('../configs');
@@ -15,7 +16,7 @@ gulp.task('copy:fonts', () => {
 gulp.task('copy:vendor:js', () => {
 	gulp.src(configs.source.vendorJs + '*.js')
 	.pipe(plumber())
-	.pipe(uglify())
+	.pipe(gulpif(configs.production, uglify()))
 	.pipe(gulp.dest(configs.build.vendorJs));
 });
 gulp.task('copy:vendor:css', () => {

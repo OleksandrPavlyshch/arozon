@@ -19,6 +19,8 @@ ul.stepper
 				top: 47px
 				left: 17px
 				height: calc(100% - 18px)
+		&-content
+			display: block !important
 		&.active
 			&:before
 				background-image: $to-bot-grad
@@ -55,10 +57,14 @@ ul.stepper
 			line-height: $lh-sm
 			padding: 15px 44px 15px 82px
 			color: $grey-500
+			font-weight: 200
+			&:hover
+				background-color: transparent
 		&.done .step-title
 			color: $grey-600
 		&.active .step-title
 			color: $black-300
+			font-weight: 200
 		&-content
 			margin-left: 61px
 			margin-right: 0
@@ -71,9 +77,6 @@ ul.stepper
 
 .calc_stepper
 	padding-bottom: 80px
-	// &-wrap
-	// 	max-width: 76%
-	// 	flex-basis: 0;
 	&-form_row + &-form_row
 		margin-top: 44px
 		.input_box
