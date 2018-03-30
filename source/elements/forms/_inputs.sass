@@ -34,6 +34,8 @@ input[type=number]::-webkit-outer-spin-button
 		padding: 0
 		&:before
 			display: none
+	&.prefilled input
+		background-color: $white
 	&-icon
 		position: absolute
 		top: 13px
@@ -110,6 +112,7 @@ input[type=number]::-webkit-outer-spin-button
 			+placeholder
 				color: $grey-200
 
+
 	label.invalid
 		font-size: $fs-xxs
 		line-height: $lh-ss
@@ -157,7 +160,7 @@ input[type=number]::-webkit-outer-spin-button
 			height: 2px
 			top: 6px
 		&.disabled
-			filter: grayscale(100%)
+			+gray
 			cursor: default
 			opacity: .5
 			&:before,
@@ -228,7 +231,7 @@ input[type=number]::-webkit-outer-spin-button
 				border: solid $white
 				border-width: 0 2px 2px 0
 				transform: rotate(45deg)
-				box-shadow: 2px 4px 3px 0 rgba($black, .2)
+				box-shadow: 1px 2px 2px 0 rgba($black, .2)
 			.is_custom_radio &
 				width: 12px
 				height: 12px
@@ -267,19 +270,17 @@ input[type=number]::-webkit-outer-spin-button
 		z-index: -1
 		opacity: 0
 	&-illustration
+		+gray
 		display: block
 		margin: 0 auto 17px
 		max-width: 120px
 		max-height: 140px
 		transition: filter $t-n $tf-prt
 		will-change: filter
-		// filter: grayscale(100%)
-		+gray
 		touch-action: none
 		pointer-events: none
 		input:checked ~ &
 			+gray-zero
-			// filter: grayscale(0)
 	&-text
 		position: relative
 		display: inline-block
@@ -288,26 +289,24 @@ input[type=number]::-webkit-outer-spin-button
 		font-size: $fs-m
 		color: $grey-500
 		margin: 0 15px
-		letter-spacing: 0.02em
+		letter-spacing: -0.02em
 		&:after
 			content: ''
 			position: absolute
-			right: -29px
-			top: 4px
-			transition: all $t-n $tf-prt
-			transform: scale(.5)
+			right: -21px
+			top: 3px
+			width: 10px
+			height: 17px
 			opacity: 0
-			width: 22px
-			height: 18px
-			background-image: url(create-svg($check-icon, $green-400, 24))
-			background-repeat: no-repeat
-			background-position: 50% 50%
-			background-size: 26px 22px
+			transition: all $t-n $tf-prt
+			transform: scale(.5) rotate(45deg)
+			border: solid $green-400
+			border-width: 0 2px 2px 0
 		input:checked ~ &
 			@extend .text-gradient
 			&:after
 				opacity: 1
-				transform: scale(1)
+				transform: scale(1) rotate(45deg)
 
 
 textarea

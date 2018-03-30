@@ -101,10 +101,10 @@
 {% endmacro %}
 
 
-{% macro input_field(type='text', name='input', error_mes='Обязательное поле', placeholder='Имя', mod_prop) %}
-	<div class="input_box">
+{% macro input_field(value="", type='text', name='input', error_mes='Обязательное поле', placeholder='Имя', mod_prop, mod_class) %}
+	<div class="input_box {{mod_class}}">
 		<span class="input_box-placeholder">{{placeholder}}</span>
-		<input type="{{type}}" name="{{name}}" class="input-base" placeholder="{{placeholder}}" tabindex="0" {{mod_prop}}>
+		<input type="{{type}}" name="{{name}}" class="input-base" placeholder="{{placeholder}}" value="{{value}}" tabindex="0" {{mod_prop}}>
 	</div>
 {% endmacro %}
 
