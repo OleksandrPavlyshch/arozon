@@ -1,34 +1,23 @@
 .clients_slider
-	padding: 44px 0 6px
+	padding: 36px 0 22px
 	min-height: 130px
+	overflow: hidden
+	&-row
+		float: left
+		width: calc( 100% + #{$base-padding} * 4 )
+		min-height: 107px
+		align-items: center
 	&-header
-		transform: rotate(-90deg)
-		transform-origin: 0 0
-		height: 0
 		width: 0
+		transform: scale(-1)
+		writing-mode:  tb-rl
 		color: $grey-500
 		font-size: $fs-m
-		position: absolute
-		left: 11px
 		white-space: nowrap
-		bottom: 16px
-	&-content
-		min-height: 120px
-		position: relative
-	&-wrap
-		margin-left: 20px
-		&-i
-			display: flex
+		float: left
+		margin-left: -6px
 	&-item
-		// +gray-half
-		+vertical
-		flex: 1
-		display: inline-block
-		height: 100px
 		text-align: center
-		opacity: .6
-		text-align: center
-		padding: 0 10px
 		img
 			display: inline-block
 			max-width: 100%

@@ -273,11 +273,13 @@ input[type=number]::-webkit-outer-spin-button
 		max-height: 140px
 		transition: filter $t-n $tf-prt
 		will-change: filter
-		filter: grayscale(100%)
+		// filter: grayscale(100%)
+		+gray
 		touch-action: none
 		pointer-events: none
 		input:checked ~ &
-			filter: grayscale(0)
+			+gray-zero
+			// filter: grayscale(0)
 	&-text
 		position: relative
 		display: inline-block
