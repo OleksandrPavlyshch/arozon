@@ -2380,6 +2380,7 @@ select.select-custom {
 .hero {
   overflow: hidden;
   height: 100vh;
+  min-height: 600px;
   max-height: 850px;
   background-size: cover;
   background-repeat: no-repeat;
