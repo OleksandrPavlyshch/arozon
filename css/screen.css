@@ -617,10 +617,6 @@ ul.stepper .step .step-title:hover {
   background-color: transparent;
 }
 
-ul.stepper .step.done .step-title {
-  color: #666666;
-}
-
 ul.stepper .step.active .step-title {
   color: #333333;
   font-weight: 200;
