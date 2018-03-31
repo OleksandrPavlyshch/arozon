@@ -71,13 +71,12 @@
 						console.log('test');
 						console.log(translateY);
 					if (divTop < top) {
-						$calcStepperBlock.velocity({'transform': 'translateY(' + translateY + 'px)'});
-					} 
-					else {
-						$calcStepperBlock.velocity({'transform': 'translateY( 0 )'});
+						$calcStepperBlock.css({'transform': 'translateY(' + translateY + 'px)'});
+					} else {
+						$calcStepperBlock.css({'transform': 'translateY( 0 )'});
 					}
 
-			}, 100));
+			}, 200));
 
 		}
 
