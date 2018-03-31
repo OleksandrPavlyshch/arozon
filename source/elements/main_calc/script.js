@@ -1,3 +1,0 @@
-(($) => {
-	$( "#calc-forms" ).tabs();
-})(jQuery);

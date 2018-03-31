@@ -1,0 +1,450 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <!-- bower:css -->
+    <link rel="stylesheet" href="css/vendor/jssocials.css" />
+    <link rel="stylesheet" href="css/vendor/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" href="css/vendor/jquery.fancybox.min.css" />
+    <!-- endbower -->
+    <link rel="stylesheet" href="css/vendor/nice-select.css" />
+    <link rel="stylesheet" href="css/vendor/materialize-stepper.css" />
+    <link rel="stylesheet" media="all" href="css/screen.css">
+    <meta name="description" content="">
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="">
+    <!-- Open Graph data -->
+    <meta property="og:title" content="">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="">
+    <meta property="og:site_name" content="">
+    <meta property="fb:admins" content="">
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon-180x180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Arozone">
+    <link rel="icon" type="image/png" sizes="228x228" href="/favicon/coast-228x228.png">
+    <link rel="yandex-tableau-widget" href="/favicon/yandex-browser-manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <link rel="manifest" href="/favicon/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="transpatent">
+    <meta name="application-name" content="Arozone">
+    <meta name="msapplication-TileColor" content="transpatent">
+    <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="/favicon/apple-touch-startup-image-320x460.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="/favicon/apple-touch-startup-image-640x920.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/favicon/apple-touch-startup-image-640x1096.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/favicon/apple-touch-startup-image-750x1294.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)" href="/favicon/apple-touch-startup-image-1182x2208.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)" href="/favicon/apple-touch-startup-image-1242x2148.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="/favicon/apple-touch-startup-image-748x1024.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="/favicon/apple-touch-startup-image-768x1004.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/favicon/apple-touch-startup-image-1496x2048.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/favicon/apple-touch-startup-image-1536x2008.png"> </head>
+  <body>
+    <header id="header" class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6">
+            <a class="header_logo" href="/">
+              <svg class="icon icon-logo header_logo-img">
+                <use xlink:href="img/sprite.svg#logo"></use>
+              </svg>
+              <span class="header_logo-text">arozon</span>
+            </a>
+            <nav class="header_menu">
+              <ul class="header_menu-list">
+                <li class="header_menu-item">
+                  <a class="header_menu-link" href="#">клининг</a>
+                </li>
+                <li class="header_menu-item">
+                  <a class="header_menu-link" href="#">аудит</a>
+                </li>
+                <li class="header_menu-item">
+                  <a class="header_menu-link" href="#">обучение</a>
+                </li>
+                <li class="header_menu-item">
+                  <a class="header_menu-link" href="#">хендлинг</a>
+                </li>
+                <li class="header_menu-item">
+                  <a class="header_menu-link" href="#">контактная информация</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-xs-2">
+            <select class="select-custom select_city">
+              <option value="киев" data-display="<span class='select_city-name'>киев</span> <span class='select_city-phone'>+380 <b>067 513 55 33</b></span>"> киев +380 067 513 55 33 </option>
+              <option value="луцк" data-display="<span class='select_city-name'>луцк</span> <span class='select_city-phone'>+380 <b>067 513 55 33</b></span>"> луцк +380 067 513 55 33 </option>
+              <option value="черновцы" data-display="<span class='select_city-name'>черновцы</span> <span class='select_city-phone'>+380 <b>067 513 55 33</b></span>"> черновцы +380 067 513 55 33 </option>
+              <option value="суммы" data-display="<span class='select_city-name'>суммы</span> <span class='select_city-phone'>+380 <b>067 513 55 33</b></span>"> суммы +380 067 513 55 33 </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- BEGIN content -->
+    <main class="content">
+      <style type="text/css">
+        body {
+          padding-top: 220px;
+        }
+
+        .styleguide-row {
+          margin-bottom: 40px;
+        }
+
+        .styleguide-head {
+          font-size: 40px;
+          color: #6bbd96;
+          margin-bottom: 20px;
+        }
+
+        .cost_popup {
+          display: inline-block;
+        }
+
+      </style>
+      <div class="container">
+        <div class="styleguide-head">Forms</div>
+        <div class="styleguide-row">
+          <div class="row">
+            <div class="col-xs-2">
+              <h2 class="text-gradient">Select clean-type</h2>
+              <br>
+              <br>
+              <div class="input_box not-style preselected">
+                <span class="input_box-placeholder">Вид уборки</span>
+                <select class="select-custom select_clean-type" tabindex="0">
+                  <option value="1" selected>После ремонта / стройки</option>
+                  <option value="2">Генеральная</option>
+                  <option value="3">Поддерживающая</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="styleguide-row">
+          <h2 class="text-gradient">Count</h2>
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-xs-1">
+              <div class="input_box wrap-count ">
+                <span class="input_box-placeholder">Кол-во комнат</span>
+                <input name="count" min="1" max="999" class="count-input input-base" value="1" readonly tabindex="0"> </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="styleguide-row">
+          <h2 class="text-gradient">Text Field</h2>
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-xs-2">
+              <div class="input_box ">
+                <span class="input_box-placeholder">Имя</span>
+                <input type="text" name="input" class="input-base" placeholder="Имя" value="" tabindex="0"> </div>
+            </div>
+          </div>
+        </div>
+        <div class="styleguide-row">
+          <h2 class="text-gradient">Checkboxes</h2>
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-xs-2">
+              <label class="input_custom is_custom_checkbox">First checkbox
+                <input type="checkbox" checked="checked" tabindex="0" />
+                <div class="input_custom-indicator"></div>
+              </label>
+              <br>
+              <br>
+              <label class="input_custom is_custom_checkbox">Second checkbox
+                <input type="checkbox" tabindex="0" />
+                <div class="input_custom-indicator"></div>
+              </label>
+              <br>
+              <br>
+              <label class="input_custom is_custom_checkbox">Disabled
+                <input type="checkbox" disabled="disabled" tabindex="0" />
+                <div class="input_custom-indicator"></div>
+              </label>
+              <br>
+              <br>
+              <label class="input_custom is_custom_checkbox">Disabled & checked
+                <input type="checkbox" disabled="disabled" checked="checked" tabindex="0" />
+                <div class="input_custom-indicator"></div>
+              </label>
+              <br>
+              <br> </div>
+          </div>
+        </div>
+        <div class="styleguide-row">
+          <h2 class="text-gradient">Radio Buttons</h2>
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-xs-2">
+              <label class="input_custom is_custom_radio">First radio
+                <input type="radio" name="radio" checked="checked" tabindex="0" />
+                <div class="input_custom-indicator"></div>
+              </label>
+              <br>
+              <br>
+              <label class="input_custom is_custom_radio">Second radio
+                <input type="radio" name="radio" tabindex="0" />
+                <div class="input_custom-indicator"></div>
+              </label>
+              <br>
+              <br>
+              <label class="input_custom is_custom_radio">Disabled
+                <input type="radio" name="radio1" disabled="disabled" tabindex="0" />
+                <div class="input_custom-indicator"></div>
+              </label>
+              <br>
+              <br>
+              <label class="input_custom is_custom_radio">Disabled & checked
+                <input type="radio" name="radio1" disabled="disabled" checked="checked" tabindex="0" />
+                <div class="input_custom-indicator"></div>
+              </label>
+              <br>
+              <br> </div>
+          </div>
+        </div>
+        <div class="styleguide-row">
+          <h2 class="text-gradient">Swich Radio Buttons</h2>
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-xs-12">
+              <label class="input_custom is_custom_swich">
+                <input type="radio" name="radio2" checked="checked" tabindex="0" />
+                <div class="input_custom-indicator"></div>
+              </label>
+              <label class="input_custom is_custom_swich">
+                <input type="radio" name="radio2" tabindex="0" />
+                <div class="input_custom-indicator"></div>
+              </label>
+              <label class="input_custom is_custom_swich">
+                <input type="radio" name="radio2" tabindex="0" />
+                <div class="input_custom-indicator"></div>
+              </label>
+            </div>
+          </div>
+          <br>
+          <br>
+          <h2 class="text-gradient">Swich Checkboxes Buttons</h2>
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-xs-12">
+              <label class="input_custom is_custom_swich">
+                <input type="checkbox" checked="checked" tabindex="0" />
+                <div class="input_custom-indicator"></div>
+              </label>
+              <label class="input_custom is_custom_swich">
+                <input type="checkbox" tabindex="0" />
+                <div class="input_custom-indicator"></div>
+              </label>
+              <label class="input_custom is_custom_swich">
+                <input type="checkbox" tabindex="0" />
+                <div class="input_custom-indicator"></div>
+              </label>
+            </div>
+          </div>
+          <br>
+          <br>
+          <h2 class="text-gradient">Image cheknoks and radio</h2>
+          <br>
+          <br>
+          <div class="row">
+            <label class="input_custom_image col-xs-2">
+              <input type="checkbox" checked="checked" tabindex="0" />
+              <img class="input_custom_image-illustration" src="img/package_baby.svg">
+              <span class="input_custom_image-text">Малыш</span>
+            </label>
+            <label class="input_custom_image col-xs-2">
+              <input type="checkbox" tabindex="0" />
+              <img class="input_custom_image-illustration" src="img/package_pet.svg">
+              <span class="input_custom_image-text">Питомец</span>
+            </label>
+            <label class="input_custom_image col-xs-2">
+              <input type="checkbox" tabindex="0" />
+              <img class="input_custom_image-illustration" src="img/package_mans.svg">
+              <span class="input_custom_image-text">Холотсяк</span>
+            </label>
+            <label class="input_custom_image col-xs-2">
+              <input type="checkbox" tabindex="0" />
+              <img class="input_custom_image-illustration" src="img/package_party.svg">
+              <span class="input_custom_image-text">Вечеринка</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="styleguide-head">Text</div>
+        <div class="styleguide-row">
+          <h1>h1 Some text</h1>
+          <br>
+          <h2>h2 Some text</h2>
+          <br>
+          <h3>h3 Some text</h3>
+          <br>
+          <h4>h4 Some text</h4>
+          <br>
+          <h5>h5 Some text</h5>
+          <br>
+          <h6>h6 Some text</h6>
+          <br>
+          <p>Paragraph Some text</p>
+        </div>
+        <div class="styleguide-head">Text Gradient</div>
+        <div class="styleguide-row">
+          <h1 class="text-gradient">h1 Some text</h1>
+          <br>
+          <h2 class="text-gradient">h2 Some text</h2>
+          <br>
+          <h3 class="text-gradient">h3 Some text</h3>
+          <br>
+          <h4 class="text-gradient">h4 Some text</h4>
+          <br>
+          <h5 class="text-gradient">h5 Some text</h5>
+          <br>
+          <h6 class="text-gradient">h6 Some text</h6>
+          <br>
+          <p class="text-gradient">Paragraph Some text</p>
+        </div>
+        <div class="styleguide-head">Buttons</div>
+        <div class="styleguide-row">
+          <button>Заказать уборку</button>
+          <br>
+          <br>
+          <div style="background-color: #33a3cc; padding: 10px;">
+            <button class="button is-see-trough">Заказать уборку</button>
+          </div>
+          <br>
+          <br>
+          <div style="background-color: #33a3cc; padding: 10px;">
+            <button class="button is-see-trough is-wide-button">Заказать уборку</button>
+          </div>
+          <br>
+          <br>
+          <button class="button is-bg-move">
+            <span>Узнать стоимость</span>
+          </button>
+          <br>
+          <br>
+          <button class="button is-bg-move is-wide-button">
+            <span>Узнать стоимость</span>
+          </button>
+        </div>
+        <div class="styleguide-head">Popup</div>
+        <div class="styleguide-row">
+          <div id="cost_popup" class="cost_popup">
+            <p class="cost_popup-mes">Минимальная стоимость убрки
+              <br>Вашей квартиры</p>
+            <h2 class="text-gradient cost_popup-header"> ~32334
+              <sup class="cost_popup-header-handreds">.00</sup>
+              <sub class="cost_popup-header-curency">грн.</sub>
+            </h2>
+            <div class="cost_popup-form">
+              <form action="#">
+                <div class="cost_popup-form-row">
+                  <div class="input_box ">
+                    <span class="input_box-placeholder">Имя</span>
+                    <input type="text" name="name" class="input-base" placeholder="Имя" value="" tabindex="0" required> </div>
+                </div>
+                <div class="cost_popup-form-row">
+                  <div class="input_box ">
+                    <span class="input_box-placeholder">Номер телефона</span>
+                    <input type="tel" name="phone" class="input-base" placeholder="Номер телефона" value="" tabindex="0" required> </div>
+                </div>
+                <div class="cost_popup-form-row">
+                  <div class="input_box ">
+                    <span class="input_box-placeholder">Email</span>
+                    <input type="email" name="email" class="input-base" placeholder="Email" value="" tabindex="0" required> </div>
+                </div>
+                <button class="button is-blue">Заказать</button>
+              </form>
+              <a class="cost_popup-form-more_ditails" href="#">Посчитать более точную стоимость</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- END content -->
+    <footer class="footer container" id="footer">
+      <div class="row">
+        <div class="col-xs-5">
+          <address class="footer-contacts">
+            <p class="footer-contacts-top">
+              <span class="footer-contacts-top-item">пн - пт с 10:00 до 18:00</span>
+              <span class="footer-contacts-top-item">+38
+                <b>044 228 11 22</b>
+              </span>
+              <span class="footer-contacts-top-item">+38
+                <b>067 513 55 33</b>
+              </span>
+            </p>
+            <p class="footer-contacts-bot"> 04080,
+              <span class="text-blue">Украина, Киев, ул. Новоконстантиновская, 13/10</span>, офис 322. Eмейл для контактов:
+              <span title="Скопировано в буфер" class="text-blue clipboard_copy" data-clipboard-text="info@arazon.com">info@arazon.com</span>
+            </p>
+          </address>
+        </div>
+        <div class="col-xs-3 footer-share">
+          <div class="share-buttons"></div>
+        </div>
+      </div>
+      <div class="row footer-copy">
+        <div class="col-xs-4 footer-copy-dev">Сайт разработан в
+          <a class="text-blue" href="http://blackbox.ua" target="_blank">Blackbox.ua</a>
+        </div>
+        <div class="col-xs-4 footer-copy-owner"> Copyright 2017 Arozon </div>
+      </div>
+    </footer>
+    <!-- BEGIN scripts -->
+    <!-- bower:js -->
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/clipboard.js"></script>
+    <script src="js/vendor/jquery-ui.js"></script>
+    <script src="js/vendor/jssocials.js"></script>
+    <script src="js/vendor/jquery.mousewheel.js"></script>
+    <script src="js/vendor/jquery.mCustomScrollbar.js"></script>
+    <script src="js/vendor/jquery.fancybox.min.js"></script>
+    <script src="js/vendor/jquery.validate.js"></script>
+    <script src="js/vendor/jquery.mask.js"></script>
+    <!-- endbower -->
+    <script src="js/vendor/jquery.nice-select.js"></script>
+    <script src="js/vendor/number.js"></script>
+    <script src="js/vendor/materialize-stepper.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- END scripts -->
+  </body>
+</html>

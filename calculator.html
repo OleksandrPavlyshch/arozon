@@ -1,0 +1,619 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <!-- bower:css -->
+    <link rel="stylesheet" href="css/vendor/jssocials.css" />
+    <link rel="stylesheet" href="css/vendor/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" href="css/vendor/jquery.fancybox.min.css" />
+    <!-- endbower -->
+    <link rel="stylesheet" href="css/vendor/nice-select.css" />
+    <link rel="stylesheet" href="css/vendor/materialize-stepper.css" />
+    <link rel="stylesheet" media="all" href="css/screen.css">
+    <meta name="description" content="">
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="">
+    <!-- Open Graph data -->
+    <meta property="og:title" content="">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="">
+    <meta property="og:site_name" content="">
+    <meta property="fb:admins" content="">
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon-180x180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Arozone">
+    <link rel="icon" type="image/png" sizes="228x228" href="/favicon/coast-228x228.png">
+    <link rel="yandex-tableau-widget" href="/favicon/yandex-browser-manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <link rel="manifest" href="/favicon/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="transpatent">
+    <meta name="application-name" content="Arozone">
+    <meta name="msapplication-TileColor" content="transpatent">
+    <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="/favicon/apple-touch-startup-image-320x460.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="/favicon/apple-touch-startup-image-640x920.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/favicon/apple-touch-startup-image-640x1096.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/favicon/apple-touch-startup-image-750x1294.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)" href="/favicon/apple-touch-startup-image-1182x2208.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)" href="/favicon/apple-touch-startup-image-1242x2148.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="/favicon/apple-touch-startup-image-748x1024.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="/favicon/apple-touch-startup-image-768x1004.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/favicon/apple-touch-startup-image-1496x2048.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/favicon/apple-touch-startup-image-1536x2008.png"> </head>
+  <body>
+    <header id="header" class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6">
+            <a class="header_logo" href="/">
+              <svg class="icon icon-logo header_logo-img">
+                <use xlink:href="img/sprite.svg#logo"></use>
+              </svg>
+              <span class="header_logo-text">arozon</span>
+            </a>
+            <nav class="header_menu">
+              <ul class="header_menu-list">
+                <li class="header_menu-item">
+                  <a class="header_menu-link" href="#">клининг</a>
+                </li>
+                <li class="header_menu-item active">
+                  <a class="header_menu-link" href="#">аудит</a>
+                </li>
+                <li class="header_menu-item">
+                  <a class="header_menu-link" href="#">обучение</a>
+                </li>
+                <li class="header_menu-item">
+                  <a class="header_menu-link" href="#">хендлинг</a>
+                </li>
+                <li class="header_menu-item">
+                  <a class="header_menu-link" href="#">контактная информация</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-xs-2">
+            <select class="select-custom select_city">
+              <option value="киев" data-display="<span class='select_city-name'>киев</span> <span class='select_city-phone'>+380 <b>067 513 55 33</b></span>"> киев +380 067 513 55 33 </option>
+              <option value="луцк" data-display="<span class='select_city-name'>луцк</span> <span class='select_city-phone'>+380 <b>067 513 55 33</b></span>"> луцк +380 067 513 55 33 </option>
+              <option value="черновцы" data-display="<span class='select_city-name'>черновцы</span> <span class='select_city-phone'>+380 <b>067 513 55 33</b></span>"> черновцы +380 067 513 55 33 </option>
+              <option value="суммы" data-display="<span class='select_city-name'>суммы</span> <span class='select_city-phone'>+380 <b>067 513 55 33</b></span>"> суммы +380 067 513 55 33 </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- BEGIN content -->
+    <main class="content">
+      <section class="container calc_stepper">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 class="calc_stepper-header">Калькулятор стоимости</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <ul id="calc_stepper" data-method="GET" class="stepper linear">
+              <li class="step calc_stepper-step-1 active">
+                <div class="step-title">Комплектация уборки (не обязательно)</div>
+                <div class="step-content">
+                  <div class="row calc_stepper-input_images_row">
+                    <label class="input_custom_image col-xs-2">
+                      <input type="checkbox" name="package_baby" tabindex="0" />
+                      <img class="input_custom_image-illustration" src="img/package_baby.svg">
+                      <span class="input_custom_image-text" title="Малыш">Малыш</span>
+                    </label>
+                    <label class="input_custom_image col-xs-2">
+                      <input type="checkbox" name="package_pet" tabindex="0" />
+                      <img class="input_custom_image-illustration" src="img/package_pet.svg">
+                      <span class="input_custom_image-text" title="Питомец">Питомец</span>
+                    </label>
+                    <label class="input_custom_image col-xs-2">
+                      <input type="checkbox" name="package_mans" tabindex="0" />
+                      <img class="input_custom_image-illustration" src="img/package_mans.svg">
+                      <span class="input_custom_image-text" title="Холостяк">Холостяк</span>
+                    </label>
+                    <label class="input_custom_image col-xs-2">
+                      <input type="checkbox" name="package_party" tabindex="0" />
+                      <img class="input_custom_image-illustration" src="img/package_party.svg">
+                      <span class="input_custom_image-text" title="Вечеринка">Вечеринка</span>
+                    </label>
+                  </div>
+                  <div class="step-actions">
+                    <button class="button is-blue next-step">пропустить</button>
+                  </div>
+                </div>
+              </li>
+              <li class="step calc_stepper-step-2">
+                <div class="step-title">На каком объекте наводить чистату и порядок?</div>
+                <div class="step-content">
+                  <div class="row calc_stepper-input_images_row">
+                    <label class="input_custom_image col-xs-2">
+                      <input type="radio" name="step2" checked="checked" tabindex="0" />
+                      <img class="input_custom_image-illustration" src="img/place_apartment.svg">
+                      <span class="input_custom_image-text" title="Квартира">Квартира</span>
+                    </label>
+                    <label class="input_custom_image col-xs-2">
+                      <input type="radio" name="step2" tabindex="0" />
+                      <img class="input_custom_image-illustration" src="img/place_house.svg">
+                      <span class="input_custom_image-text" title="Дом">Дом</span>
+                    </label>
+                    <label class="input_custom_image col-xs-2">
+                      <input type="radio" name="step2" tabindex="0" />
+                      <img class="input_custom_image-illustration" src="img/place_office.svg">
+                      <span class="input_custom_image-text" title="Офис">Офис</span>
+                    </label>
+                    <label class="input_custom_image col-xs-2">
+                      <input type="radio" name="step2" tabindex="0" />
+                      <img class="input_custom_image-illustration" src="img/place_shop.svg">
+                      <span class="input_custom_image-text" title="Бутик">Бутик</span>
+                    </label>
+                  </div>
+                  <div class="step-actions">
+                    <button class="button is-blue next-step">далее</button>
+                  </div>
+                </div>
+              </li>
+              <li class="step calc_stepper-step-3">
+                <div class="step-title">Где и когда будем наводить чистату и порядок?</div>
+                <div class="step-content">
+                  <div class="row calc_stepper-form_row">
+                    <div class="col-xs calc_stepper-col-md">
+                      <div class="input_box prefilled">
+                        <span class="input_box-placeholder"></span>
+                        <input type="text" name="city" class="input-base" placeholder="" value="Киев" tabindex="0" disabled> </div>
+                    </div>
+                    <div class="col-xs calc_stepper-col-lg">
+                      <div class="input_box ">
+                        <span class="input_box-placeholder">Улица</span>
+                        <input type="text" name="street" class="input-base" placeholder="Улица" value="" tabindex="0" required> </div>
+                    </div>
+                    <div class="col-xs calc_stepper-col-sm">
+                      <div class="input_box ">
+                        <span class="input_box-placeholder">Дом</span>
+                        <input type="text" name="building" class="input-base" placeholder="Дом" value="" tabindex="0" required> </div>
+                    </div>
+                    <div class="col-xs calc_stepper-col-sm">
+                      <div class="input_box ">
+                        <span class="input_box-placeholder">Квартира</span>
+                        <input type="text" name="flat" class="input-base" placeholder="Квартира" value="" tabindex="0" required> </div>
+                    </div>
+                  </div>
+                  <div class="row calc_stepper-form_row">
+                    <div class="col-xs calc_stepper-col-md">
+                      <div class="has_input_popup input_box">
+                        <div class="input_popup">
+                          <div class="input_popup-top">
+                            <div class="datepicker"></div>
+                          </div>
+                          <div class="input_popup-bot">
+                            <div class="input_popup-control input_popup-cancel">отмена</div>
+                            <div class="input_popup-control input_popup-confirm">принять</div>
+                          </div>
+                        </div>
+                        <span class="input_box-placeholder">Дата уборки</span>
+                        <input name="date" placeholder="Дата уборки" readonly tabindex="0" required>
+                        <svg class="icon icon-calendar input_box-icon is_right_icon">
+                          <use xlink:href="img/sprite.svg#calendar"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="col-xs calc_stepper-col-sm">
+                      <div class="has_input_popup input_box">
+                        <div class="input_popup">
+                          <div class="input_popup-top">
+                            <div class="timepicker">
+                              <div class="timepicker-top">
+                                <p class="timepicker-top-content text-gradient">
+                                  <span class="timepicker-top-content-hours">0</span> :
+                                  <span class="timepicker-top-content-minutes">00</span>
+                                </p>
+                              </div>
+                              <div class="timepicker-bot">
+                                <div class="timepicker-bot-col">
+                                  <ul class="timepicker-list timepicker-hour_list">
+                                    <li class="timepicker-list-item active" data-val="0">
+                                      <span>0</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="1">
+                                      <span>1</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="2">
+                                      <span>2</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="3">
+                                      <span>3</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="4">
+                                      <span>4</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="5">
+                                      <span>5</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="6">
+                                      <span>6</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="7">
+                                      <span>7</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="8">
+                                      <span>8</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="9">
+                                      <span>9</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="10">
+                                      <span>10</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="11">
+                                      <span>11</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="12">
+                                      <span>12</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="13">
+                                      <span>13</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="14">
+                                      <span>14</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="15">
+                                      <span>15</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="16">
+                                      <span>16</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="17">
+                                      <span>17</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="18">
+                                      <span>18</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="19">
+                                      <span>19</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="20">
+                                      <span>20</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="21">
+                                      <span>21</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="22">
+                                      <span>22</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="23">
+                                      <span>23</span>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="timepicker-bot-col">
+                                  <ul class="timepicker-list timepicker-minute_list">
+                                    <li class="timepicker-list-item active" data-val="00">
+                                      <span>00</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="05">
+                                      <span>05</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="10">
+                                      <span>10</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="15">
+                                      <span>15</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="20">
+                                      <span>20</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="25">
+                                      <span>25</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="30">
+                                      <span>30</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="35">
+                                      <span>35</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="40">
+                                      <span>40</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="45">
+                                      <span>45</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="50">
+                                      <span>50</span>
+                                    </li>
+                                    <li class="timepicker-list-item" data-val="55">
+                                      <span>55</span>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="input_popup-bot">
+                            <div class="input_popup-control input_popup-cancel">отмена</div>
+                            <div class="input_popup-control input_popup-confirm">принять</div>
+                          </div>
+                        </div>
+                        <span class="input_box-placeholder">Время</span>
+                        <input class="time-input" name="time" placeholder="Время" readonly tabindex="0" required>
+                        <svg class="icon icon-time input_box-icon is_right_icon">
+                          <use xlink:href="img/sprite.svg#time"></use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="step-actions">
+                    <button class="button is-blue next-step">далее</button>
+                  </div>
+                </div>
+              </li>
+              <li class="step calc_stepper-step-4">
+                <div class="step-title">Площадь и объемы</div>
+                <div class="step-content">
+                  <div class="row">
+                    <div class="col-xs-2 wrap-count">
+                      <div class="input_box wrap-count ">
+                        <span class="input_box-placeholder">Кв. метры</span>
+                        <input name="square-amount" min="20" max="500" class="count-input input-base" value="60" readonly tabindex="0"> </span>
+                      </div>
+                    </div>
+                    <div class="col-xs-2 wrap-count">
+                      <div class="input_box wrap-count ">
+                        <span class="input_box-placeholder">Кол-во комнат</span>
+                        <input name="flats-amount" min="1" max="50" class="count-input input-base" value="3" readonly tabindex="0"> </span>
+                      </div>
+                    </div>
+                    <div class="col-xs-2 wrap-count">
+                      <div class="input_box wrap-count ">
+                        <span class="input_box-placeholder">Кол-во санузлов</span>
+                        <input name="bathrooms-amount" min="1" max="50" class="count-input input-base" value="2" readonly tabindex="0"> </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="step-actions">
+                    <button class="button is-blue next-step">далее</button>
+                  </div>
+                </div>
+              </li>
+              <li class="step calc_stepper-step-5">
+                <div class="step-title">Вид уборки</div>
+                <div class="step-content">
+                  <div class="row calc_stepper-input_images_row">
+                    <label class="input_custom_image col-xs">
+                      <input type="radio" name="step5" checked="checked" tabindex="0" />
+                      <img class="input_custom_image-illustration" src="img/clean1.svg">
+                      <span class="input_custom_image-text" title="Поддерживающая">Поддерживающая</span>
+                    </label>
+                    <label class="input_custom_image col-xs">
+                      <input type="radio" name="step5" tabindex="0" />
+                      <img class="input_custom_image-illustration" src="img/clean2.svg">
+                      <span class="input_custom_image-text" title="Генеральная">Генеральная</span>
+                    </label>
+                    <label class="input_custom_image col-xs">
+                      <input type="radio" name="step5" tabindex="0" />
+                      <img class="input_custom_image-illustration" src="img/clean3.svg">
+                      <span class="input_custom_image-text" title="После строительства или ремонта">После строительства
+                        <br>или ремонта</span>
+                    </label>
+                  </div>
+                  <div class="step-actions">
+                    <button class="button is-blue next-step">далее</button>
+                  </div>
+                </div>
+              </li>
+              <li class="step calc_stepper-step-6">
+                <div class="step-title">Дополнительные опции</div>
+                <div class="step-content">
+                  <div class="row calc_stepper-form_row">
+                    <div class="col-xs calc_stepper-col-third">
+                      <label class="input_custom is_custom_checkbox">Холодильник
+                        <input type="checkbox" tabindex="0" />
+                        <div class="input_custom-indicator"></div>
+                      </label>
+                    </div>
+                    <div class="col-xs calc_stepper-col-third">
+                      <label class="input_custom is_custom_checkbox">Микроволновка
+                        <input type="checkbox" tabindex="0" />
+                        <div class="input_custom-indicator"></div>
+                      </label>
+                    </div>
+                    <div class="col-xs">
+                      <label class="input_custom is_custom_checkbox">Люстры оригинальной конструкции
+                        <input type="checkbox" tabindex="0" />
+                        <div class="input_custom-indicator"></div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row calc_stepper-form_row">
+                    <div class="col-xs calc_stepper-col-third">
+                      <label class="input_custom is_custom_checkbox">Духовка
+                        <input type="checkbox" tabindex="0" />
+                        <div class="input_custom-indicator"></div>
+                      </label>
+                    </div>
+                    <div class="col-xs calc_stepper-col-third">
+                      <label class="input_custom is_custom_checkbox">Помыть посуду
+                        <input type="checkbox" tabindex="0" />
+                        <div class="input_custom-indicator"></div>
+                      </label>
+                    </div>
+                    <div class="col-xs">
+                      <label class="input_custom is_custom_checkbox">Химчистка
+                        <input type="checkbox" tabindex="0" />
+                        <div class="input_custom-indicator"></div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row calc_stepper-form_row">
+                    <div class="col-xs calc_stepper-col-third">
+                      <label class="input_custom is_custom_checkbox">Окна
+                        <input type="checkbox" class="view-checkbox" data-target=".window-amount" tabindex="0" />
+                        <div class="input_custom-indicator"></div>
+                      </label>
+                    </div>
+                    <div class="col-xs calc_stepper-col-third">
+                      <label class="input_custom is_custom_checkbox">Балкон
+                        <input type="checkbox" class="view-checkbox" data-target=".balcony-amount" tabindex="0" />
+                        <div class="input_custom-indicator"></div>
+                      </label>
+                    </div>
+                    <div class="col-xs"></div>
+                  </div>
+                  <div class="row calc_stepper-form_row">
+                    <div class="col-xs calc_stepper-col-third">
+                      <div class="input_box wrap-count window-amount hidden">
+                        <span class="input_box-placeholder">Кол-во окон</span>
+                        <input name="window-amount" min="1" max="999" class="count-input input-base" value="1" readonly tabindex="0"> </span>
+                      </div>
+                    </div>
+                    <div class="col-xs calc_stepper-col-third">
+                      <div class="input_box wrap-count balcony-amount hidden">
+                        <span class="input_box-placeholder">Кол-во балконов</span>
+                        <input name="balcony-amount" min="1" max="999" class="count-input input-base" value="1" readonly tabindex="0"> </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="step-actions">
+                    <button class="button is-blue next-step">далее</button>
+                  </div>
+                </div>
+              </li>
+              <li class="step calc_stepper-step-7">
+                <div class="step-title">Ваши комментарии и дополнительные пожелания</div>
+                <div class="step-content">
+                  <div class="row">
+                    <div class="col-xs">
+                      <textarea rows="4" cols="50" placeholder="Ваши комментарии"></textarea>
+                    </div>
+                  </div>
+                  <div class="step-actions">
+                    <button class="button is-blue next-step">далее</button>
+                  </div>
+                </div>
+              </li>
+              <li class="step calc_stepper-step-8">
+                <div class="step-title">Ваши контакты</div>
+                <div class="step-content">
+                  <div class="row calc_stepper-form_row">
+                    <div class="col-xs">
+                      <div class="input_box ">
+                        <span class="input_box-placeholder">Имя</span>
+                        <input type="text" name="name" class="input-base" placeholder="Имя" value="" tabindex="0" required> </div>
+                    </div>
+                    <div class="col-xs">
+                      <div class="input_box ">
+                        <span class="input_box-placeholder">Номер телефона</span>
+                        <input type="tel" name="phone" class="input-base" placeholder="Номер телефона" value="" tabindex="0" required> </div>
+                    </div>
+                    <div class="col-xs">
+                      <div class="input_box ">
+                        <span class="input_box-placeholder">Email</span>
+                        <input type="email" name="email" class="input-base" placeholder="Email" value="" tabindex="0" required> </div>
+                    </div>
+                  </div>
+                  <div class="row calc_stepper-form_row">
+                    <div class="col-xs">
+                      <label class="input_custom is_custom_swich">Я даю согласие на обработку персональных данных
+                        <input type="checkbox" tabindex="0" />
+                        <div class="input_custom-indicator"></div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="step-actions">
+                    <button class="button is-blue next-step" type="submit">далее</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-2 calc_stepper-sum_block-wrap">
+            <div class="calc_stepper-sum_block">
+              <p class="calc_stepper-sum_block-title"> Приблизительная
+                <br> стоимость уборки
+                <br> Вашего объекта </p>
+              <h2 class="text-gradient calc_stepper-sum_block-header"> 32334
+                <sup class="calc_stepper-sum_block-header-handreds">.00</sup>
+                <sub class="calc_stepper-sum_block-header-curency">грн.</sub>
+              </h2>
+              <p class="calc_stepper-sum_block-bot"> Точную оценку может дать
+                <br> только наш специалист
+                <br> находясь на Вашем объекте </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- END content -->
+    <footer class="footer container" id="footer">
+      <div class="row">
+        <div class="col-xs-5">
+          <address class="footer-contacts">
+            <p class="footer-contacts-top">
+              <span class="footer-contacts-top-item">пн - пт с 10:00 до 18:00</span>
+              <span class="footer-contacts-top-item">+38
+                <b>044 228 11 22</b>
+              </span>
+              <span class="footer-contacts-top-item">+38
+                <b>067 513 55 33</b>
+              </span>
+            </p>
+            <p class="footer-contacts-bot"> 04080,
+              <span class="text-blue">Украина, Киев, ул. Новоконстантиновская, 13/10</span>, офис 322. Eмейл для контактов:
+              <span title="Скопировано в буфер" class="text-blue clipboard_copy" data-clipboard-text="info@arazon.com">info@arazon.com</span>
+            </p>
+          </address>
+        </div>
+        <div class="col-xs-3 footer-share">
+          <div class="share-buttons"></div>
+        </div>
+      </div>
+      <div class="row footer-copy">
+        <div class="col-xs-4 footer-copy-dev">Сайт разработан в
+          <a class="text-blue" href="http://blackbox.ua" target="_blank">Blackbox.ua</a>
+        </div>
+        <div class="col-xs-4 footer-copy-owner"> Copyright 2017 Arozon </div>
+      </div>
+    </footer>
+    <!-- BEGIN scripts -->
+    <!-- bower:js -->
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/clipboard.js"></script>
+    <script src="js/vendor/jquery-ui.js"></script>
+    <script src="js/vendor/jssocials.js"></script>
+    <script src="js/vendor/jquery.mousewheel.js"></script>
+    <script src="js/vendor/jquery.mCustomScrollbar.js"></script>
+    <script src="js/vendor/jquery.fancybox.min.js"></script>
+    <script src="js/vendor/jquery.validate.js"></script>
+    <script src="js/vendor/jquery.mask.js"></script>
+    <!-- endbower -->
+    <script src="js/vendor/jquery.nice-select.js"></script>
+    <script src="js/vendor/number.js"></script>
+    <script src="js/vendor/materialize-stepper.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- END scripts -->
+  </body>
+</html>

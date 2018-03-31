@@ -1,3 +1,0 @@
-(($) => {
-	$('.select-custom').niceSelect();
-})(jQuery);
