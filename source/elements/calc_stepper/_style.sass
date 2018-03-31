@@ -19,8 +19,8 @@ ul.stepper
 				top: 47px
 				left: 17px
 				height: calc(100% - 18px)
-		&-content
-			display: block !important
+		// &-content
+		// 	display: block !important
 		&.active
 			&:before
 				background-image: $to-bot-grad
@@ -69,11 +69,8 @@ ul.stepper
 			margin-left: 61px
 			margin-right: 0
 			padding-top: 15px
-			// display: block
-			// width: 97%
 		&-actions
 			padding-top: 24px
-
 
 .calc_stepper
 	padding-bottom: 80px
@@ -99,10 +96,14 @@ ul.stepper
 		margin-left: -5px
 		text-transform: uppercase
 	&-sum_block
-		margin-top: 118px
+		will-change: transform
+		// transform: translateY(0)
+		// transition: transform $t-n $tf-def
 		float: right
 		border-left: 2px solid $green-400
 		padding: 19px 9px 23px 36px
+		// &-wrap
+			// padding-top: 118px
 		&-title
 			font-size: $fs-m
 			line-height: $lh-sm

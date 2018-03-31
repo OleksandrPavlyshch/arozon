@@ -3,7 +3,7 @@
 	<div class="row calc_stepper-form_row">
 		<div class="col-xs calc_stepper-col-third">
 			<label class="input_custom is_custom_checkbox">Холодильник
-				<input type="checkbox" checked="checked" tabindex="0"/>
+				<input type="checkbox" tabindex="0"/>
 				<div class="input_custom-indicator"></div>
 			</label>
 		</div>
@@ -43,13 +43,13 @@
 	<div class="row calc_stepper-form_row">
 		<div class="col-xs calc_stepper-col-third">
 			<label class="input_custom is_custom_checkbox">Окна
-				<input type="checkbox" checked="checked" tabindex="0"/>
+				<input type="checkbox" class="view-checkbox" data-target=".window-amount" tabindex="0"/>
 				<div class="input_custom-indicator"></div>
 			</label>
 		</div>
 		<div class="col-xs calc_stepper-col-third">
 			<label class="input_custom is_custom_checkbox">Балкон
-				<input type="checkbox" checked="checked" tabindex="0"/>
+				<input type="checkbox" class="view-checkbox" data-target=".balcony-amount" tabindex="0"/>
 				<div class="input_custom-indicator"></div>
 			</label>
 		</div>
@@ -57,10 +57,10 @@
 	</div>
 	<div class="row calc_stepper-form_row">
 		<div class="col-xs calc_stepper-col-third">
-			{{mixins.count( name='window-amount', placeholder='Кол-во окон', min=1, max=999)}}
+			{{mixins.count( mod_class="window-amount hidden", name='window-amount', placeholder='Кол-во окон', min=1, max=999)}}
 		</div>
 		<div class="col-xs calc_stepper-col-third">
-			{{mixins.count( name='balcony-amount', placeholder='Кол-во балконов', min=1, max=999)}}
+			{{mixins.count( mod_class="balcony-amount hidden", name='balcony-amount', placeholder='Кол-во балконов', min=1, max=999)}}
 		</div>
 	</div>
 	<div class="step-actions">

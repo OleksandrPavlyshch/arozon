@@ -25,4 +25,18 @@
 
 focusANDEnterField();
 
+	$('.view-checkbox').on('change', (e) => {
+
+		let $this = $(e.currentTarget)
+			, targetData =  $this.data('target')
+			, $viewElement = $(targetData);
+
+			if( $this.prop('checked') !== false ){
+				$viewElement.slideDown();
+				return;
+			}
+
+			$viewElement.slideUp();
+	});
+
 })(jQuery);
