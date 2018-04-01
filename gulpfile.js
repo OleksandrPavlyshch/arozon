@@ -1,14 +1,11 @@
 const gulp = require('gulp')
-	, ghpages = require('gh-pages');
+	, deploy = require('gulp-gh-pages');
 
-gulp.task('publish', () => {
-	ghpages.publish('build', {
-		branch: 'gh-pages',
-		repo: 'https://github.com/OleksandrPavlyshch/arozon-dev.git'
-		}, (err) => {
-			console.log(err);
-			console.log('Publish');
-		});
+gulp.task('deploy', function () {
+	return gulp.src("./build/**/*")
+		.pipe(deploy({
+			// remoteUrl: 'https://github.com/OleksandrPavlyshch/arozon.git'
+		}));
 });
 
-require('require-dir')('./gulp-tasks/', {recurse: true});+
+require('require-dir')('./gulp-tasks/', {recurse: true});
