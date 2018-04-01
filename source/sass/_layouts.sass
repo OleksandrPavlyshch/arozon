@@ -1,6 +1,16 @@
 // default layout
 @import flexboxgrid
 
+$flexboxgrid-max-width: 1300
+
+// Set the number of columns you want to use on your layout.
+$grid-columns: 8
+// Set the gutter between columns.
+$gutter-width: 34px
+// Set a margin for the container sides.
+$outer-margin: 17px
+
+$flexboxgrid-breakpoints: sm 48em 46rem, 	md 62em 1300 1300
 //denug begin
 // .hero
 	// .container
@@ -20,20 +30,23 @@
 	// 	background-color: rgba($blue-400, .3)
 //denug end
 
-%extreme-left-col
-	margin-left: $base-padding * -1
-	padding-left: $base-padding * 2
-%extreme-right-col
-	margin-right: $base-padding * -1
-	padding-right: $base-padding * 2
 
-%row-extreme
-	margin-left: $base-padding * -2
-	margin-right: $base-padding * -2
-	> *:first-child
++min-screen($desctop)
+	
+	%extreme-left-col
+		margin-left: $base-padding * -1
 		padding-left: $base-padding * 2
-	> *:last-child
+	%extreme-right-col
+		margin-right: $base-padding * -1
 		padding-right: $base-padding * 2
+
+	%row-extreme
+		margin-left: $base-padding * -2
+		margin-right: $base-padding * -2
+		> *:first-child
+			padding-left: $base-padding * 2
+		> *:last-child
+			padding-right: $base-padding * 2
 
 .row-extreme
 	@extend .row
@@ -42,8 +55,29 @@
 .container
 	@extend .container-fluid
 	max-width: $desctop+px
+	+min-screen($desctop)
+		padding-right: 34px;
+		padding-left: 34px;
 
+.hide-on-tablet
+	display: block
+	+max-screen($desctop + 1)
+		display: none
 
+.hide-on-mobile
+	display: block
+	+max-screen($tablet + 1)
+		display: none
+
+.show-on-desctop
+	display: none
+	+min-screen($desctop + 1)
+		display: block
+
+.show-on-tablet
+	display: none
+	+min-screen($tablet + 1)
+		display: block
 
 .clearfix
 	*zoom: 1

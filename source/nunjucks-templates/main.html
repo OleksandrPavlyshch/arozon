@@ -8,14 +8,13 @@ active_menu_link: 1
 
 {% block content %}
 
-	{% include "elements/hero/main-top.html" %}
-	{% include "elements/main_calc/index.html" %}
-	
-	{% include "elements/services/index.html" %}
-
-	{% include "elements/hero/main-midle.html" %}
-	
-	{% include "elements/packages/index.html" %}
-	{% include "elements/clients-slider/index.html" %}
-
+	<div class="hide">{% include "elements/hero/main-top.html" %}
+		{% include "elements/main_calc/index.html" %}
+		
+		{% include "elements/services/index.html" %}
+		
+		{% include "elements/hero/main-midle.html" %}
+		
+		{% include "elements/packages/index.html" %}
+		{% include "elements/clients-slider/index.html" %}</div>
 {% endblock %}

@@ -1,18 +1,21 @@
 .hero
 	overflow: hidden
-	height: 100vh
-	min-height: 600px
 	max-height: 850px
 	background-size: cover
 	background-repeat: no-repeat
 	background-color: $blue-600
 	background-position: 50% 50%
+	color: $white
+	+min-screen($desctop)
+		height: 100vh
+		min-height: 600px
 	&.is-main-top
-		padding: 90px 0 180px
+		padding: 120px 0 37px
+		+min-screen($desctop)
+			padding: 90px 0 180px
 	&.is-main-midle
 		height: 744px
 		padding: 94px 0 330px
-	color: $white
 	.container,
 	&-content
 		height: 100%
@@ -22,12 +25,20 @@
 		line-height: 38px
 		margin-bottom: 20px
 	&-title
-		font-size: $fs-xxxm
-		line-height: 1.6
 		opacity: .8
+		font-size: $fs-xm
+		line-height: 30px
 		font-weight: 200
 		margin-bottom: 30px
+		+min-screen($desctop)
+			font-size: $fs-xxxm
+			line-height: 1.6
+	br
+		display: none
+		+min-screen($tablet)
+			display: block
 	&-text-wrap
-		@extend %extreme-left-col
-		border-left: 2px solid $green-300
-		padding-left: ($base-padding * 2) - 3
+		+min-screen($desctop)
+			@extend %extreme-left-col
+			padding-left: ($base-padding * 2) - 3
+			border-left: 2px solid $green-300

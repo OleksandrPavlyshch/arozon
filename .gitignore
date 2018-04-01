@@ -1,6 +1,7 @@
 /source/bower
 /node_modules
 /build
+.publish
 source/fonts/svgfont**
 source/nunjucks-templates/partials/_favicons.html
 source/sass/_svgfont**
