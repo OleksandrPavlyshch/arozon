@@ -235,11 +235,11 @@ p {
 }
 
 .inline-on-mobile {
-  display: inline-block;
+  display: inline;
 }
 
 .inline-on-tablet {
-  display: inline-block;
+  display: inline;
 }
 
 .text-blue {
@@ -2528,8 +2528,7 @@ select.select-custom {
 }
 
 .hero.is-main-midle {
-  height: 744px;
-  padding: 94px 0 330px;
+  padding: 60px 0 330px;
 }
 
 .hero .container, .hero-content {
@@ -2551,8 +2550,8 @@ select.select-custom {
   margin-bottom: 30px;
 }
 
-.hero br {
-  display: none;
+.hero .button {
+  width: 100%;
 }
 
 .main_calc {
@@ -2764,6 +2763,12 @@ select.select-custom {
   border-top: 1px solid #ebebeb;
 }
 
+@media screen and (min-width: 480px) {
+  .hero .button {
+    width: auto;
+  }
+}
+
 @media screen and (min-width: 500px) {
   .footer-contacts-top-item {
     display: inline-block;
@@ -2781,43 +2786,6 @@ select.select-custom {
 @media screen and (min-width: 520px) {
   .header .select_city {
     display: inline-block;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  .block-on-mobile {
-    display: inline-block;
-  }
-  .inline-on-mobile {
-    display: block;
-  }
-  .container {
-    padding-right: 44px;
-    padding-left: 44px;
-  }
-  .footer-i {
-    padding-top: 31px;
-  }
-  .footer-i:before {
-    left: 54px;
-    right: 54px;
-  }
-  .footer-contacts-top {
-    margin-bottom: 20px;
-  }
-  .footer-contacts-top-item + .footer-contacts-top-item:last-child {
-    display: inline-block;
-    border-left: 1px solid #999999;
-    margin-bottom: 0;
-  }
-  .footer-contacts-bot {
-    margin-bottom: 29px;
-  }
-  .share-buttons .jssocials-shares .jssocials-share + .jssocials-share {
-    margin-left: 11px;
-  }
-  .hero br {
-    display: block;
   }
 }
 
@@ -2961,6 +2929,46 @@ select.select-custom {
   }
 }
 
+@media screen and (min-width: 800px) {
+  .block-on-mobile {
+    display: inline;
+  }
+  .inline-on-mobile {
+    display: block;
+  }
+  .container {
+    padding-right: 44px;
+    padding-left: 44px;
+  }
+  .footer-i {
+    padding-top: 31px;
+  }
+  .footer-i:before {
+    left: 54px;
+    right: 54px;
+  }
+  .footer-contacts-top {
+    margin-bottom: 20px;
+  }
+  .footer-contacts-top-item + .footer-contacts-top-item:last-child {
+    display: inline-block;
+    border-left: 1px solid #999999;
+    margin-bottom: 0;
+  }
+  .footer-contacts-bot {
+    margin-bottom: 29px;
+  }
+  .share-buttons .jssocials-shares .jssocials-share + .jssocials-share {
+    margin-left: 11px;
+  }
+  .hero.is-main-top {
+    padding: 140px 0 96px;
+  }
+  .hero.is-main-midle {
+    padding: 60px 0 330px;
+  }
+}
+
 @media screen and (min-width: 801px) {
   .show-on-tablet {
     display: block;
@@ -2974,6 +2982,127 @@ select.select-custom {
   .datepicker .ui-datepicker-inline .ui-datepicker-title, .select_city-name, .main_calc-tab-link:before, .services-column-header {
     color: #33a3cc;
     background: none;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  h1 {
+    font-size: 48px;
+  }
+  .block-on-tablet {
+    display: inline;
+  }
+  .inline-on-tablet {
+    display: block;
+  }
+  .text-gradient, button.is-see-trough:hover span,
+  .button.is-see-trough:hover span, button.is-see-trough:active span,
+  .button.is-see-trough:active span, input:checked ~ .input_custom_image-text, .datepicker-popup .ui-datepicker-title,
+  .datepicker .ui-datepicker-inline .ui-datepicker-title, .select_city-name, .main_calc-tab-link:before, .services-column-header {
+    display: inline-block;
+    color: transparent;
+    background: -webkit-gradient(linear, right top, left top, from(#6bbd96), to(#33a3cc));
+    background: linear-gradient(to left, #6bbd96, #33a3cc);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .hero-text-wrap {
+    margin-left: -18px;
+    padding-left: 36px;
+  }
+  .row-extreme, .main_calc-tabs_row {
+    margin-left: -36px;
+    margin-right: -36px;
+  }
+  .row-extreme > *:first-child, .main_calc-tabs_row > *:first-child {
+    padding-left: 36px;
+  }
+  .row-extreme > *:last-child, .main_calc-tabs_row > *:last-child {
+    padding-right: 36px;
+  }
+  .footer-i {
+    padding-top: 40px;
+  }
+  .footer-i:before {
+    left: 36px;
+    right: 36px;
+  }
+  .footer-contacts {
+    text-align: left;
+  }
+  .footer-contacts-top {
+    margin-bottom: 7px;
+  }
+  .footer-contacts-bot {
+    margin-bottom: 50px;
+  }
+  .footer-share {
+    margin-bottom: 0;
+    text-align: right;
+    height: 0;
+  }
+  .footer-copy-dev {
+    text-align: left;
+  }
+  .footer-copy-owner {
+    text-align: right;
+  }
+  .share-buttons .jssocials-shares .jssocials-share + .jssocials-share {
+    margin-left: 14px;
+  }
+  .toggle-menu-button {
+    display: none;
+  }
+  .header_menu {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    display: block;
+    background-color: transparent;
+  }
+  .header_menu-list {
+    padding-top: 25px;
+    display: block;
+  }
+  .header_menu-item {
+    display: inline-block;
+  }
+  .header_menu-item + .header_menu-item {
+    margin-left: 30px;
+  }
+  .header_menu-link {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1.2px;
+  }
+  .header_menu-link:hover {
+    color: transparent;
+  }
+  .is_main_page .header_menu-link {
+    color: rgba(255, 255, 255, 0.7);
+    background: none;
+  }
+  .is_main_page .header_menu-link.active, .is_main_page .header_menu-link:hover {
+    color: #ffffff;
+  }
+  .hero {
+    height: 100vh;
+    min-height: 600px;
+  }
+  .hero.is-main-top {
+    padding: 90px 0 180px;
+  }
+  .hero.is-main-midle {
+    padding: 94px 0 330px;
+  }
+  .hero-title {
+    font-size: 22px;
+    line-height: 1.6;
+  }
+  .hero-text-wrap {
+    padding-left: 33px;
+    border-left: 2px solid #95ffcf;
   }
 }
 
@@ -3114,124 +3243,6 @@ select.select-custom {
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;
     order: 1;
-  }
-}
-
-@media screen and (min-width: 1300px) {
-  h1 {
-    font-size: 48px;
-  }
-  .block-on-tablet {
-    display: inline-block;
-  }
-  .inline-on-tablet {
-    display: block;
-  }
-  .text-gradient, button.is-see-trough:hover span,
-  .button.is-see-trough:hover span, button.is-see-trough:active span,
-  .button.is-see-trough:active span, input:checked ~ .input_custom_image-text, .datepicker-popup .ui-datepicker-title,
-  .datepicker .ui-datepicker-inline .ui-datepicker-title, .select_city-name, .main_calc-tab-link:before, .services-column-header {
-    display: inline-block;
-    color: transparent;
-    background: -webkit-gradient(linear, right top, left top, from(#6bbd96), to(#33a3cc));
-    background: linear-gradient(to left, #6bbd96, #33a3cc);
-    -webkit-background-clip: text;
-    background-clip: text;
-  }
-  .hero-text-wrap {
-    margin-left: -18px;
-    padding-left: 36px;
-  }
-  .row-extreme, .main_calc-tabs_row {
-    margin-left: -36px;
-    margin-right: -36px;
-  }
-  .row-extreme > *:first-child, .main_calc-tabs_row > *:first-child {
-    padding-left: 36px;
-  }
-  .row-extreme > *:last-child, .main_calc-tabs_row > *:last-child {
-    padding-right: 36px;
-  }
-  .footer-i {
-    padding-top: 40px;
-  }
-  .footer-i:before {
-    left: 36px;
-    right: 36px;
-  }
-  .footer-contacts {
-    text-align: left;
-  }
-  .footer-contacts-top {
-    margin-bottom: 7px;
-  }
-  .footer-contacts-bot {
-    margin-bottom: 50px;
-  }
-  .footer-share {
-    margin-bottom: 0;
-    text-align: right;
-    height: 0;
-  }
-  .footer-copy-dev {
-    text-align: left;
-  }
-  .footer-copy-owner {
-    text-align: right;
-  }
-  .share-buttons .jssocials-shares .jssocials-share + .jssocials-share {
-    margin-left: 14px;
-  }
-  .toggle-menu-button {
-    display: none;
-  }
-  .header_menu {
-    position: static;
-    width: auto;
-    height: auto;
-    overflow: auto;
-    display: block;
-    background-color: transparent;
-  }
-  .header_menu-list {
-    padding-top: 25px;
-    display: block;
-  }
-  .header_menu-item {
-    display: inline-block;
-  }
-  .header_menu-item + .header_menu-item {
-    margin-left: 30px;
-  }
-  .header_menu-link {
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 1.2px;
-  }
-  .header_menu-link:hover {
-    color: transparent;
-  }
-  .is_main_page .header_menu-link {
-    color: rgba(255, 255, 255, 0.7);
-    background: none;
-  }
-  .is_main_page .header_menu-link.active, .is_main_page .header_menu-link:hover {
-    color: #ffffff;
-  }
-  .hero {
-    height: 100vh;
-    min-height: 600px;
-  }
-  .hero.is-main-top {
-    padding: 90px 0 180px;
-  }
-  .hero-title {
-    font-size: 22px;
-    line-height: 1.6;
-  }
-  .hero-text-wrap {
-    padding-left: 33px;
-    border-left: 2px solid #95ffcf;
   }
 }
 
