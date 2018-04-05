@@ -1,3 +1,13 @@
+// (($) => {
+// 	$('.clients_slider .is-slick-slider').slick({
+// 		slidesToShow: 4,
+// 		slidesToScroll: 1,
+// 		autoplay: true,
+// 		dots: false,
+// 		prevArrow: false,
+// 		nextArrow: false
+// 	});
+// })(jQuery);
 (($) => {
 
 	$(function(){
@@ -84,16 +94,6 @@
 	});
 
 })(jQuery);
-// (($) => {
-// 	$('.clients_slider .is-slick-slider').slick({
-// 		slidesToShow: 4,
-// 		slidesToScroll: 1,
-// 		autoplay: true,
-// 		dots: false,
-// 		prevArrow: false,
-// 		nextArrow: false
-// 	});
-// })(jQuery);
 (($) => {
 
 	$('.clipboard_copy').tooltip({
@@ -147,11 +147,6 @@
 			{
 				share: 'twitter',
 				logo: 'img/twitter.svg',
-				label: '62'
-			},
-			{
-				share: 'telegram',
-				logo: 'img/telegram.svg',
 				label: '62'
 			}
 		]
@@ -507,8 +502,7 @@ let setTimepickerValue = ($timepicker, data) => {
 
 })(jQuery);
 
-
-
 (($) => {
 	$( "#calc-forms" ).tabs();
 })(jQuery);
+
