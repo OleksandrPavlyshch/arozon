@@ -65,8 +65,9 @@
 		align-items: center
 		justify-content: center
 		background-color: rgba($white, .8)
-		transition: height $t-n $tf-def $t-n
+		transition: height $t-n $tf-def
 		.is-menu-show &
+			transition: height $t-n $tf-def $t-n
 			height: 100vh
 		+min-screen($desctop)
 			position: static
@@ -92,7 +93,9 @@
 				margin-left: 30px
 
 		&-link
+			@extend %text-gradient
 			display: inline-block
+			color: $blue-700
 			text-decoration: none
 			text-transform: uppercase
 			font-weight: 700
@@ -100,26 +103,31 @@
 			line-height: 36px
 			letter-spacing: 1.4px
 			text-align: center
-			color: $blue-700
-			transition: all $t-n $tf-def
+			transition: color $t-n $tf-def
 			&.active
-				opacity: .7
+				color: transparent
 			+min-screen($desctop)
-				font-size: $fs-xs
-				line-height: $lh-ss
-				letter-spacing: 1.2px
-				color: $blue-700
-
-				.is_main_page &,
-				.is-scroll &
-					opacity: .7
-					color: $white
-				&.active,
 				&:hover
-					@extend .text-gradient
-					.is_main_page &,
-					.is-scroll &
-						opacity: 1
-						background: none
-						-webkit-background-clip: none
-						background-clip: none
+					color: transparent
+					// @extend .text-gradient
+			// +min-screen($desctop)
+				// opacity: .7
+			// +min-screen($desctop)
+			// 	font-size: $fs-xs
+			// 	line-height: $lh-ss
+			// 	letter-spacing: 1.2px
+			// 	color: $blue-700
+
+			// 	.is_main_page &,
+			// 	.is-scroll &
+			// 		opacity: .7
+			// 		color: $white
+			// 	&.active,
+			// 	&:hover
+					
+			// 		.is_main_page &,
+			// 		.is-scroll &
+			// 			opacity: 1
+			// 			background: none
+			// 			-webkit-background-clip: none
+			// 			background-clip: none
