@@ -31,10 +31,10 @@
 	});
 
 
-	// $(document).click( function(event){
-	// 	if( $(event.target).closest(menuClass).length )
-	// 		return;
-	// 	$body.removeClass(menuShowClass);
-	// });
+	$(document).click( function(event){
+		if( $(event.target).closest('.header').length )
+			return;
+		$body.removeClass(menuShowClass);
+	});
 
 })(jQuery);
