@@ -52,11 +52,6 @@
 				share: 'twitter',
 				logo: 'img/twitter.svg',
 				label: '62'
-			},
-			{
-				share: 'telegram',
-				logo: 'img/telegram.svg',
-				label: '62'
 			}
 		]
 	});
