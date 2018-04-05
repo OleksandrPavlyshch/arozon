@@ -3081,6 +3081,9 @@ select.select-custom {
     display: block;
     background-color: transparent;
   }
+  .is-menu-show .header_menu {
+    height: auto;
+  }
   .header_menu-list {
     padding-top: 25px;
     display: block;
