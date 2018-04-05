@@ -111,8 +111,16 @@ button,
 
 .share-buttons
 	.jssocials-shares
+		.jssocials-share + .jssocials-share
+			margin-left: 9px
+			+min-screen($tablet)
+				margin-left: 11px
+			+min-screen($desctop)
+				margin-left: 14px
 		.jssocials-share
-			margin: 0 0 0 14px
+			margin-top: 5px
+			margin-bottom: 0
+			margin-right: 0
 			border: 2px solid rgba($black, 0.15)
 			height: 48px
 			border-radius: 24px
@@ -152,3 +160,56 @@ button,
 				&:hover
 					box-shadow: 0 0 30px 0 rgba(#2ca5e0, .7)
 
+.toggle-menu-button
+	display: inline-block
+	height: 48px
+	width: 48px
+	background-color: $white
+	border-width: 2px
+	border-style: solid
+	border-color: $white-200
+	vertical-align: top
+	position: relative
+	margin-left: 12px
+	z-index: 200
+	transition: all $t-n $tf-def
+	margin-top: 12px
+	+min-screen($desctop)
+		display: none
+	.is-scroll &
+		margin-top: 5px
+		border-color: $white-200
+	.is_main_page &
+		border-color: $white
+	.is-menu-show &
+		transition: all $t-n $tf-def $t-n
+		transform: rotate(45deg)
+		background-color: $blue-700
+		border-color: rgba($black, .15)
+	&:before,
+	&:after
+		content: ''
+		position: absolute
+		top: 50%
+		left: 0
+		right: 0
+		margin: auto
+		margin-top: -1px
+		display: block
+		height: 2px
+		width: 18px
+		background-color: $green-400
+	&:before
+		box-shadow: 0 -5px $green-400, 0 5px $green-400
+		transition: box-shadow $t-n $tf-def $t-n, background-color $t-n $tf-def $t-n
+		.is-menu-show &
+			transition: box-shadow $t-n $tf-def
+			background-color: $white
+			box-shadow: 0 0px $green-400, 0 0 $green-400
+	&:after
+		transition: all $t-n $tf-def .3s
+		transition: transform $t-n $tf-def,  background-color $t-n $tf-def
+		.is-menu-show &
+			background-color: $white
+			transform: rotate(90deg)
+			transition: transform $t-n $tf-def $t-n, background-color $t-f $tf-def $t-n

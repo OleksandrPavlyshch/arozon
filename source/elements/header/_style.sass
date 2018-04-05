@@ -6,7 +6,13 @@
 	top: 60px
 	transform: translateY(-60px)
 	transition: transform .3s ease-in-out
+	&-right
+		text-align: right
+		font-size: 0
 	.select_city
+		display: none
+		+min-screen(520)
+			display: inline-block
 		margin-top: 12px
 	&.is-scroll
 		top: 0
@@ -19,7 +25,7 @@
 	.container
 		+clr
 	&_logo
-		padding: 21px 15px 19px
+		padding: 21px 13px 19px
 		display: inline-block
 		background-image: linear-gradient(to left, $green-400, $blue-400)
 		text-align: center
@@ -48,34 +54,72 @@
 
 
 	&_menu
+		overflow: hidden
+		position: fixed
+		height: 0
+		left: 0
+		top: 0
+		width: 100%
+		z-index: 150
+		display: flex
+		align-items: center
+		justify-content: center
+		background-color: rgba($white, .8)
+		transition: height $t-n $tf-def $t-n
+		.is-menu-show &
+			height: 100vh
+		+min-screen($desctop)
+			position: static
+			width: auto
+			height: auto
+			overflow: auto
+			display: block
+			background-color: transparent
 		&-list
-			padding-top: 25px
+			display: inline-block
+			+min-screen($desctop)
+				padding-top: 25px
+				display: block
 			.is-scroll &
 				padding-top: 20px
 		&-item
-			display: inline-block
-			font-weight: 700
-			font-size: $fs-xs
-			line-height: $lh-ss
-			letter-spacing: 1.2px
-			color: $blue-700
-			.is_main_page &,
-			.is-scroll &
-				opacity: .7
-				color: $white
-			&.active,
-			&:hover
-				@extend .text-gradient
-				.is_main_page &,
-				.is-scroll &
-					opacity: 1
-					background: none
-					-webkit-background-clip: none
-					background-clip: none
+			text-align: center
+			display: block
+			+min-screen($desctop)
+				display: inline-block
+		+min-screen($desctop)
+			&-item + &-item
+				margin-left: 30px
 
-		&-item + &-item
-			margin-left: 30px
 		&-link
+			display: inline-block
 			text-decoration: none
 			text-transform: uppercase
-			color: inherit
+			font-weight: 700
+			font-size: $fs-s
+			line-height: 36px
+			letter-spacing: 1.4px
+			text-align: center
+			color: $blue-700
+			transition: all $t-n $tf-def
+			&.active
+				opacity: .7
+			+min-screen($desctop)
+				font-size: $fs-xs
+				line-height: $lh-ss
+				letter-spacing: 1.2px
+				color: $blue-700
+
+				.is_main_page &,
+				.is-scroll &
+					opacity: .7
+					color: $white
+				&.active,
+				&:hover
+					@extend .text-gradient
+					.is_main_page &,
+					.is-scroll &
+						opacity: 1
+						background: none
+						-webkit-background-clip: none
+						background-clip: none

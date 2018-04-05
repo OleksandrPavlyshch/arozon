@@ -1,47 +1,99 @@
 .footer
 	// height: 200px
-	margin-top: 20px
-	padding-top: 40px
-	padding-bottom: 45px
-	position: relative
 	color: $grey-500
-		
-	&:before
-		content: ''
-		left: $base-padding * 2
-		right: $base-padding * 2
-		position: absolute
-		top: 0
-		height: 2px
-		background-image: linear-gradient(to left, $green-400, $blue-400)
+	text-align: center
+	&-i
+		margin-top: 20px
+		padding-top: 37px
+		padding-bottom: 45px
+		position: relative
+		+min-screen($tablet)
+			padding-top: 31px
+		+min-screen($desctop)
+			padding-top: 40px
+		&:before
+			content: ''
+			left: 24px
+			right: 24px
+			position: absolute
+			top: 0
+			height: 2px
+			background-image: linear-gradient(to left, $green-400, $blue-400)
+			+min-screen($tablet)
+				left: $base-padding * 3
+				right: $base-padding * 3
+			+min-screen($desctop)
+				left: $base-padding * 2
+				right: $base-padding * 2
 	b
 		font-weight: normal
 		color: $black-300
 	&-contacts
 		font-style: normal
-		margin-bottom: 50px
+		+min-screen($desctop)
+			text-align: left
 		&-top
 			font-size: $fs-xm
 			line-height: 30px
-			height: 30px
-			margin-bottom: 7px
+			margin-bottom: 20px
+			+min-screen($tablet)
+				margin-bottom: 20px
+			+min-screen($desctop)
+				margin-bottom: 7px
 			&-item
-				display: inline-block
+				display: block
 				padding-right: 6px
+				+min-screen(500)
+					display: inline-block
 				& + &
-					border-left: 1px solid $grey-500
 					padding-left: 10px
+					+min-screen(500)
+						border-left: 1px solid $grey-500
+						&:last-child
+							display: block
+							border-left: none
+							margin-top: 8px
+					+min-screen($tablet)
+						&:last-child
+							display: inline-block
+							border-left: 1px solid $grey-500
+							margin-bottom: 0
 		&-bot
 			font-size: $fs-s
 			line-height: $lh-sm
+			margin-bottom: 24px
+			+min-screen($tablet)
+				margin-bottom: 29px
+			+min-screen($desctop)
+				margin-bottom: 50px
 	&-share
-		text-align: right
-		padding-top: 5px
+		// padding-top: 5px
+		text-align: center
+		margin-bottom: 21px
+		+min-screen($desctop)
+			margin-bottom: 0
+			text-align: right
+			height: 0
 		img
 			display: inline-block
 	&-copy
 		font-size: $fs-xs
+		text-align: center
+		line-height: $lh-sm
+		+screen($tablet, $desctop)
+			line-height: 1
 		a
 			text-decoration: none
+		&-dev
+			+screen($tablet, $desctop)
+				display: inline-block
+				flex-basis: auto
+			+min-screen($desctop)
+				text-align: left
 		&-owner
-			text-align: right
+			+screen($tablet, $desctop)
+				display: inline-block
+				flex-basis: auto
+				border-left: 1px solid $grey-500
+			+min-screen($desctop)
+				text-align: right

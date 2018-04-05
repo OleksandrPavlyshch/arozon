@@ -38,6 +38,26 @@ h6
 p
 	font-size: $fs-m
 
+.block-on-mobile
+	display: block
+	+min-screen($tablet)
+		display: inline-block
+
+.block-on-tablet
+	display: block
+	+min-screen($desctop)
+		display: inline-block
+
+.inline-on-mobile
+	display: inline-block
+	+min-screen($tablet)
+		display: block
+
+.inline-on-tablet
+	display: inline-block
+	+min-screen($desctop)
+		display: block
+
 .text-blue
 	color: $blue-500
 
@@ -48,7 +68,7 @@ p
 	cursor: pointer
 	display: inline-block
 
-.text-gradient
+%text-gradient
 	display: inline-block
 	color: transparent
 	background: linear-gradient(to left, $green-400, $blue-400)
@@ -57,6 +77,20 @@ p
 	+ie-screen
 		color: $blue-400
 		background: none
+
+.text-gradient
+	@extend %text-gradient
+
++min-screen($desctop)
+	.text-gradient
+		display: inline-block
+		color: transparent
+		background: linear-gradient(to left, $green-400, $blue-400)
+		-webkit-background-clip: text
+		background-clip: text
+		+ie-screen
+			color: $blue-400
+			background: none
 
 .ui-tooltip
 	color: white
