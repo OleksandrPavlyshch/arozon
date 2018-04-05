@@ -92,7 +92,7 @@
 	</div>
 {% endmacro %}
 
-{% macro count(value='1', name='count', min=1, max=999, placeholder='Кол-во комнат', mod_class) %}
+{% macro count(value=1, name='count', min=1, max=999, placeholder='Кол-во комнат', mod_class) %}
 	<div class="input_box wrap-count {{mod_class}}">
 		<span class="input_box-placeholder">{{placeholder}}</span>
 		<input name="{{name}}" min="{{min}}" max="{{max}}" class="count-input input-base" value="{{value}}" readonly tabindex="0">

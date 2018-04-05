@@ -16,9 +16,12 @@
 		{{mixins.timepicker()}}
 	</div>
 	<div class="col-sm-1">
-		{{mixins.count()}}
+		{{mixins.count(placeholder="Кол-во кв. метров", value=70, min=20)}}
 	</div>
-	<div class="col-sm-2">
-		<button data-fancybox data-src="#cost_popup" class="button is-blue is-not-round is-wide-button">посчитать стоимость</button>
+	<div class="col-sm-1">
+		{{mixins.count(placeholder="Кол-во санузлов")}}
+	</div>
+	<div class="col-sm-1">
+		<button data-fancybox data-src="#cost_popup" class="button is-blue is-not-round is-wide-button">посчитать</button>
 	</div>
 </div>
