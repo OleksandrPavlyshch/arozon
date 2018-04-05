@@ -5,21 +5,54 @@
 			margin-top: 50px
 	&-column
 		overflow: hidden
+		padding: 60px 24px 0
+		text-align: center
+		+min-screen($tablet)
+			text-align: left
+		&-top
+			overflow: hidden
+			margin-bottom: 18px
 		&-image
 			max-width: 120px
+			margin: 0 auto
+			display: block
 			height: auto
-			float: left
+			+min-screen($tablet)
+				display: inline-block
+				float: left
+				// margin-right: $base-padding * 2
+			// +min-screen($desctop)
 		&-content
-			margin-left: 120 + ($base-padding * 2)
-			padding-top: 38px
+			text-align: center
+			+min-screen($tablet)
+				text-align: left
 		&-header
 			@extend .text-gradient
-			line-height: 1.2
-			margin-bottom: 44px
+			vertical-align: top
+			font-size: $fs-xxm
+			line-height: 1.5
+			margin-bottom: 35px
+			+min-screen($tablet)
+				width: calc( 100% - 120px - #{($base-padding * 2)} )
+				// margin-left: 120 + ($base-padding * 2)
+				padding-top: 38px
+				margin-left: 36px
+				+min-screen($desctop)
+					line-height: 1.2
+					font-size: $fs-l
 		&-list
 			font-size: $fs-xm
 			color: $grey-600
 			line-height: $lh-sm
+
+			+min-screen($desctop)
+				margin-left: 120px + ($base-padding * 2)
+
 			&-item
 				padding: 8px 0 15px
+				font-size: $fs-s
 				border-top: 1px solid $white-200
+				+min-screen($tablet)
+					font-size: $fs-m
+				+min-screen($desctop)
+					font-size: $fs-xm
