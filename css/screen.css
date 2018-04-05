@@ -258,7 +258,7 @@ p {
 .text-gradient, button.is-see-trough:hover span,
 .button.is-see-trough:hover span, button.is-see-trough:active span,
 .button.is-see-trough:active span, input:checked ~ .input_custom_image-text, .datepicker-popup .ui-datepicker-title,
-.datepicker .ui-datepicker-inline .ui-datepicker-title, .select_city-name, .header_menu-link.active, .header_menu-link:hover, .main_calc-tab-link:before, .services-column-header {
+.datepicker .ui-datepicker-inline .ui-datepicker-title, .select_city-name, .main_calc-tab-link:before, .services-column-header, .header_menu-link {
   display: inline-block;
   color: transparent;
   background: -webkit-gradient(linear, right top, left top, from(#6bbd96), to(#33a3cc));
@@ -2225,6 +2225,10 @@ select.select-custom {
   border-color: #0286cd;
 }
 
+.is-scroll .select_city .current .select_city-name {
+  color: #95ffcf;
+}
+
 .select_city:after {
   display: none;
 }
@@ -2467,16 +2471,19 @@ select.select-custom {
   -ms-flex-pack: center;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.8);
-  -webkit-transition: height 0.3s linear 0.3s;
-  transition: height 0.3s linear 0.3s;
+  -webkit-transition: height 0.3s linear;
+  transition: height 0.3s linear;
 }
 
 .is-menu-show .header_menu {
+  -webkit-transition: height 0.3s linear 0.3s;
+  transition: height 0.3s linear 0.3s;
   height: 100vh;
 }
 
 .header_menu-list {
   display: inline-block;
+  overflow: hidden;
 }
 
 .is-scroll .header_menu-list {
@@ -2490,6 +2497,7 @@ select.select-custom {
 
 .header_menu-link {
   display: inline-block;
+  color: #005a95;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
@@ -2497,13 +2505,12 @@ select.select-custom {
   line-height: 36px;
   letter-spacing: 1.4px;
   text-align: center;
-  color: #005a95;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
+  -webkit-transition: color 0.3s linear;
+  transition: color 0.3s linear;
 }
 
 .header_menu-link.active {
-  opacity: .7;
+  color: transparent;
 }
 
 .hero {
@@ -2964,7 +2971,7 @@ select.select-custom {
   .text-gradient, button.is-see-trough:hover span,
   .button.is-see-trough:hover span, button.is-see-trough:active span,
   .button.is-see-trough:active span, input:checked ~ .input_custom_image-text, .datepicker-popup .ui-datepicker-title,
-  .datepicker .ui-datepicker-inline .ui-datepicker-title, .select_city-name, .header_menu-link.active, .header_menu-link:hover, .main_calc-tab-link:before, .services-column-header {
+  .datepicker .ui-datepicker-inline .ui-datepicker-title, .select_city-name, .main_calc-tab-link:before, .services-column-header {
     color: #33a3cc;
     background: none;
   }
@@ -3123,7 +3130,7 @@ select.select-custom {
   .text-gradient, button.is-see-trough:hover span,
   .button.is-see-trough:hover span, button.is-see-trough:active span,
   .button.is-see-trough:active span, input:checked ~ .input_custom_image-text, .datepicker-popup .ui-datepicker-title,
-  .datepicker .ui-datepicker-inline .ui-datepicker-title, .select_city-name, .header_menu-link.active, .header_menu-link:hover, .main_calc-tab-link:before, .services-column-header {
+  .datepicker .ui-datepicker-inline .ui-datepicker-title, .select_city-name, .main_calc-tab-link:before, .services-column-header {
     display: inline-block;
     color: transparent;
     background: -webkit-gradient(linear, right top, left top, from(#6bbd96), to(#33a3cc));
@@ -3200,19 +3207,16 @@ select.select-custom {
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 1.2px;
-    color: #005a95;
   }
-  .is_main_page .header_menu-link,
-  .is-scroll .header_menu-link {
-    opacity: .7;
-    color: #ffffff;
+  .header_menu-link:hover {
+    color: transparent;
   }
-  .is_main_page .header_menu-link.active,
-  .is-scroll .header_menu-link.active, .is_main_page .header_menu-link:hover,
-  .is-scroll .header_menu-link:hover {
-    opacity: 1;
+  .is_main_page .header_menu-link {
+    color: rgba(255, 255, 255, 0.7);
     background: none;
-    background-clip: none;
+  }
+  .is_main_page .header_menu-link.active, .is_main_page .header_menu-link:hover {
+    color: #ffffff;
   }
   .hero {
     height: 100vh;
@@ -3270,7 +3274,7 @@ select.select-custom {
   .text-gradient, button.is-see-trough:hover span,
   .button.is-see-trough:hover span, button.is-see-trough:active span,
   .button.is-see-trough:active span, input:checked ~ .input_custom_image-text, .datepicker-popup .ui-datepicker-title,
-  .datepicker .ui-datepicker-inline .ui-datepicker-title, .select_city-name, .header_menu-link.active, .header_menu-link:hover, .main_calc-tab-link:before, .services-column-header {
+  .datepicker .ui-datepicker-inline .ui-datepicker-title, .select_city-name, .main_calc-tab-link:before, .services-column-header, .header_menu-link {
     color: #33a3cc;
     background: none;
   }
