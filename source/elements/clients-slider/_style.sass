@@ -1,7 +1,10 @@
 .clients_slider
+	display: none
 	padding: 36px 0 22px
 	min-height: 130px
 	overflow: hidden
+	+min-screen($desctop)
+		display: block
 	&-row
 		float: left
 		width: calc( 100% + #{$base-padding} * 4 )

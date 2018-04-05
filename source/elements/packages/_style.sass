@@ -5,6 +5,9 @@
 		border-radius: 10px
 		position: relative
 		margin-bottom: 32px
+		padding: 0 12px
+		+min-screen($tablet)
+			padding: 0
 		&:before
 			content: ''
 			z-index: 0
@@ -17,22 +20,41 @@
 		& > div:last-child
 			border-right-width: 1px
 	&-column
-		border-radius: 10px
 		background-color: $white
 		border: solid 1px $white-200
-		border-right-width: 0
 		position: relative
 		z-index: 1
 		padding-top: 42px
 		text-align: center
 		padding-bottom: 44px
-		will-change: transform
-		transition: transform .2s linear
-		&:hover
-			transform: translateY(-2%)
-			z-index: 10
+		&:first-child
+			border-radius: 10px 10px 0 0
+		&:last-child
+			border-radius: 0 0 10px 10px
 		& + &
-			border-left-style: dashed
+			border-top-width: 0
+		+min-screen($tablet)
+			&:nth-child(n+3)
+				border-radius: 0 0 10px 10px
+				border-top-width: 0
+			&:nth-child(-n+2)
+				border-radius: 10px 10px 0 0
+				border-top-width: 1px
+			&:nth-child(2),
+			&:nth-child(4)
+				border-left-width: 0
+		+min-screen($desctop)
+			border-top-width: 1px !important
+			border-right-width: 0
+			border-radius: 10px !important
+			will-change: transform
+			transition: transform .2s linear
+			&:hover
+				transform: translateY(-2%)
+				z-index: 10
+			& + &
+				border-left-style: dashed !important
+				border-left-width: 1px
 	&-img
 		display: block
 		margin: 0 auto 32px
