@@ -4,7 +4,9 @@
 		padding: 0 8px 0 0 !important
 		margin: 0
 		&_row
-			@extend %row-extreme
+			margin-left: $base-padding * -1
+			margin-right: $base-padding * -1
+			// @extend %row-extreme
 	&-tab
 		text-align: center
 		border-radius: 10px 10px 0 0
@@ -52,7 +54,10 @@
 			&:before
 				opacity: 1
 	&-form
-		margin: 0 ($base-padding * -2)
+		// margin: 0 ($base-padding * -2) !important
+		// @extend %row-extreme
+		margin-right: $base-padding * -2 !important
+		margin-left: $base-padding * -2 !important
 		background-color: $white
 		border-radius: 10px 10px 0 0
 		margin-top: -20px
