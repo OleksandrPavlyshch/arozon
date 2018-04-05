@@ -78,6 +78,7 @@
 			background-color: transparent
 		&-list
 			display: inline-block
+			overflow: hidden
 			+min-screen($desctop)
 				padding-top: 25px
 				display: block
@@ -107,27 +108,15 @@
 			&.active
 				color: transparent
 			+min-screen($desctop)
+				font-size: $fs-xs
+				line-height: $lh-ss
+				letter-spacing: 1.2px
 				&:hover
 					color: transparent
-					// @extend .text-gradient
-			// +min-screen($desctop)
-				// opacity: .7
-			// +min-screen($desctop)
-			// 	font-size: $fs-xs
-			// 	line-height: $lh-ss
-			// 	letter-spacing: 1.2px
-			// 	color: $blue-700
-
-			// 	.is_main_page &,
-			// 	.is-scroll &
-			// 		opacity: .7
-			// 		color: $white
-			// 	&.active,
-			// 	&:hover
-					
-			// 		.is_main_page &,
-			// 		.is-scroll &
-			// 			opacity: 1
-			// 			background: none
-			// 			-webkit-background-clip: none
-			// 			background-clip: none
+				.is-scroll &
+				.is_main_page &
+					color: rgba($white, .7)
+					background: none
+					&.active,
+					&:hover
+						color: $white

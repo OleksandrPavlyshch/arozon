@@ -6,16 +6,23 @@
 	background-color: $blue-600
 	background-position: 50% 50%
 	color: $white
+	// +min-screen($tablet)
+	// 	background-position: 50% 50%
 	+min-screen($desctop)
 		height: 100vh
 		min-height: 600px
 	&.is-main-top
 		padding: 120px 0 37px
+		+min-screen($tablet)
+			padding: 140px 0 96px
 		+min-screen($desctop)
 			padding: 90px 0 180px
 	&.is-main-midle
-		height: 744px
-		padding: 94px 0 330px
+		padding: 60px 0 330px
+		+min-screen($tablet)
+			padding: 60px 0 330px
+		+min-screen($desctop)
+			padding: 94px 0 330px
 	.container,
 	&-content
 		height: 100%
@@ -33,12 +40,12 @@
 		+min-screen($desctop)
 			font-size: $fs-xxxm
 			line-height: 1.6
-	br
-		display: none
-		+min-screen($tablet)
-			display: block
 	&-text-wrap
 		+min-screen($desctop)
 			@extend %extreme-left-col
 			padding-left: ($base-padding * 2) - 3
 			border-left: 2px solid $green-300
+	.button
+		width: 100%
+		+min-screen($mobile-md)
+			width: auto
