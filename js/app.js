@@ -1,13 +1,3 @@
-// (($) => {
-// 	$('.clients_slider .is-slick-slider').slick({
-// 		slidesToShow: 4,
-// 		slidesToScroll: 1,
-// 		autoplay: true,
-// 		dots: false,
-// 		prevArrow: false,
-// 		nextArrow: false
-// 	});
-// })(jQuery);
 (($) => {
 
 	$(function(){
@@ -78,8 +68,8 @@
 							, divTop = $stepper.offset().top - 90
 							, translateY = top - divTop;
 
-						console.log('test');
-						console.log(translateY);
+						// console.log('test');
+						// console.log(translateY);
 					if (divTop < top) {
 						$calcStepperBlock.css({'transform': 'translateY(' + translateY + 'px)'});
 					} else {
@@ -94,6 +84,16 @@
 	});
 
 })(jQuery);
+// (($) => {
+// 	$('.clients_slider .is-slick-slider').slick({
+// 		slidesToShow: 4,
+// 		slidesToScroll: 1,
+// 		autoplay: true,
+// 		dots: false,
+// 		prevArrow: false,
+// 		nextArrow: false
+// 	});
+// })(jQuery);
 (($) => {
 
 	$('.clipboard_copy').tooltip({
@@ -205,6 +205,46 @@
 
 })(jQuery);
 
+(($) => {
+	let initHeader = () => {
+		$(window).scroll(function() {
+			let _top = parseInt($(window).height() / 2)
+				, _scroll = parseInt($(window).height() / 3);
+
+			if ($(window).scrollTop() >= _scroll ) {
+				$('#header').addClass('is-scroll');
+				$('.select_city').removeClass('open');
+			} else {
+				$('#header').removeClass('is-scroll');
+			}
+
+			if ($(window).scrollTop() >= _top) {
+				$('#header').addClass('is-fixed');
+			} else {
+				$('#header').removeClass('is-fixed');
+			}
+		});
+	};
+
+	initHeader();
+
+	//init menu open
+	let $body = $('body')
+		, $menuButton = $('.toggle-menu-button')
+		, menuShowClass = 'is-menu-show';
+
+	$menuButton.on('click', function() {
+		$body.toggleClass(menuShowClass);
+	});
+
+
+	$(document).click( function(event){
+		if( $(event.target).closest('.header').length )
+			return;
+		$body.removeClass(menuShowClass);
+	});
+
+})(jQuery);
 // (($) => {
 
 // 	$('body').on('mousemove', '.button.is-bg-move, button.is-bg-move', (e) => {
@@ -460,46 +500,6 @@ let setTimepickerValue = ($timepicker, data) => {
 })(jQuery);
 (($) => {
 	$('.select-custom').niceSelect();
-})(jQuery);
-(($) => {
-	let initHeader = () => {
-		$(window).scroll(function() {
-			let _top = parseInt($(window).height() / 2)
-				, _scroll = parseInt($(window).height() / 3);
-
-			if ($(window).scrollTop() >= _scroll ) {
-				$('#header').addClass('is-scroll');
-				$('.select_city').removeClass('open');
-			} else {
-				$('#header').removeClass('is-scroll');
-			}
-
-			if ($(window).scrollTop() >= _top) {
-				$('#header').addClass('is-fixed');
-			} else {
-				$('#header').removeClass('is-fixed');
-			}
-		});
-	};
-
-	initHeader();
-
-	//init menu open
-	let $body = $('body')
-		, $menuButton = $('.toggle-menu-button')
-		, menuShowClass = 'is-menu-show';
-
-	$menuButton.on('click', function() {
-		$body.toggleClass(menuShowClass);
-	});
-
-
-	$(document).click( function(event){
-		if( $(event.target).closest('.header').length )
-			return;
-		$body.removeClass(menuShowClass);
-	});
-
 })(jQuery);
 
 (($) => {
