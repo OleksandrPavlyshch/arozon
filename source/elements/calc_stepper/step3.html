@@ -1,25 +1,25 @@
-<div class="step-title">Где и когда будем наводить чистату и порядок?</div>
+<div class="step-title">Где и когда будем наводить чистоту и порядок?</div>
 <div class="step-content">
 	<div class="row calc_stepper-form_row">
-		<div class="col-xs calc_stepper-col-md">
-			{{mixins.input_field( mod_class="prefilled", value="Киев", name='city', placeholder='', mod_prop='disabled')}}
+		<div class="first-field-wrap">
+			{{mixins.input_field( mod_class="prefilled", value="Киев", name='city', placeholder='', mod_prop='readonly')}}
 		</div>
-		<div class="col-xs calc_stepper-col-lg">
-			{{mixins.input_field( name='street', placeholder='Улица', mod_prop='required')}}
+		<div class="calc_stepper-col-lg">
+			{{mixins.input_field( name='street', placeholder='Улица')}}
 		</div>
-		<div class="col-xs calc_stepper-col-sm">
-			{{mixins.input_field( name='building', placeholder='Дом', mod_prop='required')}}
+		<div class="calc_stepper-col-sm">
+			{{mixins.input_field( name='building', placeholder='Дом')}}
 		</div>
-		<div class="col-xs calc_stepper-col-sm">
-			{{mixins.input_field( name='flat', placeholder='Квартира', mod_prop='required')}}
+		<div class="calc_stepper-col-sm">
+			{{mixins.input_field( name='flat', placeholder='Квартира')}}
 		</div>
 	</div>
 	<div class="row calc_stepper-form_row">
-		<div class="col-xs calc_stepper-col-md">
-			{{mixins.datepicker( mod_prop='required' )}}
+		<div class="calc_stepper-col-md">
+			{{mixins.datepicker()}}
 		</div>
-		<div class="col-xs calc_stepper-col-sm">
-			{{mixins.timepicker( mod_prop='required' )}}
+		<div class="calc_stepper-col-sm">
+			{{mixins.timepicker()}}
 		</div>
 	</div>
 	<div class="step-actions">

@@ -173,6 +173,7 @@ input[type=number]::-webkit-outer-spin-button
 	cursor: pointer
 	position: relative
 	line-height: $lh-sm
+	font-size: $fs-m
 	&.is_custom_swich
 		padding-left: 61px
 	input
@@ -254,59 +255,76 @@ input[type=number]::-webkit-outer-spin-button
 				left: calc(100% - 16px)
 
 .input_custom_image
-	text-align: center
-	vertical-align: top
-	padding: 7px 15px
-	margin: 2px 0 5px
-	display: inline-block
-	cursor: pointer
-	position: relative
-	max-width: 233px
-	user-select: none
-	& + &
-		border-left: 1px solid $white-200
-	input
-		position: absolute
-		z-index: -1
-		opacity: 0
-	&-illustration
-		+gray
-		display: block
-		margin: 0 auto 17px
-		max-width: 120px
-		max-height: 140px
-		transition: filter $t-n $tf-prt
-		will-change: filter
-		touch-action: none
-		pointer-events: none
-		input:checked ~ &
-			+gray-zero
-	&-text
-		position: relative
-		display: inline-block
+	@extend .input_custom
+	@extend .is_custom_radio
+	width: 50%
+	// margin-bottom: 36px
+
+	+min-screen($desctop)
+		width: auto
 		text-align: center
-		line-height: $lh-sm
-		font-size: $fs-m
-		color: $grey-500
-		margin: 0 15px
-		letter-spacing: -0.02em
-		&:after
-			content: ''
+		vertical-align: top
+		padding: 7px 15px
+		margin: 2px 0 5px
+		display: inline-block
+		cursor: pointer
+		position: relative
+		max-width: 233px
+		user-select: none
+		& + &
+			border-left: 1px solid $white-200
+		input
 			position: absolute
-			right: -21px
-			top: 3px
-			width: 10px
-			height: 17px
+			z-index: -1
 			opacity: 0
-			transition: all $t-n $tf-prt
-			transform: scale(.5) rotate(45deg)
-			border: solid $green-400
-			border-width: 0 2px 2px 0
-		input:checked ~ &
-			@extend .text-gradient
+		.input_custom-indicator
+			display: none
+
+	&-illustration
+		display: none
+		+min-screen($desctop)
+			+gray
+			display: block
+			margin: 0 auto 17px
+			max-width: 120px
+			max-height: 140px
+			transition: filter $t-n $tf-prt
+			will-change: filter
+			touch-action: none
+			pointer-events: none
+			input:checked ~ &
+				+gray-zero
+	&-text
+		+min-screen($tablet)
+			padding-left: 28px
+		+min-screen($desctop)
+			padding-left: 0
+			position: relative
+			display: inline-block
+			text-align: center
+			line-height: $lh-sm
+			font-size: $fs-m
+			color: $grey-500
+			margin: 0 15px
+			letter-spacing: -0.02em
+		+min-screen($desctop)
 			&:after
-				opacity: 1
-				transform: scale(1) rotate(45deg)
+				content: ''
+				position: absolute
+				right: -21px
+				top: 3px
+				width: 10px
+				height: 17px
+				opacity: 0
+				transition: all $t-n $tf-prt
+				transform: scale(.5) rotate(45deg)
+				border: solid $green-400
+				border-width: 0 2px 2px 0
+			input:checked ~ &
+				@extend .text-gradient
+				&:after
+					opacity: 1
+					transform: scale(1) rotate(45deg)
 
 
 textarea

@@ -1,25 +1,37 @@
 <div class="step-title">Ваши контакты</div>
 <div class="step-content">
 	<div class="row calc_stepper-form_row">
-		<div class="col-xs">
+		<div class="calc_stepper-sum_block-row col-xs-8 col-sm-8 calc_stepper-form_row">
+			<p class="calc_stepper-sum_block-title"> Приблизительная стоимость уборки Вашего объекта</p>
+			<div>
+				<h2 class="text-gradient calc_stepper-sum_block-header"> 32334
+					<sup class="calc_stepper-sum_block-header-handreds">.00</sup>
+					<sub class="calc_stepper-sum_block-header-curency">грн.</sub>
+				</h2>
+			</div>
+			<p class="calc_stepper-sum_block-bot"> Точную оценку может дать только наш специалист находясь на Вашем объекте</p>
+		</div>
+
+		<div class="col-xs-6 col-sm-4 col-md">
 			{{mixins.input_field( name='name', placeholder='Имя', mod_prop='required')}}
 		</div>
-		<div class="col-xs">
-			{{mixins.input_field( type="tel", name='phone', placeholder='Номер телефона', mod_prop='required')}}
+		<div class="col-xs-6 col-sm-4 col-md">
+			{{mixins.input_field( name='phone', placeholder='Номер телефона', mod_prop='required')}}
 		</div>
-		<div class="col-xs">
-			{{mixins.input_field( type="email", name='email', placeholder='Email', mod_prop='required')}}
+		<div class="col-xs-6 col-sm-4 col-md">
+			{{mixins.input_field( name='email', placeholder='Email', mod_prop='required')}}
 		</div>
 	</div>
 	<div class="row calc_stepper-form_row">
 		<div class="col-xs">
 			<label class="input_custom is_custom_swich">Я даю согласие на обработку персональных данных
-				<input type="checkbox" tabindex="0"/>
+				<input type="checkbox" tabindex="0" required="required" />
 				<div class="input_custom-indicator"></div>
 			</label>
 		</div>
 	</div>
 	<div class="step-actions">
-		<button class="button is-blue next-step" type="submit">далее</button>
+		<!-- <button class="button is-blue next-step">далее</button> -->
+		<button class="button is-blue next-step" type="submit">заказать</button>
 	</div>
 </div>

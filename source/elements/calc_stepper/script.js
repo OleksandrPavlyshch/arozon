@@ -68,8 +68,8 @@
 							, divTop = $stepper.offset().top - 90
 							, translateY = top - divTop;
 
-						console.log('test');
-						console.log(translateY);
+						// console.log('test');
+						// console.log(translateY);
 					if (divTop < top) {
 						$calcStepperBlock.css({'transform': 'translateY(' + translateY + 'px)'});
 					} else {

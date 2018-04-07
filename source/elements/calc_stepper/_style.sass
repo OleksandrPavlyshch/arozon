@@ -74,22 +74,104 @@ ul.stepper
 
 .calc_stepper
 	padding-bottom: 80px
-	&-form_row + &-form_row
-		margin-top: 44px
-		.input_box
+	.input_custom
+		margin-top: 36px
+		+min-screen($desctop)
 			margin-top: 0
-	&-col-third
-		max-width: 228px
-	&-col-md
-		max-width: 29%
-	&-col-sm
-		max-width: 17.5%
+		& + .input_box
+			margin-top: 36px
+	+min-screen($desctop)
+		&-form_row + &-form_row
+			margin-top: 36px
+		&-col-third
+			max-width: 228px
+	&-col-md,
+	&-col-sm,
 	&-col-lg
-		max-width: 33.5%
-	div.wrap-count
-		max-width: 156px + 34
+		padding: 0 18px
+		width: 100%
+		margin-bottom: 16px
+		+min-screen($tablet)
+			margin-bottom: 0
+	&-col-md
+		width: 80%
+		input[type="text"]
+			width: 100%
+		+min-screen($tablet)
+			width: 276px + 36
+			input[type="text"]
+				width: 100%
+		+min-screen($desctop)
+			max-width: 29%
+	&-col-sm
+		width: 80%
+		input[type="text"]
+			width: 100%
+		+min-screen($tablet)
+			max-width: 156px
+		+min-screen($desctop)
+			max-width: 17.5%
+	&-col-lg
+		width: 80%
+		input[type="text"]
+			width: 100%
+		+min-screen($tablet)
+			width: 276px + 36
+			input[type="text"]
+				width: 100%
+		+min-screen($desctop)
+			max-width: 33.5%
+
+	.step.calc_stepper-step-3
+		.calc_stepper-form_row + .calc_stepper-form_row
+			margin-top: 16px
+
+	// .step.calc_stepper-step-6
+	// 	.col-sm-6
+	// 		width: 30%
+
+	.step.calc_stepper-step-8
+		.input_box
+			margin-top: 36px
+			+min-screen($tablet)
+				margin-top: 20px
+
+	.first-field-wrap
+		padding: 0 18px
+		display: block
+		width: 80%
+		margin-bottom: 16px
+		.input_box
+			width: 100%
+		+min-screen($tablet)
+			.input_box
+				max-width: 276px
+		+min-screen($desctop)
+			margin-bottom: 0
+			display: inline-block
+			max-width: 29%
+
+
+	div.wrap-count + div.wrap-count
+		margin-top: 24px
 	.input_box.wrap-count
-		max-width: 156px
+		max-width: 163px
+
+	+min-screen($tablet)
+		div.wrap-count + div.wrap-count
+			margin-top: 0
+		div.wrap-count
+			max-width: 131px + 34
+		.input_box.wrap-count
+			max-width: 131px
+
+
+	+min-screen($desctop)
+		div.wrap-count
+			max-width: 156px + 34
+		.input_box.wrap-count
+			max-width: 156px
+
 	&-header
 		color: $grey-300
 		margin-bottom: 44px
@@ -102,8 +184,15 @@ ul.stepper
 		float: right
 		border-left: 2px solid $green-400
 		padding: 19px 9px 23px 36px
+		&-row
+			margin-bottom: 36px
+			+min-screen($desctop)
+				display: none
 		&-wrap
 			padding-top: 20px
+			display: none
+			+min-screen($desctop)
+				display: block
 		&-title
 			font-size: $fs-m
 			line-height: $lh-sm
@@ -135,4 +224,8 @@ ul.stepper
 			line-height: 1.5
 			color: $grey-500
 	&-input_images_row
-		margin-left: -42px
+		margin-left: 0
+		+min-screen($tablet)
+			margin-left: 0
+		+min-screen($desctop)
+			margin-left: -42px
