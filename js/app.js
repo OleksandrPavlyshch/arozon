@@ -205,46 +205,6 @@
 
 })(jQuery);
 
-(($) => {
-	let initHeader = () => {
-		$(window).scroll(function() {
-			let _top = parseInt($(window).height() / 2)
-				, _scroll = parseInt($(window).height() / 3);
-
-			if ($(window).scrollTop() >= _scroll ) {
-				$('#header').addClass('is-scroll');
-				$('.select_city').removeClass('open');
-			} else {
-				$('#header').removeClass('is-scroll');
-			}
-
-			if ($(window).scrollTop() >= _top) {
-				$('#header').addClass('is-fixed');
-			} else {
-				$('#header').removeClass('is-fixed');
-			}
-		});
-	};
-
-	initHeader();
-
-	//init menu open
-	let $body = $('body')
-		, $menuButton = $('.toggle-menu-button')
-		, menuShowClass = 'is-menu-show';
-
-	$menuButton.on('click', function() {
-		$body.toggleClass(menuShowClass);
-	});
-
-
-	$(document).click( function(event){
-		if( $(event.target).closest('.header').length )
-			return;
-		$body.removeClass(menuShowClass);
-	});
-
-})(jQuery);
 // (($) => {
 
 // 	$('body').on('mousemove', '.button.is-bg-move, button.is-bg-move', (e) => {
@@ -501,8 +461,111 @@ let setTimepickerValue = ($timepicker, data) => {
 (($) => {
 	$('.select-custom').niceSelect();
 })(jQuery);
+(($) => {
+	let initHeader = () => {
+		$(window).scroll(function() {
+			let _top = parseInt($(window).height() / 2)
+				, _scroll = parseInt($(window).height() / 3);
+
+			if ($(window).scrollTop() >= _scroll ) {
+				$('#header').addClass('is-scroll');
+				$('.select_city').removeClass('open');
+			} else {
+				$('#header').removeClass('is-scroll');
+			}
+
+			if ($(window).scrollTop() >= _top) {
+				$('#header').addClass('is-fixed');
+			} else {
+				$('#header').removeClass('is-fixed');
+			}
+		});
+	};
+
+	initHeader();
+
+	//init menu open
+	let $body = $('body')
+		, $menuButton = $('.toggle-menu-button')
+		, menuShowClass = 'is-menu-show';
+
+	$menuButton.on('click', function() {
+		$body.toggleClass(menuShowClass);
+	});
+
+
+	$(document).click( function(event){
+		if( $(event.target).closest('.header').length )
+			return;
+		$body.removeClass(menuShowClass);
+	});
+
+})(jQuery);
 
 (($) => {
 	$( "#calc-forms" ).tabs();
+
+	$('.main_calc-form-wrap').validate({
+		debug: true
+	});
+
+	$('body').on('click', '.main-calc-action', function(event) {
+		event.preventDefault();
+		let $actionButton = $(this)
+			, $form = $actionButton.parents('.main_calc-form-wrap')
+			, formType = $form.data('form')
+			, formValuesArray = $form.serializeArray()
+			, $popup = $('#cost_popup');
+
+		let config = {
+			'home': 81.22
+			, 'flat': 72.47
+			, 'window-price': 150
+			, 'type': {
+				'1': 1.37
+				, '2': 1
+				, '3': 1
+			}
+		};
+
+		let formValueArrayToObj = (arr) => {
+			let obj = {};
+
+			arr.map(function(elem) {
+				obj[elem.name] = elem.value;
+			});
+
+			return obj;
+		};
+
+		let mainCalculatedValue = (values) => {
+			let result = config[formType] * values.meters * config.type[values.type] + (config['window-price'] * values.windows);
+
+			return Math.round(result);
+		};
+
+		let mainCalcPrice = mainCalculatedValue(formValueArrayToObj(formValuesArray));
+
+		$.fancybox.open({
+			src  : '#cost_popup',
+			type : 'inline',
+			opts : {
+				beforeShow: function() {
+					$popup.find('.cost_popup-header-price').text('~' + mainCalcPrice);
+				},
+				afterClose : function() {
+					$popup.find('.cost_popup-header-price').text('');
+				}
+			}
+		});
+
+		console.log(mainCalculatedValue(formValueArrayToObj(formValuesArray)));
+
+			// if($form.valid()){
+
+
+			// }
+	});
+
 })(jQuery);
 

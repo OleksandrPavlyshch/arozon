@@ -132,12 +132,12 @@
               </ul>
             </div>
             <div id="calc-form-tab-1">
-              <form action="#">
+              <form class="main_calc-form-wrap" data-form="home" action="#">
                 <div class="main_calc-form row">
                   <div class="col-sm-2">
                     <div class="input_box not-style preselected">
                       <span class="input_box-placeholder">Вид уборки</span>
-                      <select class="select-custom select_clean-type" tabindex="0">
+                      <select name="type" class="select-custom select_clean-type" tabindex="0">
                         <option value="1" selected>После ремонта / стройки</option>
                         <option value="2">Генеральная</option>
                         <option value="3">Поддерживающая</option>
@@ -156,7 +156,7 @@
                         </div>
                       </div>
                       <span class="input_box-placeholder">Дата уборки</span>
-                      <input name="date" placeholder="Дата уборки" readonly tabindex="0">
+                      <input name="date" placeholder="Дата уборки" readonly tabindex="0" required>
                       <svg class="icon icon-calendar input_box-icon is_right_icon">
                         <use xlink:href="img/sprite.svg#calendar"></use>
                       </svg>
@@ -299,7 +299,7 @@
                         </div>
                       </div>
                       <span class="input_box-placeholder">Время</span>
-                      <input class="time-input" name="time" placeholder="Время" readonly tabindex="0">
+                      <input class="time-input" name="time" placeholder="Время" readonly tabindex="0" required>
                       <svg class="icon icon-time input_box-icon is_right_icon">
                         <use xlink:href="img/sprite.svg#time"></use>
                       </svg>
@@ -308,28 +308,28 @@
                   <div class="col-sm-1">
                     <div class="input_box wrap-count ">
                       <span class="input_box-placeholder">Кол-во кв. метров</span>
-                      <input name="count" min="20" max="999" class="count-input input-base" value="70" readonly tabindex="0"> </span>
+                      <input name="meters" min="20" max="999" class="count-input input-base" value="70" readonly tabindex="0"> </span>
                     </div>
                   </div>
                   <div class="col-sm-1">
                     <div class="input_box wrap-count ">
                       <span class="input_box-placeholder">Кол-во санузлов</span>
-                      <input name="count" min="1" max="999" class="count-input input-base" value="1" readonly tabindex="0"> </span>
+                      <input name="windows" min="1" max="999" class="count-input input-base" value="1" readonly tabindex="0"> </span>
                     </div>
                   </div>
                   <div class="col-sm-1">
-                    <button data-fancybox data-src="#cost_popup" class="button is-blue is-not-round is-wide-button">посчитать</button>
+                    <button class="button is-blue is-not-round is-wide-button main-calc-action">посчитать</button>
                   </div>
                 </div>
               </form>
             </div>
             <div id="calc-form-tab-2">
-              <form action="#">
+              <form class="main_calc-form-wrap" data-form="flat" action="#">
                 <div class="main_calc-form row">
                   <div class="col-sm-2">
                     <div class="input_box not-style preselected">
                       <span class="input_box-placeholder">Вид уборки</span>
-                      <select class="select-custom select_clean-type" tabindex="0">
+                      <select name="type" class="select-custom select_clean-type" tabindex="0">
                         <option value="1" selected>После ремонта / стройки</option>
                         <option value="2">Генеральная</option>
                         <option value="3">Поддерживающая</option>
@@ -348,7 +348,7 @@
                         </div>
                       </div>
                       <span class="input_box-placeholder">Дата уборки</span>
-                      <input name="date" placeholder="Дата уборки" readonly tabindex="0">
+                      <input name="date" placeholder="Дата уборки" readonly tabindex="0" required>
                       <svg class="icon icon-calendar input_box-icon is_right_icon">
                         <use xlink:href="img/sprite.svg#calendar"></use>
                       </svg>
@@ -491,7 +491,7 @@
                         </div>
                       </div>
                       <span class="input_box-placeholder">Время</span>
-                      <input class="time-input" name="time" placeholder="Время" readonly tabindex="0">
+                      <input class="time-input" name="time" placeholder="Время" readonly tabindex="0" required>
                       <svg class="icon icon-time input_box-icon is_right_icon">
                         <use xlink:href="img/sprite.svg#time"></use>
                       </svg>
@@ -500,17 +500,17 @@
                   <div class="col-sm-1">
                     <div class="input_box wrap-count ">
                       <span class="input_box-placeholder">Кол-во кв. метров</span>
-                      <input name="count" min="20" max="999" class="count-input input-base" value="70" readonly tabindex="0"> </span>
+                      <input name="meters" min="20" max="999" class="count-input input-base" value="70" readonly tabindex="0"> </span>
                     </div>
                   </div>
                   <div class="col-sm-1">
                     <div class="input_box wrap-count ">
                       <span class="input_box-placeholder">Кол-во санузлов</span>
-                      <input name="count" min="1" max="999" class="count-input input-base" value="1" readonly tabindex="0"> </span>
+                      <input name="windows" min="1" max="999" class="count-input input-base" value="1" readonly tabindex="0"> </span>
                     </div>
                   </div>
                   <div class="col-sm-1">
-                    <button data-fancybox data-src="#cost_popup" class="button is-blue is-not-round is-wide-button">посчитать</button>
+                    <button class="button is-blue is-not-round is-wide-button main-calc-action">посчитать</button>
                   </div>
                 </div>
               </form>
@@ -520,7 +520,8 @@
         <div id="cost_popup" class="cost_popup">
           <p class="cost_popup-mes">Минимальная стоимость убрки
             <br>Вашего объекта</p>
-          <h2 class="text-gradient cost_popup-header"> ~32334
+          <h2 class="text-gradient cost_popup-header">
+            <span class="cost_popup-header-price">0</span>
             <sup class="cost_popup-header-handreds">.00</sup>
             <sub class="cost_popup-header-curency">грн.</sub>
           </h2>
