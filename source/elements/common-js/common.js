@@ -89,14 +89,12 @@
 						error.insertBefore($parent);
 				 } else {
 						error.insertBefore(element); // default error placement.
-						// element.closest('label').data('error', error);
-						// element.next().attr('data-error', error);
 						$parent.addClass('invalid');
 				 }
 			},
 			success: function (element) {
 				let $parent = $(element).parent();
-				console.log($parent);
+				// console.log($parent);
 				$parent.removeClass('invalid');
 				if(!$(element).closest('li').find('label.invalid:not(:empty)').length){
 						$(element).closest('li').removeClass('wrong');
