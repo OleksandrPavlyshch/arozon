@@ -1,7 +1,10 @@
 (($) => {
 
 	$(function(){
-		$('#calc_stepper').activateStepper();
+		let $stepper = $('#calc_stepper')
+			, $calcStepperBlock = $('.calc_stepper-sum_block');
+
+		$stepper.activateStepper();
 
 		$('.calc_stepper-step-1').on('click', '.input_custom_image', (e) => {
 			let $this = $(e.currentTarget)
@@ -24,8 +27,6 @@
 
 		});
 
-		let $calcStepperBlock = $('.calc_stepper-sum_block')
-		, $stepper = $('.stepper');
 
 		// function throttle(fn, threshhold, scope) {
 		// 	threshhold || (threshhold = 250);
@@ -77,15 +78,25 @@
 			}, 200));
 		}
 
+		let $costOutput =  $('.calc_stepper-sum_block-price')
+
+		let s = 111;
 		let calculateCost = (formValues) => {
 
+			++s
+			$costOutput.text(s);
 		}
 
-		$('.stepper').on('step4', function(e){
+		$stepper.on('change', 'input', function(event) {
+
+			calculateCost();
+		});
+
+		$stepper.on('step4', function(e){
 			$calcStepperBlock.fadeOut();
 		});
 
-		$('.stepper').on('step5', function(e){
+		$stepper.on('step5', function(e){
 			$calcStepperBlock.fadeIn();
 		});
 
@@ -220,6 +231,7 @@
 
 		return obj;
 	};
+
 
 
 // (($) => {

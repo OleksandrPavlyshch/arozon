@@ -62,7 +62,7 @@
 
             if(+value > +min){
 
-                input.val(+value - step);
+                input.val(+value - step).trigger('change');
 
                 if(+input.val() === +min){
 
@@ -78,7 +78,7 @@
 
             } else if(!min){
 
-                input.val(+value - step);
+                input.val(+value - step).trigger('change');
 
             }
 
@@ -92,7 +92,7 @@
 
             if(+value < +max){
 
-                input.val(+value + step);
+                input.val(+value + step).trigger('change');
 
                 if(+input.val() === +max){
 
@@ -108,7 +108,7 @@
 
             } else if(!max){
 
-                input.val(+value + step);
+                input.val(+value + step).trigger('change');
 
             }
 

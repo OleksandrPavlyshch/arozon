@@ -728,7 +728,6 @@ ul.stepper .step-actions {
 }
 
 .calc_stepper-sum_block {
-  display: none;
   will-change: transform;
   -webkit-transform: translateY(0);
   transform: translateY(0);
