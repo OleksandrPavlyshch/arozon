@@ -19,7 +19,14 @@ ul.stepper
 				top: 47px
 				left: 17px
 				height: calc(100% - 18px)
-		// &-content
+		&-content
+			// background-color: red
+			> .row
+					margin-left: -11px
+			> .calc_stepper-input_images_row
+					margin-left: 0
+					+min-screen($desctop)
+						margin-left: -14px
 		// 	display: block !important
 		&.active
 			&:before
@@ -74,17 +81,20 @@ ul.stepper
 
 .calc_stepper
 	padding-bottom: 80px
+	+min-screen($desctop)
+		&-form_row + &-form_row
+			margin-top: 36px
+		&-col-third
+			max-width: 228px
 	.input_custom
 		margin-top: 36px
 		+min-screen($desctop)
 			margin-top: 0
 		& + .input_box
 			margin-top: 36px
-	+min-screen($desctop)
-		&-form_row + &-form_row
-			margin-top: 36px
-		&-col-third
-			max-width: 228px
+	&-package-default
+		+min-screen($desctop)
+			display: none
 	&-col-md,
 	&-col-sm,
 	&-col-lg
@@ -178,6 +188,9 @@ ul.stepper
 		margin-left: -5px
 		text-transform: uppercase
 	&-sum_block
+		// opacity: 0
+		// visibility: hidden
+		// display: none
 		will-change: transform
 		transform: translateY(0)
 		transition: transform 1s $tf-prt

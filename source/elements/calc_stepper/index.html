@@ -6,32 +6,34 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-8 col-sm-8 col-md-6">
-			<ul id="calc_stepper" data-method="GET" class="stepper linear">
-				<li class="step calc_stepper-step-1 active">
-						{% include "elements/calc_stepper/step1.html" %}
-				</li>
-				<li class="step calc_stepper-step-2">
-						{% include "elements/calc_stepper/step2.html" %}
-				</li>
-				<li class="step calc_stepper-step-3">
-						{% include "elements/calc_stepper/step3.html" %}
-				</li>
-				<li class="step calc_stepper-step-4">
-						{% include "elements/calc_stepper/step4.html" %}
-				</li>
-				<li class="step calc_stepper-step-5">
-						{% include "elements/calc_stepper/step5.html" %}
-				</li>
-				<li class="step calc_stepper-step-6">
-						{% include "elements/calc_stepper/step6.html" %}
-				</li>
-				<li class="step calc_stepper-step-7">
-						{% include "elements/calc_stepper/step7.html" %}
-				</li>
-				<li class="step calc_stepper-step-8">
-						{% include "elements/calc_stepper/step8.html" %}
-				</li>
-			</ul>
+			<form action="#" class="calc_stepper-form">
+				<ul id="calc_stepper" data-method="GET" class="stepper linear">
+					<li class="step calc_stepper-step-1 active">
+							{% include "elements/calc_stepper/step1.html" %}
+					</li>
+					<li class="step calc_stepper-step-2">
+							{% include "elements/calc_stepper/step2.html" %}
+					</li>
+					<li class="step calc_stepper-step-3">
+							{% include "elements/calc_stepper/step3.html" %}
+					</li>
+					<li class="step calc_stepper-step-4">
+							{% include "elements/calc_stepper/step4.html" %}
+					</li>
+					<li class="step calc_stepper-step-5">
+							{% include "elements/calc_stepper/step5.html" %}
+					</li>
+					<li class="step calc_stepper-step-6">
+							{% include "elements/calc_stepper/step6.html" %}
+					</li>
+					<li class="step calc_stepper-step-7">
+							{% include "elements/calc_stepper/step7.html" %}
+					</li>
+					<li class="step calc_stepper-step-8">
+							{% include "elements/calc_stepper/step8.html" %}
+					</li>
+				</ul>
+			</form>
 		</div>
 		<div class="col-md-2 calc_stepper-sum_block-wrap">
 			<div class="calc_stepper-sum_block">
@@ -41,7 +43,7 @@
 					Вашего объекта
 				</p>
 				<h2 class="text-gradient calc_stepper-sum_block-header">
-					32334
+					<span class="calc_stepper-sum_block-price">32334</span>
 					<sup class="calc_stepper-sum_block-header-handreds">.00</sup>
 					<sub class="calc_stepper-sum_block-header-curency">грн.</sub>
 				</h2>

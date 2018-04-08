@@ -106,3 +106,14 @@
 
 
 })(jQuery);
+// transform array to obj
+	let formValueArrayToObj = (arr) => {
+		let obj = {};
+
+		arr.map(function(elem) {
+			obj[elem.name] = elem.value;
+		});
+
+		return obj;
+	};
+

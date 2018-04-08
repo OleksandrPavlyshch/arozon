@@ -24,15 +24,6 @@
 			}
 		};
 
-		let formValueArrayToObj = (arr) => {
-			let obj = {};
-
-			arr.map(function(elem) {
-				obj[elem.name] = elem.value;
-			});
-
-			return obj;
-		};
 
 		let mainCalculatedValue = (values) => {
 			let result = config[formType] * values.meters * config.type[values.type] + (config['window-price'] * values.windows);
