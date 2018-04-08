@@ -2,7 +2,7 @@
 
 	$(function(){
 		$('#calc_stepper').activateStepper();
-		
+
 		$('.calc_stepper-step-1').on('click', '.input_custom_image', (e) => {
 			let $this = $(e.currentTarget)
 				, $input = $this.find('input')
@@ -27,28 +27,28 @@
 		let $calcStepperBlock = $('.calc_stepper-sum_block')
 		, $stepper = $('.stepper');
 
-		function throttle(fn, threshhold, scope) {
-			threshhold || (threshhold = 250);
-			var last,
-					deferTimer;
-			return function () {
-				var context = scope || this;
+		// function throttle(fn, threshhold, scope) {
+		// 	threshhold || (threshhold = 250);
+		// 	var last,
+		// 			deferTimer;
+		// 	return function () {
+		// 		var context = scope || this;
 
-				var now = +new Date,
-						args = arguments;
-				if (last && now < last + threshhold) {
-					// hold on to it
-					clearTimeout(deferTimer);
-					deferTimer = setTimeout(function () {
-						last = now;
-						fn.apply(context, args);
-					}, threshhold);
-				} else {
-					last = now;
-					fn.apply(context, args);
-				}
-			};
-		}
+		// 		var now = +new Date,
+		// 				args = arguments;
+		// 		if (last && now < last + threshhold) {
+		// 			// hold on to it
+		// 			clearTimeout(deferTimer);
+		// 			deferTimer = setTimeout(function () {
+		// 				last = now;
+		// 				fn.apply(context, args);
+		// 			}, threshhold);
+		// 		} else {
+		// 			last = now;
+		// 			fn.apply(context, args);
+		// 		}
+		// 	};
+		// }
 
 		function debounce(fn, delay) {
 				var timer = null;
@@ -68,8 +68,6 @@
 							, divTop = $stepper.offset().top - 90
 							, translateY = top - divTop;
 
-						// console.log('test');
-						// console.log(translateY);
 					if (divTop < top) {
 						$calcStepperBlock.css({'transform': 'translateY(' + translateY + 'px)'});
 					} else {
@@ -77,9 +75,19 @@
 					}
 
 			}, 200));
+		}
+
+		let calculateCost = (formValues) => {
 
 		}
 
+		$('.stepper').on('step4', function(e){
+			$calcStepperBlock.fadeOut();
+		});
+
+		$('.stepper').on('step5', function(e){
+			$calcStepperBlock.fadeIn();
+		});
 
 	});
 
@@ -202,112 +210,16 @@
 
 
 })(jQuery);
+// transform array to obj
+	let formValueArrayToObj = (arr) => {
+		let obj = {};
 
-
-(($) => {
-	let initHeader = () => {
-		$(window).scroll(function() {
-			let _top = parseInt($(window).height() / 2)
-				, _scroll = parseInt($(window).height() / 3);
-
-			if ($(window).scrollTop() >= _scroll ) {
-				$('#header').addClass('is-scroll');
-				$('.select_city').removeClass('open');
-			} else {
-				$('#header').removeClass('is-scroll');
-			}
-
-			if ($(window).scrollTop() >= _top) {
-				$('#header').addClass('is-fixed');
-			} else {
-				$('#header').removeClass('is-fixed');
-			}
+		arr.map(function(elem) {
+			obj[elem.name] = elem.value;
 		});
+
+		return obj;
 	};
-
-	initHeader();
-
-	//init menu open
-	let $body = $('body')
-		, $menuButton = $('.toggle-menu-button')
-		, menuShowClass = 'is-menu-show';
-
-	$menuButton.on('click', function() {
-		$body.toggleClass(menuShowClass);
-	});
-
-
-	$(document).click( function(event){
-		if( $(event.target).closest('.header').length )
-			return;
-		$body.removeClass(menuShowClass);
-	});
-
-})(jQuery);
-(($) => {
-	$( "#calc-forms" ).tabs();
-
-	$('.main_calc-form-wrap').validate({
-		debug: true
-	});
-
-	$('body').on('click', '.main-calc-action', function(event) {
-		event.preventDefault();
-		let $actionButton = $(this)
-			, $form = $actionButton.parents('.main_calc-form-wrap')
-			, formType = $form.data('form')
-			, formValuesArray = $form.serializeArray()
-			, $popup = $('#cost_popup');
-
-		let config = {
-			'home': 81.22
-			, 'flat': 72.47
-			, 'window-price': 150
-			, 'type': {
-				'1': 1.37
-				, '2': 1
-				, '3': 1
-			}
-		};
-
-		let formValueArrayToObj = (arr) => {
-			let obj = {};
-
-			arr.map(function(elem) {
-				obj[elem.name] = elem.value;
-			});
-
-			return obj;
-		};
-
-		let mainCalculatedValue = (values) => {
-			let result = config[formType] * values.meters * config.type[values.type] + (config['window-price'] * values.windows);
-
-			return Math.round(result);
-		};
-
-
-		if($form.valid()){
-
-			let mainCalcPrice = mainCalculatedValue(formValueArrayToObj(formValuesArray));
-
-			$.fancybox.open({
-				src  : '#cost_popup',
-				type : 'inline',
-				opts : {
-					beforeShow: function() {
-						$popup.find('.cost_popup-header-price').text('~' + mainCalcPrice);
-					},
-					afterClose : function() {
-						$popup.find('.cost_popup-header-price').text('');
-					}
-				}
-			});
-		}
-
-	});
-
-})(jQuery);
 
 
 // (($) => {
@@ -566,3 +478,100 @@ let setTimepickerValue = ($timepicker, data) => {
 (($) => {
 	$('.select-custom').niceSelect();
 })(jQuery);
+(($) => {
+	let initHeader = () => {
+		$(window).scroll(function() {
+			let _top = parseInt($(window).height() / 2)
+				, _scroll = parseInt($(window).height() / 3);
+
+			if ($(window).scrollTop() >= _scroll ) {
+				$('#header').addClass('is-scroll');
+				$('.select_city').removeClass('open');
+			} else {
+				$('#header').removeClass('is-scroll');
+			}
+
+			if ($(window).scrollTop() >= _top) {
+				$('#header').addClass('is-fixed');
+			} else {
+				$('#header').removeClass('is-fixed');
+			}
+		});
+	};
+
+	initHeader();
+
+	//init menu open
+	let $body = $('body')
+		, $menuButton = $('.toggle-menu-button')
+		, menuShowClass = 'is-menu-show';
+
+	$menuButton.on('click', function() {
+		$body.toggleClass(menuShowClass);
+	});
+
+
+	$(document).click( function(event){
+		if( $(event.target).closest('.header').length )
+			return;
+		$body.removeClass(menuShowClass);
+	});
+
+})(jQuery);
+(($) => {
+	$( "#calc-forms" ).tabs();
+
+	$('.main_calc-form-wrap').validate({
+		debug: true
+	});
+
+	$('body').on('click', '.main-calc-action', function(event) {
+		event.preventDefault();
+		let $actionButton = $(this)
+			, $form = $actionButton.parents('.main_calc-form-wrap')
+			, formType = $form.data('form')
+			, formValuesArray = $form.serializeArray()
+			, $popup = $('#cost_popup');
+
+		let config = {
+			'home': 81.22
+			, 'flat': 72.47
+			, 'window-price': 150
+			, 'type': {
+				'1': 1.37
+				, '2': 1
+				, '3': 1
+			}
+		};
+
+
+		let mainCalculatedValue = (values) => {
+			let result = config[formType] * values.meters * config.type[values.type] + (config['window-price'] * values.windows);
+
+			return Math.round(result);
+		};
+
+
+		if($form.valid()){
+
+			let mainCalcPrice = mainCalculatedValue(formValueArrayToObj(formValuesArray));
+
+			$.fancybox.open({
+				src  : '#cost_popup',
+				type : 'inline',
+				opts : {
+					beforeShow: function() {
+						$popup.find('.cost_popup-header-price').text('~' + mainCalcPrice);
+					},
+					afterClose : function() {
+						$popup.find('.cost_popup-header-price').text('');
+					}
+				}
+			});
+		}
+
+	});
+
+})(jQuery);
+
+
