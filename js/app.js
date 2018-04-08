@@ -2,6 +2,7 @@
 
 	$(function(){
 		let $stepper = $('#calc_stepper')
+			, $stepperForm = $('.calc_stepper-form')
 			, $calcStepperBlock = $('.calc_stepper-sum_block');
 
 		$stepper.activateStepper();
@@ -11,11 +12,13 @@
 				, $input = $this.find('input')
 				, $step = $(e.delegateTarget)
 				, $stepInputs = $step.find('input')
+				, $defaultInput = $step.find('.calc_stepper-package-default').find('input')
 				, $nextButton = $step.find('.button')
 				, defaultText = 'пропустить'
 				, nextText = 'далее';
 
-				if( $input.prop('checked') === false ){
+					console.log($input.prop('checked'));
+				if( $input.prop('checked') === true ){
 					$stepInputs.prop('checked', false);
 					$input.prop('checked', 'checked');
 					$nextButton.text(nextText);
@@ -24,6 +27,7 @@
 
 				$nextButton.text(defaultText);
 				$stepInputs.prop('checked', false);
+				$defaultInput.prop('checked', 'checked');
 
 		});
 
@@ -82,6 +86,11 @@
 
 		let s = 111;
 		let calculateCost = (formValues) => {
+			let config = {
+
+			};
+
+			console.table( $stepperForm.serializeArray());
 
 			++s
 			$costOutput.text(s);
@@ -530,6 +539,7 @@ let setTimepickerValue = ($timepicker, data) => {
 	});
 
 })(jQuery);
+
 (($) => {
 	$( "#calc-forms" ).tabs();
 
@@ -585,5 +595,4 @@ let setTimepickerValue = ($timepicker, data) => {
 	});
 
 })(jQuery);
-
 
