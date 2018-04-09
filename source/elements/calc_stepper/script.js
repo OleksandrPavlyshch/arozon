@@ -123,6 +123,7 @@
 
 			let result = config['base-price'];
 
+				//steps for all selected values
 				result *= config.package[formValues.package] || 1;
 				result *= config['place-type'][formValues['place-type']] || 1;
 				result *= formValues['square-amount'] || 1;
