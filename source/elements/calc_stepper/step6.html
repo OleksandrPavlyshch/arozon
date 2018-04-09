@@ -1,56 +1,56 @@
 <div class="step-title">Дополнительные опции</div>
 <div class="step-content">
 	<div class="row calc_stepper-form_row">
-		<div class="col-xs-8 col-sm-4 col-md calc_stepper-col-third">
+		<div class="col-xs-8 col-sm-2 col-md calc_stepper-col-third">
 			<label class="input_custom is_custom_checkbox">Холодильник
-				<input type="checkbox" tabindex="0"/>
+				<input name="refrigerator" type="checkbox" tabindex="0"/>
 				<div class="input_custom-indicator"></div>
 			</label>
 		</div>
-		<div class="col-xs-8 col-sm-4 col-md calc_stepper-col-third">
+		<div class="col-xs-8 col-sm-2 col-md calc_stepper-col-third">
 			<label class="input_custom is_custom_checkbox">Микроволновка
-				<input type="checkbox" tabindex="0"/>
+				<input name="microwave" type="checkbox" tabindex="0"/>
 				<div class="input_custom-indicator"></div>
 			</label>
 		</div>
-		<div class="col-xs-8 col-sm-4 col-md">
+		<div class="col-xs-8 col-sm-3 col-md">
 			<label class="input_custom is_custom_checkbox">Люстры оригинальной конструкции
-				<input type="checkbox" tabindex="0"/>
+				<input name="сhandelier" type="checkbox" tabindex="0"/>
 				<div class="input_custom-indicator"></div>
 			</label>
 		</div>
 	</div>
 	<div class="row calc_stepper-form_row">
-		<div class="col-xs-8 col-sm-4 col-md calc_stepper-col-third">
+		<div class="col-xs-8 col-sm-2 col-md calc_stepper-col-third">
 			<label class="input_custom is_custom_checkbox">Духовка
-				<input type="checkbox" tabindex="0"/>
+				<input name="oven" type="checkbox" tabindex="0"/>
 				<div class="input_custom-indicator"></div>
 			</label>
 		</div>
-		<div class="col-xs-8 col-sm-4 col-md calc_stepper-col-third">
+		<div class="col-xs-8 col-sm-2 col-md calc_stepper-col-third">
 			<label class="input_custom is_custom_checkbox">Помыть посуду
-				<input type="checkbox" tabindex="0"/>
+				<input name="wash-dishes" type="checkbox" tabindex="0"/>
 				<div class="input_custom-indicator"></div>
 			</label>
 		</div>
 		<div class="col-xs-8 col-sm-4 col-md">
 			<label class="input_custom is_custom_checkbox">Химчистка
-				<input type="checkbox" tabindex="0"/>
+				<input name="dry-cleaning" type="checkbox" tabindex="0"/>
 				<div class="input_custom-indicator"></div>
 			</label>
 		</div>
 	</div>
 	<div class="row calc_stepper-form_row">
-		<div class="col-xs-8 col-sm-4 col-md calc_stepper-col-third">
+		<div class="col-xs-8 col-sm-2 col-md calc_stepper-col-third">
 			<label class="input_custom is_custom_checkbox view-checkbox-wrap">Окна
-				<input type="checkbox" class="view-checkbox" data-target=".window-amount" tabindex="0"/>
+				<input name="window" type="checkbox" class="view-checkbox" data-target=".window-amount" tabindex="0"/>
 				<div class="input_custom-indicator"></div>
 			</label>
 			{{mixins.count( mod_class="window-amount hidden", name='window-amount', placeholder='Кол-во окон', min=1, max=999)}}
 		</div>
-		<div class="col-xs-8 col-sm-4 col-md calc_stepper-col-third">
+		<div class="col-xs-8 col-sm-2 col-md calc_stepper-col-third">
 			<label class="input_custom is_custom_checkbox view-checkbox-wrap">Балкон
-				<input type="checkbox" class="view-checkbox" data-target=".balcony-amount" tabindex="0"/>
+				<input name="balcony" type="checkbox" class="view-checkbox" data-target=".balcony-amount" tabindex="0"/>
 				<div class="input_custom-indicator"></div>
 			</label>
 			{{mixins.count( mod_class="balcony-amount hidden", name='balcony-amount', placeholder='Кол-во балконов', min=1, max=999)}}
