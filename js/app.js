@@ -1,13 +1,3 @@
-// (($) => {
-// 	$('.clients_slider .is-slick-slider').slick({
-// 		slidesToShow: 4,
-// 		slidesToScroll: 1,
-// 		autoplay: true,
-// 		dots: false,
-// 		prevArrow: false,
-// 		nextArrow: false
-// 	});
-// })(jQuery);
 (($) => {
 
 	$(function(){
@@ -29,7 +19,7 @@
 				, defaultText = 'пропустить'
 				, nextText = 'далее';
 
-					console.log($input.prop('checked'));
+					// console.log($input.prop('checked'));
 				if( $input.prop('checked') === false && $this.hasClass('calc_stepper-package-default') === false ){
 					$stepInputs.prop('checked', false);
 					$input.prop('checked', 'checked');
@@ -98,19 +88,84 @@
 
 		let $costOutput =  $('.calc_stepper-sum_block-price');
 
-		let s = 111;
 		let calculateCost = () => {
 			let config = {
-
+				'base-price' : 40
+				, 'package': {
+					'baby': 1.37
+					, 'pet': 1.37
+					, 'mans': 1.37
+					, 'party': 1.37
+				}
+				, 'place-type': {
+					'apartment': 1
+					, 'house': 1.15
+					, 'office': 1
+					, 'boutique': 1
+				}
+				, 'clean-type': {
+					'support': 1
+					, 'general': 1
+					, 'after-construction': 1.27
+				}
+				, 'refrigerator': 100
+				, 'microwave': 40
+				, 'сhandelier': 0
+				, 'oven': 180
+				, 'wash-dishes': 0
+				, 'dry-cleaning': 0
+				, 'window': 150
+				, 'balcony': 200
 			};
 
-			console.table( $stepperForm.serializeArray());
+			let formValues = formValueArrayToObj($stepperForm.serializeArray());
 
-			++s;
-			$costOutput.text(s);
-		}
 
-		$stepper.on('change', 'input', function(event) {
+			let result = config['base-price'];
+
+				result *= config.package[formValues.package] || 1;
+				result *= config['place-type'][formValues['place-type']] || 1;
+				result *= formValues['square-amount'] || 1;
+				result *= config['clean-type'][formValues['clean-type']] || 1;
+
+				if(formValues.refrigerator) {
+					result += config.refrigerator;
+				}
+
+				if(formValues.microwave) {
+					result += config.microwave;
+				}
+
+				if(formValues.сhandelier) {
+					result += config.сhandelier;
+				}
+
+				if(formValues.oven) {
+					result += config.oven;
+				}
+
+				if(formValues['wash-dishes']) {
+					result += config['wash-dishes'];
+				}
+
+				if(formValues['dry-cleaning']) {
+					result += config['dry-cleaning'];
+				}
+
+				if(formValues.window) {
+					result += (config.window * formValues['window-amount']);
+				}
+
+				if(formValues.balcony) {
+					result += (config.balcony * formValues['balcony-amount']);
+				}
+
+			// console.table( formValueArrayToObj($stepperForm.serializeArray()));
+
+			$costOutput.text(Math.round(result));
+		};
+
+		$stepper.on('change', 'input', function() {
 
 			calculateCost();
 		});
@@ -130,6 +185,16 @@
 	});
 
 })(jQuery);
+// (($) => {
+// 	$('.clients_slider .is-slick-slider').slick({
+// 		slidesToShow: 4,
+// 		slidesToScroll: 1,
+// 		autoplay: true,
+// 		dots: false,
+// 		prevArrow: false,
+// 		nextArrow: false
+// 	});
+// })(jQuery);
 (($) => {
 
 	$('.clipboard_copy').tooltip({
