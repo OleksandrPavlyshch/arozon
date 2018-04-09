@@ -8,6 +8,8 @@
 		$stepper.activateStepper();
 
 		$('.calc_stepper-step-1').on('click', '.input_custom_image', (e) => {
+			e.preventDefault();
+
 			let $this = $(e.currentTarget)
 				, $input = $this.find('input')
 				, $step = $(e.delegateTarget)
@@ -18,7 +20,7 @@
 				, nextText = 'далее';
 
 					console.log($input.prop('checked'));
-				if( $input.prop('checked') === true ){
+				if( $input.prop('checked') === false && $this.hasClass('calc_stepper-package-default') === false ){
 					$stepInputs.prop('checked', false);
 					$input.prop('checked', 'checked');
 					$nextButton.text(nextText);
