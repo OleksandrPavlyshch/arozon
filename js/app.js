@@ -5,7 +5,8 @@
 			, $stepperForm = $('.calc_stepper-form')
 			, $calcStepperBlock = $('.calc_stepper-sum_block');
 
-		$stepper.activateStepper();
+		// activate moved to preloader script
+		// $stepper.activateStepper();
 
 		$('.calc_stepper-step-1').on('click', '.input_custom_image', (e) => {
 			e.preventDefault();
@@ -670,3 +671,15 @@ let setTimepickerValue = ($timepicker, data) => {
 
 })(jQuery);
 
+(($) => {
+	let $preloader = $('.preloader');
+	let $stepper = $('#calc_stepper');
+	
+	//fade-preloader
+	$(window).on("load", function () {
+		$preloader.delay(1500).fadeOut(400, function(){
+			$stepper.activateStepper();
+		});
+	});
+
+})(jQuery);
