@@ -157,25 +157,25 @@
                   <div class="step-content">
                     <div class="row calc_stepper-input_images_row">
                       <label class="input_custom_image col-xs-6 col-sm-4 col-md-2">
-                        <input type="radio" name="place" value="apartment" checked="checked" tabindex="0" />
+                        <input type="radio" name="place-type" value="apartment" checked="checked" tabindex="0" />
                         <span class="input_custom-indicator"></span>
                         <img class="input_custom_image-illustration" src="img/place_apartment.svg">
                         <span class="input_custom_image-text" title="Квартира">Квартира</span>
                       </label>
                       <label class="input_custom_image col-xs-6 col-sm-4 col-md-2">
-                        <input type="radio" name="place" value="house" tabindex="0" />
+                        <input type="radio" name="place-type" value="house" tabindex="0" />
                         <span class="input_custom-indicator"></span>
                         <img class="input_custom_image-illustration" src="img/place_house.svg">
                         <span class="input_custom_image-text" title="Дом">Дом</span>
                       </label>
                       <label class="input_custom_image col-xs-6 col-sm-4 col-md-2">
-                        <input type="radio" name="place" value="office" tabindex="0" />
+                        <input type="radio" name="place-type" value="office" tabindex="0" />
                         <span class="input_custom-indicator"></span>
                         <img class="input_custom_image-illustration" src="img/place_office.svg">
                         <span class="input_custom_image-text" title="Офис">Офис</span>
                       </label>
                       <label class="input_custom_image col-xs-6 col-sm-4 col-md-2">
-                        <input type="radio" name="place" value="boutique" tabindex="0" />
+                        <input type="radio" name="place-type" value="boutique" tabindex="0" />
                         <span class="input_custom-indicator"></span>
                         <img class="input_custom_image-illustration" src="img/place_shop.svg">
                         <span class="input_custom_image-text" title="Бутик">Бутик</span>
@@ -203,12 +203,12 @@
                       <div class="calc_stepper-col-sm">
                         <div class="input_box ">
                           <span class="input_box-placeholder">Дом</span>
-                          <input type="text" name="building" class="input-base" placeholder="Дом" value="" tabindex="0"> </div>
+                          <input type="text" name="house-number" class="input-base" placeholder="Дом" value="" tabindex="0"> </div>
                       </div>
                       <div class="calc_stepper-col-sm">
                         <div class="input_box ">
                           <span class="input_box-placeholder">Квартира</span>
-                          <input type="text" name="flat" class="input-base" placeholder="Квартира" value="" tabindex="0"> </div>
+                          <input type="text" name="apartment-number" class="input-base" placeholder="Квартира" value="" tabindex="0"> </div>
                       </div>
                     </div>
                     <div class="row calc_stepper-form_row">
@@ -412,19 +412,19 @@
                   <div class="step-content">
                     <div class="row calc_stepper-input_images_row">
                       <label class="input_custom_image col-xs-6 col-md-2">
-                        <input type="radio" name="step5" checked="checked" tabindex="0" />
+                        <input type="radio" name="clean-type" value="support" checked="checked" tabindex="0" />
                         <span class="input_custom-indicator"></span>
                         <img class="input_custom_image-illustration" src="img/clean1.svg">
                         <span class="input_custom_image-text" title="Поддерживающая">Поддерживающая</span>
                       </label>
                       <label class="input_custom_image col-xs-6 col-md-2">
-                        <input type="radio" name="step5" tabindex="0" />
+                        <input type="radio" name="clean-type" value="general" tabindex="0" />
                         <span class="input_custom-indicator"></span>
                         <img class="input_custom_image-illustration" src="img/clean2.svg">
                         <span class="input_custom_image-text" title="Генеральная">Генеральная</span>
                       </label>
                       <label class="input_custom_image col-xs-6 col-md-2">
-                        <input type="radio" name="step5" tabindex="0" />
+                        <input type="radio" name="clean-type" value="after-construction" tabindex="0" />
                         <span class="input_custom-indicator"></span>
                         <img class="input_custom_image-illustration" src="img/clean3.svg">
                         <span class="input_custom_image-text" title="После строительства или ремонта">
@@ -442,19 +442,19 @@
                   <div class="step-title">Дополнительные опции</div>
                   <div class="step-content">
                     <div class="row calc_stepper-form_row">
-                      <div class="col-xs-8 col-sm-4 col-md calc_stepper-col-third">
+                      <div class="col-xs-8 col-sm-2 col-md calc_stepper-col-third">
                         <label class="input_custom is_custom_checkbox">Холодильник
                           <input type="checkbox" tabindex="0" />
                           <div class="input_custom-indicator"></div>
                         </label>
                       </div>
-                      <div class="col-xs-8 col-sm-4 col-md calc_stepper-col-third">
+                      <div class="col-xs-8 col-sm-2 col-md calc_stepper-col-third">
                         <label class="input_custom is_custom_checkbox">Микроволновка
                           <input type="checkbox" tabindex="0" />
                           <div class="input_custom-indicator"></div>
                         </label>
                       </div>
-                      <div class="col-xs-8 col-sm-4 col-md">
+                      <div class="col-xs-8 col-sm-3 col-md">
                         <label class="input_custom is_custom_checkbox">Люстры оригинальной конструкции
                           <input type="checkbox" tabindex="0" />
                           <div class="input_custom-indicator"></div>
@@ -462,13 +462,13 @@
                       </div>
                     </div>
                     <div class="row calc_stepper-form_row">
-                      <div class="col-xs-8 col-sm-4 col-md calc_stepper-col-third">
+                      <div class="col-xs-8 col-sm-2 col-md calc_stepper-col-third">
                         <label class="input_custom is_custom_checkbox">Духовка
                           <input type="checkbox" tabindex="0" />
                           <div class="input_custom-indicator"></div>
                         </label>
                       </div>
-                      <div class="col-xs-8 col-sm-4 col-md calc_stepper-col-third">
+                      <div class="col-xs-8 col-sm-2 col-md calc_stepper-col-third">
                         <label class="input_custom is_custom_checkbox">Помыть посуду
                           <input type="checkbox" tabindex="0" />
                           <div class="input_custom-indicator"></div>
@@ -482,7 +482,7 @@
                       </div>
                     </div>
                     <div class="row calc_stepper-form_row">
-                      <div class="col-xs-8 col-sm-4 col-md calc_stepper-col-third">
+                      <div class="col-xs-8 col-sm-2 col-md calc_stepper-col-third">
                         <label class="input_custom is_custom_checkbox view-checkbox-wrap">Окна
                           <input type="checkbox" class="view-checkbox" data-target=".window-amount" tabindex="0" />
                           <div class="input_custom-indicator"></div>
@@ -492,7 +492,7 @@
                           <input name="window-amount" min="1" max="999" class="count-input input-base" value="1" readonly tabindex="0"> </span>
                         </div>
                       </div>
-                      <div class="col-xs-8 col-sm-4 col-md calc_stepper-col-third">
+                      <div class="col-xs-8 col-sm-2 col-md calc_stepper-col-third">
                         <label class="input_custom is_custom_checkbox view-checkbox-wrap">Балкон
                           <input type="checkbox" class="view-checkbox" data-target=".balcony-amount" tabindex="0" />
                           <div class="input_custom-indicator"></div>
@@ -554,7 +554,7 @@
                       </div>
                     </div>
                     <div class="row calc_stepper-form_row">
-                      <div class="col-xs">
+                      <div class="col-xs col-sm">
                         <label class="input_custom is_custom_swich">Я даю согласие на обработку персональных данных
                           <input type="checkbox" tabindex="0" required="required" />
                           <div class="input_custom-indicator"></div>

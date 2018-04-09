@@ -1,3 +1,13 @@
+// (($) => {
+// 	$('.clients_slider .is-slick-slider').slick({
+// 		slidesToShow: 4,
+// 		slidesToScroll: 1,
+// 		autoplay: true,
+// 		dots: false,
+// 		prevArrow: false,
+// 		nextArrow: false
+// 	});
+// })(jQuery);
 (($) => {
 
 	$(function(){
@@ -24,12 +34,14 @@
 					$stepInputs.prop('checked', false);
 					$input.prop('checked', 'checked');
 					$nextButton.text(nextText);
+					calculateCost();
 					return;
 				}
 
 				$nextButton.text(defaultText);
 				$stepInputs.prop('checked', false);
 				$defaultInput.prop('checked', 'checked');
+				calculateCost();
 
 		});
 
@@ -84,17 +96,17 @@
 			}, 200));
 		}
 
-		let $costOutput =  $('.calc_stepper-sum_block-price')
+		let $costOutput =  $('.calc_stepper-sum_block-price');
 
 		let s = 111;
-		let calculateCost = (formValues) => {
+		let calculateCost = () => {
 			let config = {
 
 			};
 
 			console.table( $stepperForm.serializeArray());
 
-			++s
+			++s;
 			$costOutput.text(s);
 		}
 
@@ -103,27 +115,21 @@
 			calculateCost();
 		});
 
-		$stepper.on('step4', function(e){
+		$stepper.on('stepchange', function(){
+			calculateCost();
+		});
+
+		$stepper.on('step4', function(){
 			$calcStepperBlock.fadeOut();
 		});
 
-		$stepper.on('step5', function(e){
+		$stepper.on('step5', function(){
 			$calcStepperBlock.fadeIn();
 		});
 
 	});
 
 })(jQuery);
-// (($) => {
-// 	$('.clients_slider .is-slick-slider').slick({
-// 		slidesToShow: 4,
-// 		slidesToScroll: 1,
-// 		autoplay: true,
-// 		dots: false,
-// 		prevArrow: false,
-// 		nextArrow: false
-// 	});
-// })(jQuery);
 (($) => {
 
 	$('.clipboard_copy').tooltip({
