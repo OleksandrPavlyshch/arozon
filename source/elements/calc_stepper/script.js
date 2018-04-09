@@ -5,7 +5,8 @@
 			, $stepperForm = $('.calc_stepper-form')
 			, $calcStepperBlock = $('.calc_stepper-sum_block');
 
-		$stepper.activateStepper();
+		// activate moved to preloader script
+		// $stepper.activateStepper();
 
 		$('.calc_stepper-step-1').on('click', '.input_custom_image', (e) => {
 			e.preventDefault();
