@@ -21,7 +21,7 @@ const onlyFaviconFilter = filter(['**', '!' + htmlName + '.html'], {restore: tru
 			, developerName: appName
 			, developerURL: appName
 			, background: 'transpatent'
-			, path: '/favicon'
+			, path: 'http://arozone.pro/favicon'
 			, url: appName
 			, display: 'standalone'
 			, orientation: 'portrait'
